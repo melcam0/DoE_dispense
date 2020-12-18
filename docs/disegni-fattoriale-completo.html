@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capitolo 1 Disegni Fattoriale completo | Dispense sul disegno sperimentiale</title>
+  <meta name="description" content="Capitolo 1 Disegni Fattoriale completo | Dispense sul disegno sperimentiale" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capitolo 1 Disegni Fattoriale completo | Dispense sul disegno sperimentiale" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capitolo 1 Disegni Fattoriale completo | Dispense sul disegno sperimentiale" />
+  
+  
+  
+
+<meta name="author" content="Giorgio Marrubini e Camillo Melzi" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">DoE</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Glossario</a></li>
+<li class="chapter" data-level="1" data-path="disegni-fattoriale-completo.html"><a href="disegni-fattoriale-completo.html"><i class="fa fa-check"></i><b>1</b> Disegni Fattoriale completo</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="disegni-fattoriale-completo.html"><a href="disegni-fattoriale-completo.html#disegni-fattoriali-completi-2k"><i class="fa fa-check"></i><b>1.1</b> Disegni fattoriali completi <span class="math inline">\(2^k\)</span></a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Dispense sul disegno sperimentiale</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="disegni-fattoriale-completo" class="section level1" number="1">
+<h1><span class="header-section-number">Capitolo 1</span> Disegni Fattoriale completo</h1>
+<p>I disegni fattoriali che analizziamo in questa dispensa sono utilizzati principalmente per lo screening, cioè per determinare l’influenza di un certo numero di fattori e delle loro interazioni su una risposta, e per eliminare quelli che sono non significativi.</p>
+<div id="disegni-fattoriali-completi-2k" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Disegni fattoriali completi <span class="math inline">\(2^k\)</span></h2>
+<p>
+I disegni fattoriali completi sono disegni in cui sono indagate tutte le possibili combinazioni dei livelli dei fattori. Se ad esempio il fattore <span class="math inline">\(X_1\)</span> ha <span class="math inline">\(a\)</span> livelli (supponiamo a = 2) e il fattore <span class="math inline">\(X_2\)</span> ha <span class="math inline">\(b\)</span> livelli (supponiamo b=3), tutte le <span class="math inline">\(ab\)</span> (2x3=6) possibili combinazioni dei livelli sono analizzate sperimentalmente. In questo paragrafo consideriamo piani sperimentali in cui i fattori possono variare su <span class="math inline">\(2\)</span> livelli.</p>
+<p>Siano <span class="math inline">\(k\)</span> i fattori che possono influenzare il fenomeno a cui siamo interessati. In questo paragrafo vediamo come costruire un disegno sperimentale che ci permetta di determinare quali fattori e eventualmente quali interazioni tra questi fattori hanno effetto sui risultati che otteniamo nello studio del fenomeno sotto osservazione.</p>
+<p>Iniziamo con lo scegliere il dominio sperimentale, ossia l’insieme degli intervalli di valori che possono essere assunti da ciascun fattore. Per ogni fattore quindi dobbiamo scegliere i valori minimo e massimo dell’intervallo entro cui studiare il fenomeno a cui siamo interessati.<br />
+<em>Esempio</em>: studio della cottura di un uovo sodo. Supponiamo che il risultato, ossia il grado di cottura dell’uovo, dipenda solo dal tempo di immersione dell’uovo in acqua bollente. Il tempo di cottura quindi è il fattore che studieremo tra due livelli. Il livello minimo è 5 minuti, misurati dal momento dell’immersione dell’uovo nell’acqua bollente, mentre il livello massimo è 10 minuti. Il dominio sperimentale in questo caso è rappresentato dai tempi di cottura compresi tra 5 e 10 minuti (compresi i due tempi estremi dell’intervallo).</p>
+<p>Quando i fattori da considerare in un esperimento sono più di uno o due, occorre rendere indipendenti i risultati dall’ordine di grandezza degli intervalli di variazione dei diversi fattori. Se infatti un fattore varia in un dominio che ha ordine di grandezza dei milioni (es. 5-10 milioni di cellule) e un altro fattore varia invece all’interno di un dominio che ha ordine di grandezza delle unità (es. 1-3 ore), i coefficienti del modello di regressione che si calcolano dipenderanno molto dalla grandezza della variabile originaria. Quindi dopo avere individuato il dominio sperimentale dei fattori che si vogliono studiare, è necessario rendere uniforme (standardizzare) il dominio sperimentale mediante la trasformazione di ogni fattore in modo tale che tutti i fattori abbiano la stessa grandezza. La scelta più frequente è quella di trasformare i valori “reali” dei fattori centrandoli nell’origine e facendo si che il valore minimo di ogni fattore coincida con il valore “-1” e il massimo con il valore “+1”. In tale modo si ottiene anche un dominio sperimentale che ha la forma di una figura geometrica regolare (se k=2, siamo nel piano, otterremo un dominio quadrato con lato di lunghezza pari a 2 privo di unità di misura; se k=3, avremo un dominio nello spazio a 3 dimensioni rappresentato da un cubo di spigolo avente lunghezza pari a 2 unità). La standardizzazione si esegue applicando la seguente trasformazione:</p>
+<p><span class="math display">\[\begin{equation*}
+    X&#39;_i=2\frac{X_i-(X_{i,min}+\bar{X_i})}{X_{i,max}-X_{i,min}},
+\end{equation*}\]</span></p>
+<p>dove <span class="math inline">\(\bar{X_i}=(X_{i,max}-X_{i,min})/2\)</span>, in modo che <span class="math inline">\(X&#39;_i\)</span> vari tra <span class="math inline">\(-1\)</span> <span class="math inline">\((X_{i,min})\)</span> e <span class="math inline">\(1\)</span> <span class="math inline">\((X_{i,max})\)</span>. Il dominio sperimentale standard è ipercubo di <span class="math inline">\(\mathbb{R}^k\)</span> centrato nell’origine di lato <span class="math inline">\(2\)</span>. I <span class="math inline">\(2^k\)</span> vertici dell’ipercubo sono i punti sperimentali.
+Si noti che la standardizzazione del dominio sperimentale ci permette un corretto confronto tra i <span class="math inline">\(k\)</span> fattori (rendendo ogni fattore scalare e la variazione di ogni fattore omogenea nel dominio sperimentale). Inoltre il modello lineare che costruiamo dopo aver eseguito gli esperimenti risulta molto semplificato.</p>
+La matrice del disegno sperimentale sperimentale, ossia la matrice le cui colonne sono i <span class="math inline">\(k\)</span> fattori e le cui righe sono i <span class="math inline">\(2^k\)</span> esperimenti è data da .
+<p>Le colonne di tale matrice sono a due a due ortogonali, i <span class="math inline">\(k\)</span> fattori indipendenti sono incorrelati.</p>
+<p>Nell’applicativo selezionare la voce <em>Fattoriale completo/Disegno</em> nel menù <em>Variabili indipendenti</em>. E’ possibile scegliere il numero di fattori per avere la matrice del disegno fattoriale completo <span class="math inline">\(2^k\)</span> e nel caso di
+<span class="math inline">\(k\leq 3\)</span> una rappresentazione grafica del dominio sperimentale: per il caso <span class="math inline">\(k=2\)</span> si veda la  e per <span class="math inline">\(k=3\)</span> la .</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="Immagini/01_fattacompl2liv.png" alt="Disegno fattoriale completo $2^2$\label{fig1}" width="100%" />
+<p class="caption">
+Figure 1.1: Disegno fattoriale completo <span class="math inline">\(2^2\)</span>
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="Immagini/02_fattacompl3liv.png" alt="Disegno fattoriale completo $2^3$\label{fig2}" width="100%" />
+<p class="caption">
+Figure 1.2: Disegno fattoriale completo <span class="math inline">\(2^3\)</span>
+</p>
+</div>
+Consideriamo il modello lineare che tiene conto di tutti i termini lineari e di tutte le possibili interazioni
+<span class="math display">\[\begin{equation}\label{eq:ModDisFull}
+     y_i=\beta_0+\beta_1x_{i1}+\cdots+\beta_kx_{ik}+\beta_{12}x_{i1}x_{i2}+\cdots+\beta_{1\dots k}x_{i1} \cdots x_{ik}+\epsilon_i, \qquad i=1,\dots,2^k,
+\end{equation}\]</span>
+dove <span class="math inline">\(\epsilon_i\sim N(0,\sigma^2)\)</span> a due a due non correlate, errore sperimentale.
+La matrice <span class="math inline">\(X\)</span> del modello è data dalla matrice in 
+<p>Poiché la matrice del modello () è ortogonale, i coefficienti relativi ad ogni termine lineare forniscono esattamente l’informazione di quanto varia la risposta per uno spostamento unitario del fattore relativo, ossia <span class="math inline">\(\frac{X_{max}-X_{min}}{2}\)</span>, mantenendo gli altri parametri nulli. E’ quindi 1/2 l’, cioè la differenza tra la media dei valori delle risposte per <span class="math inline">\(X_{max}\)</span> e la media dei valori delle risposte per <span class="math inline">\(X_{min}\)</span>.<br />
+Nell’esempio numerico che trattiamo più avanti, l’effetto del parametro <span class="math inline">\(X_1\)</span> (temperatura), vedi , è dato dalla differenza (23) tra la media (75.75) dei 4 valori della faccia <span class="math inline">\(X_1=1\)</span> e la media (52.75) dei 4 valori della faccia <span class="math inline">\(X_1=-1\)</span>. Il coefficiente di <span class="math inline">\(X_1\)</span>, vedi , è esattamente 1/2 l’effetto della temperatura.</p>
+<p>Più grande in valore assoluto è il coefficiente, e maggiore è l’effetto del relativo fattore nel dominio sperimentale scelto.</p>
+Determinato il vettore <span class="math inline">\(y\)</span> delle risposte, eseguendo i <span class="math inline">\(2^k\)</span> esperimenti nei punti sperimentali individuati dalla matrice sperimentale in .
+( per evitare effetto di autocorrelazione nell’errore nel modello gli esperimenti non vanno eseguiti nell’ordine in  ma vanno mischiati casualmente)
+dobbiamo stimare
+<p>Si noti che per il binomio di Newton si ha che
+<span class="math display">\[\begin{equation*}
+    \sum_{m=0}^k\frac{k!}{(k-m)!m!}=2^k.
+\end{equation*}\]</span>
+La matrice del modello () è quindi un matrice quadrata <span class="math inline">\(2^k\)</span>x <span class="math inline">\(2^k\)</span> e poiché le sue colonne sono a due a due ortogonali è una matrice di Hadamard.</p>
+<p>Dalla teoria della regressione sappiamo che uno stimatore del vettore dei parametri <span class="math inline">\(\beta\)</span> del modello  è dato dall’unica soluzione del sistema <span class="math inline">\(y=Xb\)</span> (si vedano le diapositive <em>Fattoriale completo</em>)
+<span class="math display">\[\begin{equation}\label{eq:UnicaSolFull}
+    b=X^{-1}y.
+\end{equation}\]</span>
+e che
+<span class="math display">\[
+Cov(b)=(X^tX)^{-1}=\frac{1}{2^k}I_k
+\]</span>
+dove con <span class="math inline">\(I_k\)</span> è indicata la matrice diagonale con valori tutti uguali a <span class="math inline">\(1\)</span> sulla diagonale (matrice identità).</p>
+<p>Nell’applicativo, scelto il numero di fattori compaiono automaticamente il modello e la matrice di dispersione (matrice <span class="math inline">\((X^tX)^{-1}\)</span>) </p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="Immagini/03_matr_disp.png" alt="Modello e matrice di dispersione per un disegno fattoriale completo $2^3$\label{fig3}" width="100%" />
+<p class="caption">
+Figure 1.3: Modello e matrice di dispersione per un disegno fattoriale completo <span class="math inline">\(2^3\)</span>
+</p>
+</div>
+<p>Come già osservato, la matrice di dispersione è una matrice diagonale, e questo implica che tutti i fattori sono ortogonali tra di loro
+<span class="math display">\[\begin{equation}\label{eq:CorrFull}
+    Corr(b_i,b_j)=0, \qquad i\neq j.
+\end{equation}\]</span>
+Il coefficiente <span class="math inline">\(\beta_j\)</span> non cambia anche se elimino qualche fattore, o anche tutti i fattori <span class="math inline">\(X_i,\)</span> <span class="math inline">\(i\neq j\)</span> dal modello (la variazione dovuta da <span class="math inline">\(X_j\)</span> sulla risposta è letta soltanto da <span class="math inline">\(\beta_j\)</span>).</p>
+<p>Inoltre per lo stimatore <span class="math inline">\(b=X^{-1}y\)</span> abbiamo che
+<span class="math display">\[\begin{equation}\label{eq:VarFull}
+    Var(b _j)=\frac{\sigma^2}{2^k}, \qquad j=1,\dots,2^k
+\end{equation}\]</span></p>
+<p>La () ci dice la qualità dell’informazione dello stimatore <span class="math inline">\(b_j\)</span>. Ci permette inoltre di studiare la significatività statistica di <span class="math inline">\(\beta_j\)</span> nota la varianza sperimentale <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Essendo <span class="math inline">\(y=Xb\)</span> un sistema di <span class="math inline">\(2^k\)</span> equazioni (linearmente indipendenti) in <span class="math inline">\(2^k\)</span> incognite, non abbiamo gradi di libertà, e quindi non siamo in grado di stimare <span class="math inline">\(\sigma^2\)</span>. Alla fine di questo paragrafo vedremo, se non è nota a priori la varianza <span class="math inline">\(\sigma^2\)</span>, come possiamo superare questo ostacolo.</p>
+<p>Il valore previsto dal modello in un punto <span class="math inline">\((x_1,x_2,\dots,x_k)\)</span> del dominio sperimentale è dato da
+<span class="math display">\[
+\hat{y_0}=x_0b
+\]</span>
+dove <span class="math inline">\(x_0=(1,x_1,\dots,x_1x_2,\dots,x_1x_2\cdots x_k)\)</span> (riga della matrice del modello  corrispondente al punto <span class="math inline">\((x_1,x_2,\dots,x_k)\)</span>). Dalla teoria sappiamo che la varianza dello stimatore <span class="math inline">\(\hat{y_0}\)</span> è data da
+<span class="math display">\[
+Var(\hat{y_0})=x_0(X^tX)^{-1}x_0^t\sigma^2
+\]</span>
+La quantità <span class="math inline">\(x_0(X^tX)^{-1}x_0^t\)</span> è chiamata <em>Leverage</em> nel punto <span class="math inline">\((x_1,x_2,\dots,x_k)\)</span>.</p>
+<p>Nell’applicativo si trova il grafico del leverage per ogni punto del dominio, </p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="Immagini/04_lev.png" alt="Linee di livello e superficie del leverage per un disegno fattoriale completo $2^3$\label{fig4}" width="100%" />
+<p class="caption">
+Figure 1.4: Linee di livello e superficie del leverage per un disegno fattoriale completo <span class="math inline">\(2^3\)</span>
+</p>
+</div>
+<p>La superficie di leverege ci dice com’è la qualità dell’informazione dello stimatore risposta in ogni punto del dominio sperimentale.</p>
+<p>A questo punto è opportuno fare due osservazioni importanti:</p>
+<ol style="list-style-type: decimal">
+<li><p>il leverage non dipende dai valori delle risposte. Per questo si trova nel sotto-menù <em>Disegno</em> il cui output dipende solo dal disegno.</p></li>
+<li><p>nei punti del disegno, poiché la somma dei quadrati dei valori delle righe della matrice del modello  è <span class="math inline">\(2^k\)</span>, il valore del leverage è <span class="math inline">\(1\)</span>.<br />
+Questo significa che il modello “deve passare” per quei punti, ma questo non deve meravigliare poiché, coma già detto, non abbiamo gradi di libertà. Per fissare le idee su questo passaggio fondamentale, siamo nello stessa situazione che conosciamo nel piano quando abbiamo solo due punti per stimare i coefficienti di una retta.</p></li>
+</ol>
+<p>Si noti che i <span class="math inline">\(2^k\)</span> punti sperimentali sono i punti del dominio sperimentale di leverage massimo. Il che significa che in ognuno di questi punti l’informazione che abbiamo grazie al modello è migliore di quella che avremmo mediante un (unico) eventuale esperimento in quel punto. Ciò significa che la risposta, o meglio l’aspettativa della risposta, può essere predetta meglio (leggi con varianza minore) dal modello che da un singolo esperimento in quel punto. </p>
+<p>Consideriamo ora un esempio numerico.<br />
+Supponiamo ora di dover identificare le condizioni di processo di una reazione chimica. Vogliamo determinare l’influenza di 3 fattori</p>
+<ul>
+<li><p><span class="math inline">\(X_1\)</span>: temperatura (°C)</p></li>
+<li><p><span class="math inline">\(X_2\)</span>: concentrazione del substrato (%, p/p)</p></li>
+<li><p><span class="math inline">\(X_3\)</span>: tipo di catalizzatore</p></li>
+</ul>
+<p>e delle loro interazioni sulla risposta</p>
+<ul>
+<li><span class="math inline">\(Y\)</span>: resa di reazione</li>
+</ul>
+<p>Dobbiamo innanzitutto scegliere il dominio sperimentale, cioè per ogni fattore dobbiamo determinare un intervallo di valori compreso tra un massimo e un minimo entro i quali studiare il fenomeno a cui siamo interessati. Abbiamo 2 fattori quantitativi, che sono la temperatura e la concentrazione del substrato, e un fattore qualitativo a 2 livelli, e questo è il tipo di catalizzatore: A o B.</p>
+<table>
+<caption><span id="tab:liv">Table 1.1: </span>Definizione dei livelli</caption>
+<thead>
+<tr class="header">
+<th align="left">Fattori</th>
+<th align="left">-1</th>
+<th align="left">+1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">temperatura</td>
+<td align="left">160</td>
+<td align="left">180</td>
+</tr>
+<tr class="even">
+<td align="left">concentrazione</td>
+<td align="left">20</td>
+<td align="left">40</td>
+</tr>
+<tr class="odd">
+<td align="left">catalizzatore</td>
+<td align="left">A</td>
+<td align="left">B</td>
+</tr>
+</tbody>
+</table>
+<p>La matrice del disegno  per 3 fattori è quella in . Il piano degli esperimenti  si ottiene sostituendo a -1/+1 il valore corrispondente nella .
+</p>
+<table>
+<caption><span id="tab:unnamed-chunk-7">Table 1.2: </span>Piano degli esperimenti</caption>
+<thead>
+<tr class="header">
+<th align="right">Exp.</th>
+<th align="right">Temp</th>
+<th align="right">Conc</th>
+<th align="left">Cat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">160</td>
+<td align="right">20</td>
+<td align="left">A</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">180</td>
+<td align="right">20</td>
+<td align="left">A</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">160</td>
+<td align="right">40</td>
+<td align="left">A</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">180</td>
+<td align="right">40</td>
+<td align="left">A</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">160</td>
+<td align="right">20</td>
+<td align="left">B</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">180</td>
+<td align="right">20</td>
+<td align="left">B</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">160</td>
+<td align="right">40</td>
+<td align="left">B</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">180</td>
+<td align="right">40</td>
+<td align="left">B</td>
+</tr>
+</tbody>
+</table>
+<p>Gli esperimenti sono elencati nel cosiddetto “ordine standard”.
+Per evitare di osservare effetti (errori) sistematici, gli esperimenti devono essere eseguiti in ordine casuale (random order). Alla fine degli esperimenti otteniamo i risultati in </p>
+<table>
+<caption><span id="tab:unnamed-chunk-8">Table 1.3: </span>Piano degli esperimenti con risposte</caption>
+<thead>
+<tr class="header">
+<th align="right">Exp.</th>
+<th align="right">Temp</th>
+<th align="right">Conc</th>
+<th align="left">Cat</th>
+<th align="right">Resa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">160</td>
+<td align="right">20</td>
+<td align="left">A</td>
+<td align="right">60</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">180</td>
+<td align="right">20</td>
+<td align="left">A</td>
+<td align="right">72</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">160</td>
+<td align="right">40</td>
+<td align="left">A</td>
+<td align="right">54</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">180</td>
+<td align="right">40</td>
+<td align="left">A</td>
+<td align="right">68</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">160</td>
+<td align="right">20</td>
+<td align="left">B</td>
+<td align="right">52</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">180</td>
+<td align="right">20</td>
+<td align="left">B</td>
+<td align="right">83</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">160</td>
+<td align="right">40</td>
+<td align="left">B</td>
+<td align="right">45</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">180</td>
+<td align="right">40</td>
+<td align="left">B</td>
+<td align="right">80</td>
+</tr>
+</tbody>
+</table>
+<p>Per inserire le risposte nell’applicativo bisogna andare nel sotto menu <em>Modello</em> e inserire le risposte nell’apposito riquadro, vedi  (da Excel basta copiare la colonna delle risposte e incollarla nel riquadro)</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
+<img src="Immagini/05_risp.png" alt="Inserimento risposte nell'applicativo \label{fig5}" width="100%" />
+<p class="caption">
+Figure 1.5: Inserimento risposte nell’applicativo 
+</p>
+</div>
+<p>Per un numero di fattori non superiore a 3 viene fornita anche una rappresentazione grafica delle risposte.</p>
+<p>Una volta inserite le risposte, il calcolo dei coefficienti del modello è automatico e ne abbiamo anche una rappresentazione grafica, vedi </p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
+<img src="Immagini/06_coeff.png" alt="Calcolo dei coefficienti del modello \label{fig6}" width="100%" />
+<p class="caption">
+Figure 1.6: Calcolo dei coefficienti del modello 
+</p>
+</div>
+<p>Un altro grafico riportato è il <em>Grafico degli effetti normalizzati</em>, , in cui sono rappresentati i coefficienti che contribuiscono di più nel determinare la risposta. Il grafico rappresenta la percentuale del contributo di ciascun coefficiente elevato al quadrato alla somma dei quadrati di tutti i coefficienti. I coefficienti che risultano dare un contributo in percentuale maggiore sono quelli che che influenzano maggiormente la risposta.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
+<img src="Immagini/07_coeff_norm.png" alt="Grafico degli effetti normalizzati \label{fig7}" width="100%" />
+<p class="caption">
+Figure 1.7: Grafico degli effetti normalizzati 
+</p>
+</div>
+<p>Dai grafici  e  risulta che i fattori che influenzano di più la risposta Resa sono la temperatura e la sua interazione con il tipo di catalizzatore.<br />
+In  è illustrato il grafico della superficie di risposta della Resa in funzione della temperatura e del tipo di catalizzatore, avendo fissato la concentrazione del substrato nel punto centrale del suo intervallo di variazione, vale a dire al 30%.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
+<img src="Immagini/08_sup_risp.png" alt="Grafico della superficie di risposta della Resa \label{fig8}" width="100%" />
+<p class="caption">
+Figure 1.8: Grafico della superficie di risposta della Resa 
+</p>
+</div>
+<p>Come si nota dalla  il massimo della resa si ottiene alla temperatura massima (180 °C) e usando il catalizzatore del tipo B quando il substrato è alla concentrazione del 30%.</p>
+<p>Circa la significatività dei coefficienti, per quanto già osservato precedentemente, non abbiamo gradi di libertà e quindi non è possibile stimare <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Una analisi grafica della significatività dei parametri <span class="math inline">\(b_j\)</span> può essere effettuata mediante il <em>Normal Probability Plot</em>, . Se tutti i coefficienti fossero nulli, i.e. se fossero tutti distribuiti come una normale di media <span class="math inline">\(0\)</span> e varianza <span class="math inline">\(\sigma^2/2^k\)</span>, essi sarebbero distribuiti come una retta. Possiamo considerare significativamente non nulli i coefficienti che si discostano dalla retta.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-13"></span>
+<img src="Immagini/09_qqplot.png" alt="qq-plot dei coefficienti \label{fig9}" width="100%" />
+<p class="caption">
+Figure 1.9: qq-plot dei coefficienti 
+</p>
+</div>
+<p>Dal qq-plot in  si ottiene la conferma che sono significativi (leggi: diversi da zero) la temperatura e la sua interazione con il tipo di catalizzatore.</p>
+<p>Per convalidare il modello eseguiamo alcune misure indipendenti <span class="math inline">\(\eta_1,\dots,\eta_p\)</span> in un punto del dominio scelto arbitrariamente. In generale si prende il centro del dominio perché è il punto in cui il leverage è minore.
+Possiamo determinare <span class="math inline">\(\sigma^2\)</span> con lo stimatore
+<span class="math display">\[
+s^2=\frac{1}{p-1}\sum_{p=1}^p(\eta_i-\bar{\eta})^2.
+\]</span>
+Possiamo costruire l’intervallo di confidenza della misura “vera” in quel punto
+<span class="math display">\[
+\bar{\eta}\pm t(\alpha/2,p-1)s\sqrt{1/p}
+\]</span>
+per <span class="math inline">\(\alpha\)</span> fissato (in generale <span class="math inline">\(\alpha=95\%\)</span>).</p>
+<p>Nel nostro caso essendo il terzo fattore qualitativo prendiamo il punto centrale tra la temperatura e la concentrazione per il catalizzatore di tipo B, ossia il punto <span class="math inline">\((X_1,X_2,X_3)=(0,0,1)\)</span>.<br />
+Inserendo il valore delle misure indipendenti nell’applicativo,  otteniamo il valore medio delle misure e il relativo intervallo di confidenza al 95%, quindi il valore della deviazione standard e dei gradi di libertà</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-14"></span>
+<img src="Immagini/10_mis_ind.png" alt="Misure indipendenti \label{fig10}" width="100%" />
+<p class="caption">
+Figure 1.10: Misure indipendenti 
+</p>
+</div>
+<p>Inserendo le misure indipendenti abbiamo quindi una stima di <span class="math inline">\(\sigma\)</span> e dei gradi di libertà. Utilizzando questi valori è possibile, grazie all’, costruire l’intervallo di confidenza dei parametri del modello. Nell’applicativo si ottengono gli estremi degli intervalli di confidenza dei parametri per alcuni valori di <span class="math inline">\(\alpha\)</span> e i relativi <span class="math inline">\(p-value\)</span>, </p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-15"></span>
+<img src="Immagini/11_intconf.png" alt="Estremi degli intervalli di confidenza dei coefficienti \label{fig11}" width="100%" />
+<p class="caption">
+Figure 1.11: Estremi degli intervalli di confidenza dei coefficienti 
+</p>
+</div>
+<p>Nel grafico dei parametri, l’ampiezza degli intervalli di confidenza è rapprentata con un segmento di colore verde, </p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-16"></span>
+<img src="Immagini/12_intcong_graf.png" alt="Grafico dei coefficienti con estrremi degli intervalli di confidenza dei coefficienti \label{fig12}" width="100%" />
+<p class="caption">
+Figure 1.12: Grafico dei coefficienti con estrremi degli intervalli di confidenza dei coefficienti 
+</p>
+</div>
+<p>Per convalidare il modello bisogna quindi vedere quale è il valore previsto dal modello nel punto in cui abbiamo eseguito le misure indipendenti e verificare che non differisca significativamente dal valore ottenuto dalle misure indipendenti (ossia appartenga all’intervallo di confidenza determinato).<br />
+Inserendo nell’applicativo le coordinate del punto in cui sono state eseguite le misure indipendenti otteniamo la previsione del modello in quel punto e gli estremi dell’intervallo di confidenza costruiti con la stima di <span class="math inline">\(\sigma\)</span> ottenuta, </p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-17"></span>
+<img src="Immagini/13_prev.png" alt="Previsione del modello in un punto\label{fig13}" width="100%" />
+<p class="caption">
+Figure 1.13: Previsione del modello in un punto
+</p>
+</div>
+<p>Nel nostro esempio numerico il modello risulta convalidato.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+},
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
