@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capitolo 2 Disegni Frazionari | Dispense sul disegno sperimentiale</title>
+  <meta name="description" content="Capitolo 2 Disegni Frazionari | Dispense sul disegno sperimentiale" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capitolo 2 Disegni Frazionari | Dispense sul disegno sperimentiale" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="Immagini/Design-of-Experiments.jpg" />
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capitolo 2 Disegni Frazionari | Dispense sul disegno sperimentiale" />
+  
+  
+  <meta name="twitter:image" content="Immagini/Design-of-Experiments.jpg" />
+
+<meta name="author" content="Giorgio Marrubini e Camillo Melzi" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="Immagini/doe.ico" type="image/x-icon" />
+<link rel="prev" href="disegni-fattoriale-completo.html"/>
+<link rel="next" href="bibliografia.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">DoE</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#section"></a></li>
+<li class="chapter" data-level="" data-path="glossario.html"><a href="glossario.html"><i class="fa fa-check"></i>Glossario minimo</a></li>
+<li class="chapter" data-level="1" data-path="disegni-fattoriale-completo.html"><a href="disegni-fattoriale-completo.html"><i class="fa fa-check"></i><b>1</b> Disegni Fattoriale completo</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="disegni-fattoriale-completo.html"><a href="disegni-fattoriale-completo.html#disegni-fattoriali-completi-2k"><i class="fa fa-check"></i><b>1.1</b> Disegni fattoriali completi <span class="math inline">\(2^k\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="disegni-frazionari.html"><a href="disegni-frazionari.html"><i class="fa fa-check"></i><b>2</b> Disegni Frazionari</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="disegni-frazionari.html"><a href="disegni-frazionari.html#esempio-confusioni"><i class="fa fa-check"></i><b>2.1</b> Esempio: confusioni</a></li>
+<li class="chapter" data-level="2.2" data-path="disegni-frazionari.html"><a href="disegni-frazionari.html#esempio-studio-dei-fattori-dellestrazione-liquido-liquido"><i class="fa fa-check"></i><b>2.2</b> Esempio: studio dei fattori dell’estrazione liquido-liquido</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Dispense sul disegno sperimentiale</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="disegni-frazionari" class="section level1" number="2">
+<h1><span class="header-section-number">Capitolo 2</span> Disegni Frazionari</h1>
+<p>All’aumentare del numero <span class="math inline">\(k\)</span> dei fattori, il numero degli esperimenti da eseguire in un disegno fattoriale completo (a 2 livelli) aumenta esponenzialmente come <span class="math inline">\(2^k\)</span>.<br />
+In Tabella <a href="disegni-frazionari.html#tab:exprich">2.1</a> è riportato il numero di esperimenti richiesti in funzione del numero di fattori <span class="math inline">\(k\)</span> nei piani sperimentali fattoriali completi.</p>
+<table>
+<caption><span id="tab:exprich">Tabella 2.1: </span>Esperimenti richiesti per disegni fattoriali completi <span class="math inline">\(2^k\)</span></caption>
+<thead>
+<tr class="header">
+<th align="center">Fattori (k)</th>
+<th align="center">Esperimenti (2^k)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">4</td>
+<td align="center">16</td>
+</tr>
+<tr class="even">
+<td align="center">5</td>
+<td align="center">32</td>
+</tr>
+<tr class="odd">
+<td align="center">6</td>
+<td align="center">64</td>
+</tr>
+<tr class="even">
+<td align="center">7</td>
+<td align="center">128</td>
+</tr>
+<tr class="odd">
+<td align="center">8</td>
+<td align="center">256</td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td align="center">512</td>
+</tr>
+</tbody>
+</table>
+<p>E’ possibile ridurre il numero di esperimenti, riducendolo di <span class="math inline">\(\frac{1}{2},\frac{1}{4}, \dots\)</span>, costruendo a partire da un disegno fattoriale completo <span class="math inline">\(2^k\)</span> un disegno fattoriale frazionario <span class="math inline">\(2^{k-p}\)</span> pur di accettare di “confondere” tra loro alcuni termini del modello. In generale, la strategia per fare questo consiste nel cercare di “confondere” termini di ordine maggiore che possono essere considerati trascurabili a priori, secondo il principio empirico della economia degli effetti (v. <a href="glossario.html#glossario">Glossario</a>).</p>
+<p>Vediamo come possiamo costruire un disegno frazionario <span class="math inline">\(2^{k-p}\)</span> con un esempio specifico.<br />
+Supponiamo di voler costruire il disegno <span class="math inline">\(2^{5-2}\)</span> ossia <span class="math inline">\(1/4\)</span> del disegno fattoriale completo <span class="math inline">\(2^5\)</span>.<br />
+Partiamo dal disegno <span class="math inline">\(2^3\)</span>, vedi Tabella <a href="disegni-frazionari.html#tab:fatt3">2.2</a></p>
+<table>
+<caption><span id="tab:fatt3">Tabella 2.2: </span>Disegno fattorialo completo <span class="math inline">\(2^3\)</span></caption>
+<thead>
+<tr class="header">
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>a cui dobbiamo aggiungere i fattori mancanti <span class="math inline">\(x_4\)</span> e <span class="math inline">\(x_5\)</span> “confondendoli” con le interazioni <span class="math inline">\(x_4=x_1x_2\)</span> e <span class="math inline">\(x_5=x_1x_3\)</span>. Otteniamo così il disegno Tabella <a href="disegni-frazionari.html#tab:fraz52">2.3</a> in cui la quarta colonna risulta il prodotto della prima con seconda e la quinta il prodotto tra la prima e la terza </p>
+<table>
+<caption><span id="tab:fraz52">Tabella 2.3: </span>Disegno frazionario <span class="math inline">\(2^{5-2}\)</span></caption>
+<thead>
+<tr class="header">
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">x4</th>
+<th align="right">x5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>Diremo che <span class="math inline">\(x_4=x_1x_2\)</span> e <span class="math inline">\(x_5=x_1x_3\)</span> sono i generatori del disegno frazionario <span class="math inline">\(2^{5-2}\)</span>.</p>
+<p>Nell’applicativo, nel menù <em>Frazionario</em>, vengono costruiti i disegni frazionari <span class="math inline">\(2^{k-p}\)</span> indicando il numero di fattori <span class="math inline">\(k\)</span> e il numero di generatori <span class="math inline">\(p\)</span>.<br />
+In Figura <a href="disegni-frazionari.html#fig:fz1">2.1</a> abbiamo il risultato che si ottiene per <span class="math inline">\(k=5\)</span> e <span class="math inline">\(p=2\)</span>, ossia il disegno <span class="math inline">\(2^{5-2}\)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:fz1"></span>
+<img src="Immagini/Fraz/01_fraz.png" alt="Disegno frazionario $2^{5-2}$" width="100%" />
+<p class="caption">
+Figura 2.1: Disegno frazionario <span class="math inline">\(2^{5-2}\)</span>
+</p>
+</div>
+<p>Si noti che i generatori sono indicati con le lettere maiuscole, e che queste corrispondono alle colonne della matrice disposte in ordine alfabetico (A è la prima colonna, B la seconda, C la terza, D la quarta ed E la quinta colonna)</p>
+<p>Poiché ogni colonna della matrice del disegno elevata al quadrato è la colonna cosiddetta <em>identità</em>, <em>Int.</em>, costituita solo da valori uguali a 1, dalle relazioni <span class="math inline">\(x_4=x_1x_2\)</span> e <span class="math inline">\(x_5=x_1x_3\)</span> si ottiene facilmente che
+<span class="math display">\[
+Int.=x_1x_2x_4 \qquad \rm{e} \qquad \it{Int.}=x_1x_3x_5
+\]</span>
+dette <em>Relazioni di identità</em>. La lunghezza (ordine delle interazioni) minima delle relazioni d’identità è chiamata <em>risoluzione</em> del disegno e, di solito, è indicata con un numero romano. Nel nostro esempio la risoluzione è <span class="math inline">\(III\)</span> e il disegno viene indicato con <span class="math inline">\(2^{5-2}_{III}\)</span>.<br />
+In linea di principio conviene scegliere relazioni di risoluzione massima (V e superiore) in quanto confondono termini di ordine maggiore. Questa di solito è l’indicazione data dalla maggior parte dei software professionali commerciali (v. Figura <a href="disegni-frazionari.html#fig:fz2">2.2</a>). Ma affinando l’esperienza e la pratica nell’uso dei fattoriali frazionari si constateranno le notevoli potenzialità offerte anche da disegni di ordine III e IV.</p>
+<p>Nella Figura <a href="disegni-frazionari.html#fig:fz2">2.2</a>, è riportata la copia della prima schermata da Design Expert®: sono indicati i disegni frazionari che si possono costruire in funzione del numero di fattori (per colonna) e numero di esperimenti (per riga) con la relativa risoluzione.</p>
+<div class="figure" style="text-align: center"><span id="fig:fz2"></span>
+<img src="Immagini/Fraz/02_risoluzione.png" alt="Disegni frazionari con risoluzione" width="100%" />
+<p class="caption">
+Figura 2.2: Disegni frazionari con risoluzione
+</p>
+</div>
+<p>Per la ragione detta sopra, i programmatori di Design Expert® hanno assegnato dei codici-colore “semaforici” ai diversi disegni frazionari. Il colore del riquadro corrisponde al rischio di ottenere risultati inconcludenti. Perciò disegni con risoluzione <span class="math inline">\(III\)</span>, in cui si “confondono” i termini lineari con le interazioni di ordine 2 sono colorati in rosso (rischio/attenzione alti); i disegni di risoluzione <span class="math inline">\(IV\)</span> in cui si “confondono” i termini lineari con le interazioni di ordine 3, e le interazioni di ordine 2 sono confuse a coppie tra loro, sono in giallo (rischio/attenzione medi). In verde, invece, sono indicati i disegni di risoluzione superiore a V (via libera, nessuna attenzione?). Questo tipo di classificazione è discutibile, come detto, ed è da considerare al pari di un consiglio di prudenza, peraltro scontato, perché l’uso dei fattoriali frazionari è da pensare per risolvere il problema chimico in esame, e non viceversa (i.e. come adattare il problema ad un disegno frazionario di risoluzione sufficientemente alta).
+La Figura <a href="disegni-frazionari.html#fig:fz2">2.2</a> è la prima immagine del menù <em>Frazionari</em> dell’applicativo.</p>
+<p>Con semplice algebra, sempre osservando che <span class="math inline">\(x_i^2=Int.\)</span>, i.e. ogni colonna al quadrato è la colonna identità <span class="math inline">\(Int.\)</span> formata da tutti 1, si ottengono tutte le altre “confusioni”.<br />
+Nell’applicativo compaiono automaticamente sia il modello relativo al disegno sia tutte le “confusioni”, vedi Figura <a href="disegni-frazionari.html#fig:fz3">2.3</a></p>
+<div class="figure" style="text-align: center"><span id="fig:fz3"></span>
+<img src="Immagini/Fraz/03_confusioni.png" alt="Modello e confusioni del disegno frazionario $2_{III}^{5-2}$" width="100%" />
+<p class="caption">
+Figura 2.3: Modello e confusioni del disegno frazionario <span class="math inline">\(2_{III}^{5-2}\)</span>
+</p>
+</div>
+<p>Per quanto riguarda la rimanente parte di output, tutto è presentato nella stessa logica già vista per i disegni fattoriali completi.</p>
+<div id="esempio-confusioni" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Esempio: confusioni</h2>
+<p>Per comprendere meglio le “confusioni” in un disegno frazionario consideriamo il seguente esempio didattico. Supponiamo che il modello “vero” (quello che a priori non conosciamo) del fenomeno di studio sia il seguente
+<span class="math display">\[
+y=x_1+5x_2-3x_3+15x_1x_3+\epsilon
+\]</span>
+Nella progettazione degli esperimenti per studiare il fenomeno in osservazione abbiamo ipotizzato che la risposta dipenda da 5 fattori <span class="math inline">\(x_1,x_2,x_3,x_4,x_5\)</span>.</p>
+<p>Per studiare tutte le possibili interazioni consideriamo un disegno fattoriale completo Tabella <a href="disegni-frazionari.html#tab:Conffull">2.4</a></p>
+<table>
+<caption><span id="tab:Conffull">Tabella 2.4: </span>Disegno fattoriale completo <span class="math inline">\(2^5\)</span> (32 esperimenti) con risposte costruito dal modello “vero” ipotizzato <span class="math inline">\(y=x_1+5x_2-3x_3+15x_1x_3+\epsilon\)</span></caption>
+<thead>
+<tr class="header">
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">x4</th>
+<th align="right">x5</th>
+<th align="right">y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">11.96</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-17.15</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">23.23</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-5.04</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-22.91</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">5.90</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-12.81</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">18.18</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">11.56</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-17.82</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">20.86</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-6.44</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-24.14</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">9.41</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-13.74</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">16.17</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">11.64</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-14.71</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">20.62</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-5.95</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-23.92</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">7.07</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-13.31</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">17.66</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">11.69</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-15.81</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">21.73</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-4.59</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-24.53</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">6.81</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-13.02</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">18.17</td>
+</tr>
+</tbody>
+</table>
+<p>Il cui grafico dei coefficienti è dato in Figura <a href="disegni-frazionari.html#fig:fz11">2.4</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:fz11"></span>
+<img src="Immagini/Fraz/11_Conf_full2.png" alt="Grafico dei coefficienti del modello $2^5$ " width="100%" />
+<p class="caption">
+Figura 2.4: Grafico dei coefficienti del modello <span class="math inline">\(2^5\)</span>
+</p>
+</div>
+<p>Per ridurre della metà il numero di esperimenti si considera un disegno frazionario <span class="math inline">\(2^{5-1}_V\)</span>, Tabella <a href="disegni-frazionari.html#tab:Confris5">2.5</a>
+</p>
+<table>
+<caption><span id="tab:Confris5">Tabella 2.5: </span>Disegno frazionario <span class="math inline">\(2^{5-1}_V\)</span> (16 esperimenti) con risposte costruito dal modello supposto <span class="math inline">\(y=x_1+5x_2-3x_3+15x_1x_3+\epsilon\)</span></caption>
+<thead>
+<tr class="header">
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">x4</th>
+<th align="right">x5</th>
+<th align="right">y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">11.64</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-17.15</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">23.23</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-5.95</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-22.91</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">7.07</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-13.31</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">18.18</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">11.56</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-15.81</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">21.73</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-6.44</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-24.53</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">9.41</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-13.74</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">18.17</td>
+</tr>
+</tbody>
+</table>
+<p>In questo caso il grafico dei parametri è dato da Figura <a href="disegni-frazionari.html#fig:fz12">2.5</a></p>
+<div class="figure" style="text-align: center"><span id="fig:fz12"></span>
+<img src="Immagini/Fraz/12_Conf_ris5.png" alt="Grafico dei coefficienti del modello frazionario $2^{5-1}_V$ " width="100%" />
+<p class="caption">
+Figura 2.5: Grafico dei coefficienti del modello frazionario <span class="math inline">\(2^{5-1}_V\)</span>
+</p>
+</div>
+<div style="page-break-after: always;"></div>
+<p>Il disegno scelto ha risoluzione <span class="math inline">\(V\)</span>, ciò significa che i termini lineari sono confusi con le interazioni di ordine 4 e quindi posssiamo supporre che il valore di ciascun parametro si riferisca al termine lineare corrispondente (consideriamo trascurabili tutte le interazioni di ordine 4). E’ possibile fare un ragionamento analogo per le interazioni di ordine 2 che si confondono con le interazioni di ordine 3. Supponendo che queste ultime siano trascurabili, possiamo dunque concludere che il valore di ciascun parametro di interazione si riferisca easclusivamente alle interazioni di ordine 2.</p>
+<p>Se si volesse diminuire ulteriormente il numero di esperimenti, è possibile ricorrere ad un disegno frazionario <span class="math inline">\(2^{5-2}_{III}\)</span>, Tabella <a href="disegni-frazionari.html#tab:Confris3">2.6</a></p>
+<table>
+<caption><span id="tab:Confris3">Tabella 2.6: </span>Disegno frazionario <span class="math inline">\(2^{5-2}_{III}\)</span> (8 esperimenti) con risposte costruito dal modello supposto <span class="math inline">\(y=x_1+5x_2-3x_3+15x_1x_3+\epsilon\)</span></caption>
+<thead>
+<tr class="header">
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">x4</th>
+<th align="right">x5</th>
+<th align="right">y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">11.69</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-17.15</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">20.62</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-6.44</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-24.14</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">7.07</td>
+</tr>
+<tr class="odd">
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-12.81</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">18.17</td>
+</tr>
+</tbody>
+</table>
+<p>Questo è un disegno di risoluzione <span class="math inline">\(III\)</span>, bisogna quindi fare molta attenzione alle confusioni Figura <a href="disegni-frazionari.html#fig:fz13">2.6</a></p>
+<div class="figure" style="text-align: center"><span id="fig:fz13"></span>
+<img src="Immagini/Fraz/13_Conf_ris3.png" alt="Confusioni del disegno $2^{5-2}_{III}$" width="100%" />
+<p class="caption">
+Figura 2.6: Confusioni del disegno <span class="math inline">\(2^{5-2}_{III}\)</span>
+</p>
+</div>
+<p>I termini lineari si confondono con le interazione di ordine 2. Come si vede dal grafico dei coefficienti Figura <a href="disegni-frazionari.html#fig:fz14">2.7</a></p>
+<div class="figure" style="text-align: center"><span id="fig:fz14"></span>
+<img src="Immagini/Fraz/14_Conf_ris3.png" alt="Grafico dei coefficienti del disegno $2^{5-2}_{III}$" width="100%" />
+<p class="caption">
+Figura 2.7: Grafico dei coefficienti del disegno <span class="math inline">\(2^{5-2}_{III}\)</span>
+</p>
+</div>
+<p>ad esempio il valore di <span class="math inline">\(x_5\)</span> è circa 15, ma non siamo in grado di stabilire se è dovuto dal termine linerare <span class="math inline">\(x_5\)</span>, dal termine “confuso” <span class="math inline">\(x_1x_3\)</span> (come in questo caso, ricordo la forma del modello <span class="math inline">\(y=x_1+5x_2-3x_3+15x_1x_3+\epsilon\)</span>) o dalla combinazione di entrambi.</p>
+</div>
+<div id="esempio-studio-dei-fattori-dellestrazione-liquido-liquido" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Esempio: studio dei fattori dell’estrazione liquido-liquido</h2>
+<p>Per meglio comprendere i disegni frazionari e l’utilizzo dell’applicativo in questi disegni consideriamo il seguente esempio.</p>
+<p>Si vogliono studiare i seguenti 4 fattori:</p>
+<ul>
+<li><p>volume miscela solventi per estrazione</p></li>
+<li><p>tempo di centrifuga dell’estratto</p></li>
+<li><p>forza ionica del campione (quantità di NaCl da aggiungere)</p></li>
+<li><p>tempo di estrazione</p></li>
+</ul>
+<p>Definiamo innanzitutto il dominio sperimentale. Per ogni fattore determiniamo l’intervallo di valori compreso tra un massimo e un minimo entro i quali studiare il fenomeno, Tabella <a href="disegni-frazionari.html#tab:fzliv">2.7</a></p>
+<table>
+<caption><span id="tab:fzliv">Tabella 2.7: </span>Definizione dei livelli</caption>
+<thead>
+<tr class="header">
+<th align="left">Fattori</th>
+<th align="center">-1</th>
+<th align="center">+1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">vol. solvente</td>
+<td align="center">10</td>
+<td align="center">40</td>
+</tr>
+<tr class="even">
+<td align="left">t. centrifuga</td>
+<td align="center">5</td>
+<td align="center">20</td>
+</tr>
+<tr class="odd">
+<td align="left">forza ionica</td>
+<td align="center">1</td>
+<td align="center">5</td>
+</tr>
+<tr class="even">
+<td align="left">t. estrazione</td>
+<td align="center">1</td>
+<td align="center">5</td>
+</tr>
+</tbody>
+</table>
+<p>Il piano fattoriale completo prevede 16 esperimenti. L’impegno del laboratorio è considerato troppo oneroso. Si decide quindi di utilizzare un disegno frazionario <span class="math inline">\(2^{4-1}_{IV}\)</span> per eseguire la metà degli esperimenti. Vedi Figura <a href="disegni-frazionari.html#fig:fz4">2.8</a></p>
+<div class="figure" style="text-align: center"><span id="fig:fz4"></span>
+<img src="Immagini/Fraz/04_esempio1.png" alt="Disegno e generatore di  $2_{IV}^{4-1}$" width="100%" />
+<p class="caption">
+Figura 2.8: Disegno e generatore di <span class="math inline">\(2_{IV}^{4-1}\)</span>
+</p>
+</div>
+<p>Il piano sperimentale risulta quindi Tabella <a href="disegni-frazionari.html#tab:piano">2.8</a>
+</p>
+<table>
+<caption><span id="tab:piano">Tabella 2.8: </span>Piano sperimentale</caption>
+<thead>
+<tr class="header">
+<th align="center">vol. solvente</th>
+<th align="center">t. centrifuga</th>
+<th align="center">forza ionica</th>
+<th align="center">t. estrazione</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">10</td>
+<td align="center">5</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">40</td>
+<td align="center">5</td>
+<td align="center">1</td>
+<td align="center">5</td>
+</tr>
+<tr class="odd">
+<td align="center">10</td>
+<td align="center">20</td>
+<td align="center">1</td>
+<td align="center">5</td>
+</tr>
+<tr class="even">
+<td align="center">40</td>
+<td align="center">20</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">10</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">5</td>
+</tr>
+<tr class="even">
+<td align="center">40</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">10</td>
+<td align="center">20</td>
+<td align="center">5</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">40</td>
+<td align="center">20</td>
+<td align="center">5</td>
+<td align="center">5</td>
+</tr>
+</tbody>
+</table>
+<p>Il modello e le “confusioni” sono dati in Figura <a href="disegni-frazionari.html#fig:fz5">2.9</a></p>
+<div class="figure" style="text-align: center"><span id="fig:fz5"></span>
+<img src="Immagini/Fraz/05_esempio2.png" alt="Modello e condusioni del frazionario di  $2_{IV}^{4-1}$" width="100%" />
+<p class="caption">
+Figura 2.9: Modello e condusioni del frazionario di <span class="math inline">\(2_{IV}^{4-1}\)</span>
+</p>
+</div>
+<p>Il disegno è di risoluzione <span class="math inline">\(IV\)</span> quindi, come si vede in Figura <a href="disegni-frazionari.html#fig:fz5">2.9</a>, abbiamo “confusione” tra i termini lineari e le interazioni di ordine 3 e tra le coppie di interazioni di ordine 2.</p>
+<p>Vengono quindi eseguiti, in ordine casuale, gli 8 esperimenti ottenendo per la risposta <em>Resa</em> i seguenti valori, Tabella <a href="disegni-frazionari.html#tab:fzpianorisp">2.9</a></p>
+<table>
+<caption><span id="tab:fzpianorisp">Tabella 2.9: </span>Piano sperimentale <span class="math inline">\(2_{IV}^{4-1}\)</span> con risposte</caption>
+<thead>
+<tr class="header">
+<th align="center">vol. solvente</th>
+<th align="center">t. centrifuga</th>
+<th align="center">forza ionica</th>
+<th align="center">t. estrazione</th>
+<th align="center">Resa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">10</td>
+<td align="center">5</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">17</td>
+</tr>
+<tr class="even">
+<td align="center">40</td>
+<td align="center">5</td>
+<td align="center">1</td>
+<td align="center">5</td>
+<td align="center">37.9</td>
+</tr>
+<tr class="odd">
+<td align="center">10</td>
+<td align="center">20</td>
+<td align="center">1</td>
+<td align="center">5</td>
+<td align="center">17</td>
+</tr>
+<tr class="even">
+<td align="center">40</td>
+<td align="center">20</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">24.6</td>
+</tr>
+<tr class="odd">
+<td align="center">10</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">28.4</td>
+</tr>
+<tr class="even">
+<td align="center">40</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">1</td>
+<td align="center">22.7</td>
+</tr>
+<tr class="odd">
+<td align="center">10</td>
+<td align="center">20</td>
+<td align="center">5</td>
+<td align="center">1</td>
+<td align="center">30.3</td>
+</tr>
+<tr class="even">
+<td align="center">40</td>
+<td align="center">20</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">36.3</td>
+</tr>
+</tbody>
+</table>
+<p>Inserendo nell’applicativo gli 8 valori della <em>Resa</em> ottenuti (in ordine come in Tabella <a href="disegni-frazionari.html#tab:fzpianorisp">2.9</a>, otteniamo la stima puntuale dei parametri Figura <a href="disegni-frazionari.html#fig:fz6">2.10</a> e il relativo grafico Figura <a href="disegni-frazionari.html#fig:fz7">2.11</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:fz6"></span>
+<img src="Immagini/Fraz/06_parametri.png" alt="Stima puntuale dei parametri" width="100%" />
+<p class="caption">
+Figura 2.10: Stima puntuale dei parametri
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:fz7"></span>
+<img src="Immagini/Fraz/07_graf_parametri.png" alt="Grafico dell stima puntuale dei parametri" width="100%" />
+<p class="caption">
+Figura 2.11: Grafico dell stima puntuale dei parametri
+</p>
+</div>
+<p>Ricordando le “confusioni” Figura <a href="disegni-frazionari.html#fig:fz5">2.9</a> e che il disegno è di risoluzione <span class="math inline">\(IV\)</span> abbiamo che il termini lineari sono “confusi” con le interazioni di ordine 3, possiamo quindi supporre che i valori dei parametri <span class="math inline">\(x_1,x_2,x_3\)</span> e <span class="math inline">\(x_4\)</span> si riferiscano ai termini linerari mentre rimangono le “confusioni” a coppie per le interazioni di ordine 2.<br />
+Il modello risulta quindi
+<span class="math display">\[
+y=26.77+3.60x_1+0.28x_2+2.65x_3+3.12x_4-0.2(x_1x_2+x_3x_4)-3.53(x_1x_3+x_2x_4)+3.60(x_1x_4+x_2x_3)
+\]</span></p>
+<p>Il fattore <span class="math inline">\(x_2\)</span> ha coefficiente piccolo e non sembra importante, mentre gli altri tre termini lineari lo sono sicuramente.<br />
+Quindi si può sostenere l’ipotesi che le interazioni confuse siano dovute ai termini diversi da <span class="math inline">\(x_2\)</span>.<br />
+Questa osservazione è di fatto risultata coerente con il dato sperimentale osservato secondo cui il tempo di centrifuga non ha alcun effetto sulla resa di estrazione perché il livello più basso scelto è già più che sufficiente per rompere l’emulsione creata dopo la miscelazione delle fasi del solvente di estrazione e del campione.
+Tali conclusioni sono confermate dal piano <span class="math inline">\(2^4\)</span> poi condotto a termine.</p>
+<p>Il modello finale semplificato quindi è</p>
+<p><span class="math display">\[
+y=26.77+3.60x_1+2.65x_3+3.12x_4-0.2x_3x_4-3.53x_1x_3+3.60x_1x_4
+\]</span></p>
+<p>Per convalidare il modello sono state eseguite misure indipendenti nel punto test <span class="math inline">\((1-1,-1,-1,-1)\)</span>. Inserendo le rese osservate <span class="math inline">\(17.2,16.9,17.0,16.8\)</span> nell’apposita casella dell’applicativo si ottiene Figura <a href="disegni-frazionari.html#fig:fz8">2.12</a></p>
+<div class="figure" style="text-align: center"><span id="fig:fz8"></span>
+<img src="Immagini/Fraz/08_mis_ind.png" alt="Misure indipendenti nel punto test" width="100%" />
+<p class="caption">
+Figura 2.12: Misure indipendenti nel punto test
+</p>
+</div>
+<p>La risposta predetta nel punto test e gli estremi dell’intervallo di confidenza costruito con la stima di <span class="math inline">\(\sigma\)</span> ottenuta con le 4 misure indipendenti sono dati in Figura <a href="disegni-frazionari.html#fig:fz9">2.13</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:fz9"></span>
+<img src="Immagini/Fraz/09_prev.png" alt="Previsione nel punto test e estremi dell'intervallo di confidenza" width="100%" />
+<p class="caption">
+Figura 2.13: Previsione nel punto test e estremi dell’intervallo di confidenza
+</p>
+</div>
+<p>Il modello è convalidato statisticamente e può quindi essere usato per esplorare in modo attendibile il dominio delle risposte, Figura <a href="disegni-frazionari.html#fig:fz10">2.14</a></p>
+<div class="figure" style="text-align: center"><span id="fig:fz10"></span>
+<img src="Immagini/Fraz/10_sup_risp.png" alt="Grafico della superficie di risposta" width="100%" />
+<p class="caption">
+Figura 2.14: Grafico della superficie di risposta
+</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="disegni-fattoriale-completo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bibliografia.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["dispense_doe.pdf"],
+"toc": {
+"collapse": "section"
+},
+"info": false,
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

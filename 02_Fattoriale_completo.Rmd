@@ -83,11 +83,23 @@ risulta molto semplificato.
 
 La matrice del disegno sperimentale sperimentale, ossia la matrice le
 cui colonne sono i $k$ fattori e le cui righe sono i $2^k$ esperimenti è
-data da Figura \@ref(fig:MatrDisFull).
+data da Tabella \@ref(tab:MatrDisFull).
 
-```{r MatrDisFull, echo=FALSE, fig.cap="Matrice disegno completo $2^k$",fig.align='center',out.width="40%"}
-knitr::include_graphics("Immagini/Fatt_compl/Tab1.png")
-```
+|       |  $X_1$|  $X_2$|  $\cdots$|  $X_k$|
+|:-----:|------:|------:|---------:|------:|
+|   1   |     -1|     -1|         .|     -1|
+|   2   |      1|     -1|         .|     -1|
+|   3   |     -1|      1|         .|     -1|
+|   4   |      1|      1|         .|     -1|
+|   .   |      .|      .|         .|      .|
+|   .   |      .|      .|         .|      .|
+|   .   |      .|      .|         .|      .|
+|   .   |     -1|     -1|         .|      1|
+|   .   |      1|     -1|         .|      1|
+|   .   |     -1|      1|         .|      1|
+| $2^k$ |      1|      1|         .|      1|
+
+: (\#tab:MatrDisFull) Matrice disegno completo $2^k$
 
 Le colonne di tale matrice sono a due a due ortogonali, i $k$ fattori
 indipendenti sono incorrelati.
@@ -117,11 +129,36 @@ k}x_{i1} \cdots x_{ik}+\epsilon_i, \qquad i=1,\dots,2^k,
 \end{equation}
 
 dove $\epsilon_i\sim N(0,\sigma^2)$ a due a due non correlate, errore
-sperimentale.\newline La matrice $X$ del modello è data dalla matrice in Figura \@ref(fig:MatrModDisFull)
+sperimentale.\newline La matrice $X$ del modello è data dalla matrice in Tabella \@ref(tab:MatrModDisFull)
 
-```{r MatrModDisFull, echo=FALSE, fig.cap="Matrice modello  (1.1)",fig.align='center',out.width="70%"}
-knitr::include_graphics("Immagini/Fatt_compl/Tab2.png")
-```
++-------+--------+-------+-------+----------+-------+----------+----------+---------------------+
+|       | *Int.* | $X_1$ | $X_2$ | $\cdots$ | $X_k$ | $X_1X_2$ | $\cdots$ | $X_1X_2\dots X_k$   |
++:=====:+=======:+======:+======:+=========:+======:+=========:+=========:+:===================:+
+| 1     | 1      | -1    | -1    | $\cdots$ | -1    | 1        | $\cdots$ | $(-1)^k$            |
++-------+--------+-------+-------+----------+-------+----------+----------+---------------------+
+| 2     | 1      | 1     | -1    | $\cdots$ | -1    | -1       | $\cdots$ | $\quad  (-1)^{k-1}$ |
++-------+--------+-------+-------+----------+-------+----------+----------+---------------------+
+| 3     | 1      | -1    | 1     | $\cdots$ | -1    | -1       | $\cdots$ | .                   |
++-------+--------+-------+-------+----------+-------+----------+----------+---------------------+
+| 4     | 1      | 1     | 1     | $\cdots$ | -1    | 1        | $\cdots$ | .                   |
++-------+--------+-------+-------+----------+-------+----------+----------+---------------------+
+| .     | 1      | .     | .     | $\cdots$ | .     | .        | $\cdots$ | .                   |
++-------+--------+-------+-------+----------+-------+----------+----------+---------------------+
+| .     | 1      | .     | .     | $\cdots$ | .     | .        | $\cdots$ | .                   |
++-------+--------+-------+-------+----------+-------+----------+----------+---------------------+
+| .     | 1      | .     | .     | $\cdots$ | .     | .        | $\cdots$ | .                   |
++-------+--------+-------+-------+----------+-------+----------+----------+---------------------+
+| .     | 1      | -1    | -1    | $\cdots$ | 1     | 1        | $\cdots$ | .                   |
++-------+--------+-------+-------+----------+-------+----------+----------+---------------------+
+| .     | 1      | 1     | -1    | $\cdots$ | 1     | -1       | $\cdots$ | .                   |
++-------+--------+-------+-------+----------+-------+----------+----------+---------------------+
+| .     | 1      | -1    | 1     | $\cdots$ | 1     | -1       | $\cdots$ | .                   |
++-------+--------+-------+-------+----------+-------+----------+----------+---------------------+
+| $2^k$ | 1      | 1     | 1     | $\cdots$ | 1     | 1        | $\cdots$ | 1                   |
++-------+--------+-------+-------+----------+-------+----------+----------+---------------------+
+
+: (\#tab:MatrModDisFull) Matrice modello \@ref(eq:ModDisFull)
+
 
 Poiché la matrice del modello \@ref(eq:ModDisFull) è ortogonale, i
 coefficienti relativi ad ogni termine lineare forniscono esattamente
@@ -141,9 +178,9 @@ del relativo fattore nel dominio sperimentale scelto.
 
 Determinato il vettore $y$ delle risposte, eseguendo i $2^k$ esperimenti
 nei punti sperimentali individuati dalla matrice sperimentale in
-Figura \@ref(fig:MatrDisFull). (**Nota importante:** per evitare effetto
+Tabella \@ref(tab:MatrDisFull). (**Nota importante:** per evitare effetto
 di autocorrelazione nell'errore nel modello gli esperimenti non vanno
-eseguiti nell'ordine in Figura \@ref(fig:MatrDisFull) ma vanno mischiati
+eseguiti nell'ordine in Tabella \@ref(tab:MatrDisFull) ma vanno mischiati
 casualmente) dobbiamo stimare
 
   - $1$ coefficiente interazione $\beta_0$ (media delle $2^k$ risposte)
@@ -155,7 +192,7 @@ Si noti che per il binomio di Newton si ha che
 $$
 \sum_{m=0}^k\frac{k!}{(k-m)!m!}=2^k. 
 $$
-La matrice del modello, Figura \@ref(fig:MatrModDisFull), è quindi un matrice
+La matrice del modello, Tabella \@ref(tab:MatrModDisFull), è quindi un matrice
 quadrata $2^k$x $2^k$ e poiché le sue colonne sono a due a due
 ortogonali è una matrice di Hadamard.
 
@@ -194,7 +231,7 @@ $\beta_j$).
 Inoltre per lo stimatore $b=X^{-1}y$ abbiamo che
 
 \begin{equation}
-Var(b \_j)=\frac{\sigma^2}{2^k},
+Var(b_j)=\frac{\sigma^2}{2^k},
 \qquad j=1,\dots,2^k 
 (\#eq:VarFull)
 \end{equation}
@@ -215,7 +252,7 @@ $$
 \hat{y_0}=x_0b
 $$ 
 dove $x_0=(1,x_1,\dots,x_1x_2,\dots,x_1x_2\cdots x_k)$ (riga della
-matrice del modello Figura \@ref(fig:MatrDisFull) corrispondente al punto
+matrice del modello Tabella \@ref(tab:MatrDisFull) corrispondente al punto
 $(x_1,x_2,\dots,x_k)$). Dalla teoria sappiamo che la varianza dello
 stimatore $\hat{y_0}$ è data da 
 $$
@@ -241,7 +278,7 @@ A questo punto è opportuno fare due osservazioni importanti:
     disegno.
 
 2)  nei punti del disegno, poiché la somma dei quadrati dei valori delle
-    righe della matrice del modello Figura \@ref(fig:MatrDisFull)è $2^k$, il
+    righe della matrice del modello Tabella \@ref(tab:MatrDisFull)è $2^k$, il
     valore del leverage è $1$.\
     Questo significa che il modello "deve passare" per quei punti, ma
     questo non deve meravigliare poiché, coma già detto, non abbiamo
@@ -280,15 +317,15 @@ la concentrazione del substrato, e un fattore qualitativo a 2 livelli, e
 questo è il tipo di catalizzatore: A o B.
 
 ```{r livelli, echo=FALSE}
-knitr::kable(livelli,'simple',caption = 'Definizione dei livelli\\label{livelli}',align = "lrr")
+knitr::kable(livelli,'simple',caption = 'Definizione dei livelli',align = "lrr",booktabs = TRUE)
 ```
 
-La matrice del disegno Figura \@ref(fig:MatrDisFull) per 3 fattori è quella in Figura \@ref(fig:fc2). Il piano degli esperimenti Tabell \@ref(tab:esperimenti) si
+La matrice del disegno Tabella \@ref(tab:MatrDisFull) per 3 fattori è quella in Figura \@ref(fig:fc2). Il piano degli esperimenti Tabella \@ref(tab:esperimenti) si
 ottiene sostituendo a -1/+1 il valore corrispondente nella Tabella
 \@ref(tab:livelli). \newpage
 
 ```{r esperimenti,echo=FALSE}
-knitr::kable(esperimenti,'simple',caption = 'Piano degli esperimenti\\label{esperimenti}',align = "cccc")
+knitr::kable(esperimenti,'simple',caption = 'Piano degli esperimenti',align = "cccc",booktabs = TRUE)
 ```
 
 Gli esperimenti sono elencati nel cosiddetto "ordine standard". Per
@@ -297,7 +334,7 @@ devono essere eseguiti in ordine casuale (random order). Alla fine degli
 esperimenti otteniamo i risultati in Tabella \@ref(tab:esperimentir)
 
 ```{r esperimentir, echo=FALSE}
-knitr::kable(esperimenti_r,'simple',caption = 'Piano degli esperimenti  con risposte\\label{esperimenti_r}',align = "ccccc")
+knitr::kable(esperimenti_r,'simple',caption = 'Piano degli esperimenti  con risposte',align = "ccccc",booktabs = TRUE)
 ```
 
 Per inserire le risposte nell'applicativo bisogna andare nel sotto menu
