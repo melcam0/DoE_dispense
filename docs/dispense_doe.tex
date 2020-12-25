@@ -1471,26 +1471,20 @@ e la matrice \(X_2\) dei termini (interazioni) confusi Tabella \ref{tab:pbmatrco
 
 \caption{\label{tab:pbmatrconf}Matrice delle interazioni confuse}
 \centering
-\begin{tabular}[t]{r|r|r|r|r|r|l|r|r|r|r|r|r}
-\hline
+\begin{tabular}[t]{rrrrrrlrrrrrr}
+\toprule
 x1x2 & x1x3 & x1x4 & x1x5 & x1e1 & x1e2 & ... & x4x5 & x4e1 & x4e2 & x5e1 & x5e2 & e1e2\\
-\hline
+\midrule
 1 & 1 & -1 & 1 & -1 & -1 &  & -1 & 1 & 1 & -1 & -1 & 1\\
-\hline
 -1 & -1 & -1 & 1 & -1 & 1 &  & -1 & 1 & -1 & -1 & 1 & -1\\
-\hline
 1 & -1 & -1 & -1 & 1 & -1 &  & 1 & -1 & 1 & -1 & 1 & -1\\
-\hline
 -1 & -1 & 1 & 1 & 1 & -1 &  & 1 & 1 & -1 & 1 & -1 & -1\\
-\hline
 -1 & 1 & 1 & -1 & -1 & -1 &  & -1 & -1 & -1 & 1 & 1 & 1\\
-\hline
+\addlinespace
 -1 & 1 & -1 & -1 & 1 & 1 &  & 1 & -1 & -1 & -1 & -1 & 1\\
-\hline
 1 & -1 & 1 & -1 & -1 & 1 &  & -1 & -1 & 1 & 1 & -1 & -1\\
-\hline
 1 & 1 & 1 & 1 & 1 & 1 &  & 1 & 1 & 1 & 1 & 1 & 1\\
-\hline
+\bottomrule
 \end{tabular}
 \end{table}
 
@@ -1547,26 +1541,20 @@ Con 5 fattori il primo disegno di Plackett-Burman ``utile'' è quello che preved
 \caption{\label{tab:pbes1}Disegno di Plackett-Burman con 8 esperimenti con risposte costruite dal modello supposto
             $y=x_1+5x_2-3x_3+15x_4-15x_1x_3+\epsilon$ }
 \centering
-\begin{tabular}[t]{r|r|r|r|r|r|r|r}
-\hline
+\begin{tabular}[t]{rrrrrrrr}
+\toprule
 x1 & x2 & x3 & x4 & x5 & e1 & e2 & y\\
-\hline
+\midrule
 1 & 1 & 1 & -1 & 1 & -1 & -1 & 2.66\\
-\hline
 -1 & 1 & 1 & 1 & -1 & 1 & -1 & 1.26\\
-\hline
 -1 & -1 & 1 & 1 & 1 & -1 & 1 & -9.53\\
-\hline
 1 & -1 & -1 & 1 & 1 & 1 & -1 & -0.81\\
-\hline
 -1 & 1 & -1 & -1 & 1 & 1 & 1 & 5.62\\
-\hline
+\addlinespace
 1 & -1 & 1 & -1 & -1 & 1 & 1 & -9.10\\
-\hline
 1 & 1 & -1 & 1 & -1 & -1 & 1 & 8.56\\
-\hline
 -1 & -1 & -1 & -1 & -1 & -1 & -1 & -3.04\\
-\hline
+\bottomrule
 \end{tabular}
 \end{table}
 
@@ -1606,34 +1594,25 @@ Se a priori invece non si può escludere nessuna interazione, si può prendere i
 \caption{\label{tab:pb12}Disegno di Plackett-Burman con 12 esperimenti con risposte costruite dal modello ipotizzato
             $y=x_1+5x_2-3x_3+15x_4-15x_1x_3+\epsilon$ }
 \centering
-\begin{tabular}[t]{r|r|r|r|r|r|r|r|r|r|r|r}
-\hline
+\begin{tabular}[t]{rrrrrrrrrrrr}
+\toprule
 x1 & x2 & x3 & x4 & x5 & e1 & e2 & e3 & e4 & e5 & e6 & y\\
-\hline
+\midrule
 1 & 1 & -1 & 1 & 1 & 1 & -1 & -1 & -1 & 1 & -1 & 10.41\\
-\hline
 -1 & 1 & 1 & -1 & 1 & 1 & 1 & -1 & -1 & -1 & 1 & -28.31\\
-\hline
 1 & -1 & 1 & 1 & -1 & 1 & 1 & 1 & -1 & -1 & -1 & 24.41\\
-\hline
 -1 & 1 & -1 & 1 & 1 & -1 & 1 & 1 & 1 & -1 & -1 & 36.73\\
-\hline
 -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & 1 & 1 & -1 & -38.92\\
-\hline
+\addlinespace
 -1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & 1 & 1 & 26.56\\
-\hline
 1 & -1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & 1 & -29.71\\
-\hline
 1 & 1 & -1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -20.04\\
-\hline
 1 & 1 & 1 & -1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 3.18\\
-\hline
 -1 & 1 & 1 & 1 & -1 & -1 & -1 & 1 & -1 & 1 & 1 & 1.26\\
-\hline
+\addlinespace
 1 & -1 & 1 & 1 & 1 & -1 & -1 & -1 & 1 & -1 & 1 & 21.81\\
-\hline
 -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -3.04\\
-\hline
+\bottomrule
 \end{tabular}
 \end{table}
 
@@ -1714,20 +1693,16 @@ Il dominio sperimentale è definito in Tabella \ref{tab:pbliv1}
 
 \caption{\label{tab:pbliv1}Definizione dei livelli dei 5 fattori}
 \centering
-\begin{tabular}[t]{l|l|l}
-\hline
+\begin{tabular}[t]{lll}
+\toprule
 Fattori & -1 & +1\\
-\hline
+\midrule
 Solvente & ACN & MeOH\\
-\hline
 Plasma & 50 & 200\\
-\hline
 Solvente (vol) & 1:3 & 1:7\\
-\hline
 Miscelazione & 20 & 60\\
-\hline
 Centrifuga & 4 & 25\\
-\hline
+\bottomrule
 \end{tabular}
 \end{table}
 
@@ -1747,14 +1722,13 @@ I livelli delle 2 variabili fittizie sono dati nella Tabella \ref{tab:dummy1}. S
 
 \caption{\label{tab:dummy1}Definizione dei livelli dei 2 fattori  dummy}
 \centering
-\begin{tabular}[t]{l|l|l}
-\hline
+\begin{tabular}[t]{lll}
+\toprule
 Fattori & -1 & +1\\
-\hline
+\midrule
 Orologio & sin & dx\\
-\hline
 Canto & si & no\\
-\hline
+\bottomrule
 \end{tabular}
 \end{table}
 
@@ -1765,26 +1739,20 @@ Il disegno con le relative risposte è dato in Tabella \ref{tab:pbes2}
 
 \caption{\label{tab:pbes2}Disegno di Plackett-Burman per lo sviluppo del metodo di estrazione di Elvitegravir con risposte}
 \centering
-\begin{tabular}[t]{r|r|r|r|r|r|r|r|r}
-\hline
+\begin{tabular}[t]{rrrrrrrrr}
+\toprule
 Exp. & x1 & x2 & x3 & x4 & x5 & e1 & e2 & S.N\\
-\hline
+\midrule
 1 & 1 & 1 & 1 & -1 & 1 & -1 & -1 & 31795\\
-\hline
 2 & -1 & 1 & 1 & 1 & -1 & 1 & -1 & 33313\\
-\hline
 3 & -1 & -1 & 1 & 1 & 1 & -1 & 1 & 32264\\
-\hline
 4 & 1 & -1 & -1 & 1 & 1 & 1 & -1 & 31559\\
-\hline
 5 & -1 & 1 & -1 & -1 & 1 & 1 & 1 & 35150\\
-\hline
+\addlinespace
 6 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & 21201\\
-\hline
 7 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 32344\\
-\hline
 8 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 21087\\
-\hline
+\bottomrule
 \end{tabular}
 \end{table}
 

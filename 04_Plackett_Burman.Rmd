@@ -78,7 +78,7 @@ knitr::kable(matr.mod,caption = 'Matrice del modello',booktabs = TRUE)
 e la matrice $X_2$ dei termini (interazioni) confusi Tabella \@ref(tab:pbmatrconf)
 
 ```{r pbmatrconf,echo=FALSE}
-knitr::kable(matr.conf,caption = 'Matrice delle interazioni confuse')
+knitr::kable(matr.conf,caption = 'Matrice delle interazioni confuse',booktabs = TRUE)
 ```
 
 
@@ -121,7 +121,7 @@ Con 5 fattori il primo disegno di Plackett-Burman "utile" è quello che prevede 
 
 ```{r pbes1, echo=FALSE}
 knitr::kable(Confusioni8,caption = 'Disegno di Plackett-Burman con 8 esperimenti con risposte costruite dal modello supposto
-            $y=x_1+5x_2-3x_3+15x_4-15x_1x_3+\\epsilon$ ')
+            $y=x_1+5x_2-3x_3+15x_4-15x_1x_3+\\epsilon$ ',booktabs = TRUE)
 ```
 
 E' un disegno fattoriale frazionario a due livelli con risoluzione $III$. I termini lineari sono confusi con i termini di interazione di ordine 2. Si noti il valore $-1$ nella matrice delle confusioni Figura \@ref(fig:pb6)
@@ -146,7 +146,7 @@ Se a priori invece non si può escludere nessuna interazione, si può prendere i
 
 ```{r pb12,echo=FALSE}
 knitr::kable(Confusioni12,caption = 'Disegno di Plackett-Burman con 12 esperimenti con risposte costruite dal modello ipotizzato
-            $y=x_1+5x_2-3x_3+15x_4-15x_1x_3+\\epsilon$ ')
+            $y=x_1+5x_2-3x_3+15x_4-15x_1x_3+\\epsilon$ ',booktabs = TRUE)
 ```
 
 Il grafico dei coefficienti è dato da Figura \@ref(fig:pb8)
@@ -194,7 +194,7 @@ Il dominio sperimentale è definito in Tabella \@ref(tab:pbliv1)
 \newpage
 
 ```{r pbliv1, echo=FALSE}
-knitr::kable(liv1,caption = 'Definizione dei livelli dei 5 fattori')
+knitr::kable(liv1,caption = 'Definizione dei livelli dei 5 fattori',booktabs = TRUE)
 ```
 
 Si sceglie un disegno di Plackett-Burnan con 8 esperimenti. Sono quindi aggiunte al piano sperimentale 2 variabili dummy 
@@ -205,14 +205,14 @@ Si sceglie un disegno di Plackett-Burnan con 8 esperimenti. Sono quindi aggiunte
 I livelli delle 2 variabili fittizie sono dati nella Tabella \@ref(tab:dummy1). Sono 2 variabili che sicuramente non hanno alcuna influenza sulla risposta e che saranno utili quindi per avere un benchmark di significatività (o se si preferisce, una stima della importanza del rumore di fondo casuale nei risultati degli esperimenti).
 
 ```{r dummy1, echo=FALSE}
-knitr::kable(dummy1,caption = 'Definizione dei livelli dei 2 fattori  dummy')
+knitr::kable(dummy1,caption = 'Definizione dei livelli dei 2 fattori  dummy',booktabs = TRUE)
 ```
 
 Il disegno con le relative risposte è dato in Tabella \@ref(tab:pbes2) 
 \newpage
 
 ```{r pbes2, echo=FALSE}
-knitr::kable(pb8,caption = 'Disegno di Plackett-Burman per lo sviluppo del metodo di estrazione di Elvitegravir con risposte')
+knitr::kable(pb8,caption = 'Disegno di Plackett-Burman per lo sviluppo del metodo di estrazione di Elvitegravir con risposte',booktabs = TRUE)
 ```
 
 \newpage
