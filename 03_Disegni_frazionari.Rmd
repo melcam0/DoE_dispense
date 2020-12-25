@@ -41,9 +41,12 @@ knitr::include_graphics("Immagini/Fraz/01_fraz.png")
 Si noti che i generatori sono indicati con le lettere maiuscole, e che queste corrispondono alle colonne della matrice disposte in ordine alfabetico (A è la prima colonna, B la seconda, C la terza, D la quarta ed E la quinta colonna)
 
 Poiché ogni colonna della matrice del disegno elevata al quadrato è la colonna cosiddetta *identità*, *Int.*, costituita solo da valori uguali a 1, dalle relazioni $x_4=x_1x_2$ e $x_5=x_1x_3$ si ottiene facilmente che 
+
 $$
-Int.=x_1x_2x_4 \qquad \rm{e} \qquad \it{Int.}=x_1x_3x_5
+Int.=x_1x_2x_4 \qquad  \rm{e} \qquad \it{Int.} = x_1x_3x_5 
 $$
+
+
 dette *Relazioni di identità*. La lunghezza (ordine delle interazioni) minima delle relazioni d'identità è chiamata *risoluzione* del disegno e, di solito, è indicata con un numero romano. Nel nostro esempio la risoluzione è $III$ e il disegno viene indicato con $2^{5-2}_{III}$.  
 In linea di principio conviene scegliere relazioni di risoluzione massima (V e superiore) in quanto confondono termini di ordine maggiore. Questa di solito è l'indicazione data dalla maggior parte dei software professionali commerciali (v. Figura \@ref(fig:fz2)). Ma affinando l'esperienza e la pratica nell'uso dei fattoriali frazionari si constateranno le notevoli potenzialità offerte anche da disegni di ordine III e IV.
 

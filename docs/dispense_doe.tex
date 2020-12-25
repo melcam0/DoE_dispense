@@ -338,11 +338,11 @@ data da Tabella \ref{tab:MatrDisFull}.
 \begin{longtable}[]{@{}crrrr@{}}
 \caption{\label{tab:MatrDisFull} Matrice disegno completo \(2^k\)}\tabularnewline
 \toprule
-& \(X_1\) & \(X_2\) & \(\cdots\) & \(X_k\)\tabularnewline
+& \(\bf{X_1}\) & \(\bf{X_2}\) & \(\cdots\) & \(\bf{X_k}\)\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-& \(X_1\) & \(X_2\) & \(\cdots\) & \(X_k\)\tabularnewline
+& \(\bf{X_1}\) & \(\bf{X_2}\) & \(\cdots\) & \(\bf{X_k}\)\tabularnewline
 \midrule
 \endhead
 1 & -1 & -1 & . & -1\tabularnewline
@@ -402,258 +402,24 @@ sperimentale.\newline La matrice \(X\) del modello è data dalla matrice in Tabe
 \begin{longtable}[]{@{}crrrrrrrc@{}}
 \caption{\label{tab:MatrModDisFull} Matrice modello \eqref{eq:ModDisFull}}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.06\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedleft
-\emph{Int.}\strut
-\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\raggedleft
-\(X_1\)\strut
-\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\raggedleft
-\(X_2\)\strut
-\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\raggedleft
-\(X_k\)\strut
-\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\raggedleft
-\(X_1X_2\)\strut
-\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
-\(X_1X_2\dots X_k\)\strut
-\end{minipage}\tabularnewline
+& \emph{Int.} & \(\bf{X_1}\) & \(\bf{X_2}\) & \(\cdots\) & \(\bf{X_k}\) & \(\bf{X_1X_2}\) & \(\cdots\) & \(\bf{X_1X_2\dots X_k}\)\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.06\columnwidth}\centering
-\strut
-\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\raggedleft
-\emph{Int.}\strut
-\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\raggedleft
-\(X_1\)\strut
-\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\raggedleft
-\(X_2\)\strut
-\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\raggedleft
-\(X_k\)\strut
-\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\raggedleft
-\(X_1X_2\)\strut
-\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
-\(X_1X_2\dots X_k\)\strut
-\end{minipage}\tabularnewline
+& \emph{Int.} & \(\bf{X_1}\) & \(\bf{X_2}\) & \(\cdots\) & \(\bf{X_k}\) & \(\bf{X_1X_2}\) & \(\cdots\) & \(\bf{X_1X_2\dots X_k}\)\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.06\columnwidth}\centering
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
--1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
--1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
--1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-\((-1)^k\)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\centering
-2\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
--1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
--1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
--1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-\(\quad (-1)^{k-1}\)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\centering
-3\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
--1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
--1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
--1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\centering
-4\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
--1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\centering
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\centering
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\centering
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\centering
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
--1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
--1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\centering
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
--1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
--1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\centering
-.\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
--1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
--1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.06\columnwidth}\centering
-\(2^k\)\strut
-\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-1\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedleft
-\(\cdots\)\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
-1\strut
-\end{minipage}\tabularnewline
+1 & 1 & -1 & -1 & \(\cdots\) & -1 & 1 & \(\cdots\) & \((-1)^k\)\tabularnewline
+2 & 1 & 1 & -1 & \(\cdots\) & -1 & -1 & \(\cdots\) & \(\quad (-1)^{k-1}\)\tabularnewline
+3 & 1 & -1 & 1 & \(\cdots\) & -1 & -1 & \(\cdots\) & .\tabularnewline
+4 & 1 & 1 & 1 & \(\cdots\) & -1 & 1 & \(\cdots\) & .\tabularnewline
+. & 1 & . & . & \(\cdots\) & . & . & \(\cdots\) & .\tabularnewline
+. & 1 & . & . & \(\cdots\) & . & . & \(\cdots\) & .\tabularnewline
+. & 1 & . & . & \(\cdots\) & . & . & \(\cdots\) & .\tabularnewline
+. & 1 & -1 & -1 & \(\cdots\) & 1 & 1 & \(\cdots\) & .\tabularnewline
+. & 1 & 1 & -1 & \(\cdots\) & 1 & -1 & \(\cdots\) & .\tabularnewline
+. & 1 & -1 & 1 & \(\cdots\) & 1 & -1 & \(\cdots\) & .\tabularnewline
+\(2^k\) & 1 & 1 & 1 & \(\cdots\) & 1 & 1 & \(\cdots\) & 1\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -1166,9 +932,11 @@ In Figura \ref{fig:fz1} abbiamo il risultato che si ottiene per \(k=5\) e \(p=2\
 Si noti che i generatori sono indicati con le lettere maiuscole, e che queste corrispondono alle colonne della matrice disposte in ordine alfabetico (A è la prima colonna, B la seconda, C la terza, D la quarta ed E la quinta colonna)
 
 Poiché ogni colonna della matrice del disegno elevata al quadrato è la colonna cosiddetta \emph{identità}, \emph{Int.}, costituita solo da valori uguali a 1, dalle relazioni \(x_4=x_1x_2\) e \(x_5=x_1x_3\) si ottiene facilmente che
+
 \[
-Int.=x_1x_2x_4 \qquad \rm{e} \qquad \it{Int.}=x_1x_3x_5
+Int.=x_1x_2x_4 \qquad  \rm{e} \qquad \it{Int.} = x_1x_3x_5 
 \]
+
 dette \emph{Relazioni di identità}. La lunghezza (ordine delle interazioni) minima delle relazioni d'identità è chiamata \emph{risoluzione} del disegno e, di solito, è indicata con un numero romano. Nel nostro esempio la risoluzione è \(III\) e il disegno viene indicato con \(2^{5-2}_{III}\).\\
 In linea di principio conviene scegliere relazioni di risoluzione massima (V e superiore) in quanto confondono termini di ordine maggiore. Questa di solito è l'indicazione data dalla maggior parte dei software professionali commerciali (v. Figura \ref{fig:fz2}). Ma affinando l'esperienza e la pratica nell'uso dei fattoriali frazionari si constateranno le notevoli potenzialità offerte anche da disegni di ordine III e IV.
 
@@ -1543,6 +1311,507 @@ Il modello è convalidato statisticamente e può quindi essere usato per esplora
 }
 
 \caption{Grafico della superficie di risposta}\label{fig:fz10}
+\end{figure}
+
+\hypertarget{plackett-burman}{%
+\chapter{Plackett Burman}\label{plackett-burman}}
+
+I disegni frazionari \(2_{III}^{k-p}\) di risoluzione \(III\) sono usati prevalentemente per condurre studi di screening e di robustezza. Il numero di esperimenti di un qualsiasi piano fattoriale frazionario è comunque uguale ad un numero di esperimenti esponenziale \(2^n\): 8, 16, 32, \ldots{} .
+Plackett e Burman nel 1946 hanno introdotto una classe di disegni fattoriali a \(2\) livelli ortogonali che permettono di condurre lo screening di \(n-1\) fattori prevedendo lo svolgimento di un numero \(n=4m\) di esperimenti (4, 8, 12, 16, 20, 24, \ldots), in modo tale da offrire le opzioni per colmare i vuoti esistenti ad esempio tra piani di 8 e 16, oppure di 16 e 32 esperimenti.\\
+Nel caso in cui \(n\) sia anche una potenza di \(2\) (4, 8, 16, \ldots), il disegno di PB corrispondente è un particolare disegno frazionario di risoluzione \(III\).
+
+La matrice sperimentale di questi disegni si costruisce seguendo un procedimento iterativo in cui, data la prima riga della matrice (vedi Tabella \ref{tab:PBAlg} di lunghezza \(n-1\), si generano le righe successive per permutazione circolare di questa riga (ogni riga ha al primo posto l'elemento che era all'ultimo posto della riga superiore e agli altri \(i=2,\dots, n-1\) l'elemento di posto \(i-1\) della riga superiore; in totale in questo modo si scrivono \(n-1\) righe, compresa la prima riga data, e a queste si aggiunge una ultima riga composta da solo \(-1\).
+
+\begin{longtable}[]{@{}lrrrrrrrrrrrrrrrrrrr@{}}
+\caption{\label{tab:PBAlg}}\tabularnewline
+\toprule
+n & & & & & & & & & & & & & & & & & & &\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+n & & & & & & & & & & & & & & & & & & &\tabularnewline
+\midrule
+\endhead
+4 & 1 & 1 & -1 & & & & & & & & & & & & & & & &\tabularnewline
+8 & 1 & 1 & 1 & -1 & 1 & -1 & -1 & & & & & & & & & & & &\tabularnewline
+12 & 1 & 1 & -1 & 1 & 1 & 1 & -1 & -1 & -1 & 1 & -1 & & & & & & & &\tabularnewline
+16 & 1 & 1 & 1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & -1 & -1 & & & &\tabularnewline
+20 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1\tabularnewline
+\(\cdots\) & & & & & & & & & & & & & & & & & & &\tabularnewline
+\bottomrule
+\end{longtable}
+
+Vediamo ad esempio la costruzione della matrice per \(n=4.\) La prima riga della matrice, vedi Tabella \ref{tab:PBAlg}, è:\\
+\begin{equation*}
+    1 \qquad 1 \qquad -1.
+\end{equation*}
+Generiamo le altre righe \(2\) righe per permutazione circolare e aggiungiamo la quarta riga costituita da \(-1\).
+
+\begin{longtable}[]{@{}crrr@{}}
+\caption{Plackett Burman con 4 esperimenti}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.22\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedleft
+\(\bf{X_1}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedleft
+\(\bf{X_2}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedleft
+\(\bf{X_3}\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.22\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedleft
+\(\bf{X_1}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedleft
+\(\bf{X_2}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedleft
+\(\bf{X_3}\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.22\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+-1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.22\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.22\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.22\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedleft
+-1\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Il modello associato a questi disegni tiene conto di tutti i fattori lineari
+\begin{equation*}
+     y_i=\beta_0+\beta_1x_{i1}+\cdots+\beta_{n-1}x_{i,n-1}+\epsilon_i, \qquad i=1,\dots,n,
+\end{equation*}
+la matrice del modello é uguale alla matrice sperimentale a cui va aggiunta una prima colonna di tutti \(1\). Abbiamo per lo stimatore \(b=X^{-1}Y\)
+\begin{equation*}
+    Cov(b)=\frac{\sigma^2}{n}I_{n},
+\end{equation*}
+abbiamo cioè
+\begin{equation*}
+    Var(b)=\frac{\sigma^2}{n}, \qquad j=1,\dots,n
+\end{equation*}
+e
+\begin{equation*}
+    Corr(b_i,b_j)=0, \qquad i\neq j.
+\end{equation*}
+
+Nell'applicativo, selezionando il numero di fattori da studiare, viene proposto il disegno di Plackett-Burman con con un numero di esperimenti pari al minimo multiplo di 4 maggione del numero del numero di fattori, Figura \ref{fig:pb1}.
+
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=1\linewidth]{Immagini/PB/01_dis} 
+
+}
+
+\caption{Disegno di Plackett-Burman per 5 fattori}\label{fig:pb1}
+\end{figure}
+
+Si noti che le prime 5 colonne sono ``occupate'' dai 5 fattori in analisi indicate con \(x_1, \dots,x_5\) mentre vengono indicate con \(e_1,e_2\) le 2 colonne rimanenti. Queste sono 2 variabili cosiddette \emph{dummy} (variabili fittizie) che possono essere utili per stabilire la significatività dei fattori in studio. Si vedano al riguardo gli esempi nel seguito.
+
+I disegni di Plackett-Burman sono disegni di risoluzione \(III\), nel senso che le interazioni sono confuse con i termini lineari. Nel caso in cui il numero di esperimenti \(n\) sia una potenza di \(2\), come abbiamo già detto, il disegno di Plackett-Burmann è un particolare disegno frazionario di risoluzione \(III\) e quindi i termini lineari sono ``completamente confusi'' con le interazioni (si veda la sezione dedicata ai disegni frazionari). Nei casi in cui \(n\) non è una potenza di \(2\), per determinare le relazioni ``confuse'' si considerano la matrice \(X_1\) del modello Tabella \ref{tab:matrmod}\newpage
+
+\begin{table}
+
+\caption{\label{tab:matrmod}Matrice del modello}
+\centering
+\begin{tabular}[t]{rrrrrrrr}
+\toprule
+Int. & x1 & x2 & x3 & x4 & x5 & e1 & e2\\
+\midrule
+1 & 1 & 1 & 1 & -1 & 1 & -1 & -1\\
+1 & -1 & 1 & 1 & 1 & -1 & 1 & -1\\
+1 & -1 & -1 & 1 & 1 & 1 & -1 & 1\\
+1 & 1 & -1 & -1 & 1 & 1 & 1 & -1\\
+1 & -1 & 1 & -1 & -1 & 1 & 1 & 1\\
+\addlinespace
+1 & 1 & -1 & 1 & -1 & -1 & 1 & 1\\
+1 & 1 & 1 & -1 & 1 & -1 & -1 & 1\\
+1 & -1 & -1 & -1 & -1 & -1 & -1 & -1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+e la matrice \(X_2\) dei termini (interazioni) confusi Tabella \ref{tab:pbmatrconf}
+
+\begin{table}
+
+\caption{\label{tab:pbmatrconf}Matrice delle interazioni confuse}
+\centering
+\begin{tabular}[t]{r|r|r|r|r|r|l|r|r|r|r|r|r}
+\hline
+x1x2 & x1x3 & x1x4 & x1x5 & x1e1 & x1e2 & ... & x4x5 & x4e1 & x4e2 & x5e1 & x5e2 & e1e2\\
+\hline
+1 & 1 & -1 & 1 & -1 & -1 &  & -1 & 1 & 1 & -1 & -1 & 1\\
+\hline
+-1 & -1 & -1 & 1 & -1 & 1 &  & -1 & 1 & -1 & -1 & 1 & -1\\
+\hline
+1 & -1 & -1 & -1 & 1 & -1 &  & 1 & -1 & 1 & -1 & 1 & -1\\
+\hline
+-1 & -1 & 1 & 1 & 1 & -1 &  & 1 & 1 & -1 & 1 & -1 & -1\\
+\hline
+-1 & 1 & 1 & -1 & -1 & -1 &  & -1 & -1 & -1 & 1 & 1 & 1\\
+\hline
+-1 & 1 & -1 & -1 & 1 & 1 &  & 1 & -1 & -1 & -1 & -1 & 1\\
+\hline
+1 & -1 & 1 & -1 & -1 & 1 &  & -1 & -1 & 1 & 1 & -1 & -1\\
+\hline
+1 & 1 & 1 & 1 & 1 & 1 &  & 1 & 1 & 1 & 1 & 1 & 1\\
+\hline
+\end{tabular}
+\end{table}
+
+La matrice A, spesso indicata anche con il nome di ``\emph{alias matrix}'', o matrice di confusione, è definita dalla relazione algebrica
+\[
+A=(X_1^tX_1)^{-1}(X_1^tX_2)
+\]
+La matrice A ha tante righe quanti sono i termini del modello (in questo caso 8: intercetta, 5 fattori e due variabili fittizie) e tante colonne quante sono le interazioni possibili (in questo caso 21 interazioni a due termini), e si chiama matrice di confusione.\\
+In Figura \ref{fig:pb2} è illustrata la matrice di confusione relativa al modello di Plackett-Burman per 5 fattori di cui è data la matrice in Figura \ref{fig:pb1}. Nella matrice di confusione, in ogni riga si può leggere la ``confusione'' di ogni termine lineare con le interazioni di due termini.
+
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=1\linewidth]{Immagini/PB/02_matr_conf} 
+
+}
+
+\caption{Matrice di confusione}\label{fig:pb2}
+\end{figure}
+
+Il caso in esame è un frazionario \(2^{5-2}_{III}\) e le confusioni, come ci aspettiamo, sono ``totali'' o ``complete'': ciò significa che ogni interazione è ``confusa'' con un solo termine lineare. Si noti che nella matrice di confusione di questo modello appaiono solo segni 0 o -1.
+
+Scegliendo 12 esperimenti, la matrice di confusione è quella data in Figura \ref{fig:pb3}
+
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=1\linewidth]{Immagini/PB/03_matr_conf_12} 
+
+}
+
+\caption{Parte della matrice di confusione di un disegno di Plackett-Burman con 12 esperimenti}\label{fig:pb3}
+\end{figure}
+
+In questo caso le ``confusioni'' sono ``parziali'', cioè le interazioni si confondono ``parzialmente'' con più termini lineari. Questo ci permette di stimare le interazioni con l'analisi di regressione. Possiamo sostituire gli effetti lineari meno significativi con le interazioni più importanti. Per determinare le interazioni più rilevanti si moltiplicano per un'interazione fissata le confusioni con i termini lineari più grandi per il segno del coefficiente del termine lineare e se ne fa la somma. Nell'applicativo è proposto il grafico delle confusioni (Plot alias) in cui è rappresentata visivamente tale somma Figura \ref{fig:pb4}
+
+Per meglio chiarire quanto finora detto detto facciamo 2 esempi numerici.
+
+\hypertarget{esempio-confusioni-1}{%
+\section{Esempio: confusioni}\label{esempio-confusioni-1}}
+
+Come fatto nel caso del disegno frazionario, per capire le ``confusioni'' in un disegno di Plackett-Burman, consideriamo un modello teorico di un ipotetico fenomeno in esame
+\[
+y=x_1+5x_2-3x_3+15x_4-15x_1x_3+\epsilon
+\]
+e supponiamo che si vogliano analizzare gli effetti di 5 fattori
+\[
+x_1,x_2,x_3,x_4,x_5
+\]
+perché dall'analisi preliminare del problema è emerso che potrebbero essere importanti nell'influenzare la risposta.
+
+Con 5 fattori il primo disegno di Plackett-Burman ``utile'' è quello che prevede di eseguire 8 esperimenti Tabella \ref{tab:pbes1}
+
+\begin{table}
+
+\caption{\label{tab:pbes1}Disegno di Plackett-Burman con 8 esperimenti con risposte costruite dal modello supposto
+            $y=x_1+5x_2-3x_3+15x_4-15x_1x_3+\epsilon$ }
+\centering
+\begin{tabular}[t]{r|r|r|r|r|r|r|r}
+\hline
+x1 & x2 & x3 & x4 & x5 & e1 & e2 & y\\
+\hline
+1 & 1 & 1 & -1 & 1 & -1 & -1 & 2.66\\
+\hline
+-1 & 1 & 1 & 1 & -1 & 1 & -1 & 1.26\\
+\hline
+-1 & -1 & 1 & 1 & 1 & -1 & 1 & -9.53\\
+\hline
+1 & -1 & -1 & 1 & 1 & 1 & -1 & -0.81\\
+\hline
+-1 & 1 & -1 & -1 & 1 & 1 & 1 & 5.62\\
+\hline
+1 & -1 & 1 & -1 & -1 & 1 & 1 & -9.10\\
+\hline
+1 & 1 & -1 & 1 & -1 & -1 & 1 & 8.56\\
+\hline
+-1 & -1 & -1 & -1 & -1 & -1 & -1 & -3.04\\
+\hline
+\end{tabular}
+\end{table}
+
+E' un disegno fattoriale frazionario a due livelli con risoluzione \(III\). I termini lineari sono confusi con i termini di interazione di ordine 2. Si noti il valore \(-1\) nella matrice delle confusioni Figura \ref{fig:pb6}
+
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=1\linewidth]{Immagini/PB/06_confusioni8} 
+
+}
+
+\caption{Matrice delle confusioni di un pb con 8 esperimenti}\label{fig:pb6}
+\end{figure}
+
+Il grafico dei coefficienti è dato da Figura \ref{fig:pb7}
+
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=1\linewidth]{Immagini/PB/07_coeff8} 
+
+}
+
+\caption{Grafico dei coefficienti del pb con 8 esperiemnti}\label{fig:pb7}
+\end{figure}
+\newpage
+
+Se a priori non possiamo escludere nessuna interazione di ordine 2, potrebbe accadere che la non significatività dei termini \(x_4\) e \(x_5\) sia dovuta al fatto che si annullino con le interazioni di ordine 2 con cui sono confusi. Ad esempio, \(x_4\) potrebbe annullarsi con \(x_1x_3\) (\(x_4\) si confonde con \(-x_1x_3\) e, se i coefficienti di questi termini hanno valore numerico simile, come nel nostro esempio, si annullano).\\
+Anche per le dummy bisogna fare attenzione e essere sicuri che non appaiano importanti perchè ``rappresentano'' in realtà una interazione confusa con esse.
+
+Non possiamo sapere quindi se la significatività che osserviamo per alcuni termini è autentica, ossia dovuta realmente al fattore stesso, oppure derivi dalle interazioni confuse con ciascun termine. In questi casi, è solo la conoscenza tecnica del problema chimico (o fisico o ingegneristico) che può aiutare a definire la reale importanza dei diversi termini e a giungere alla conclusione di escludere alcune interazioni (perché ad esempio prive di senso fisico o impossibili tecnicamente).
+
+Se a priori invece non si può escludere nessuna interazione, si può prendere in considerazione il piano sperimentale di Plackett-Burman successivo, ossia quello che prevede 12 esperimenti. Questo numero di prove è comunque inferiore a quello del fattoriale frazionario corrispondente che è il \(2^{5-1}_V\)), e conta quindi 16 esperimenti, Tabella \ref{tab:pb12}
+\newpage
+
+\begin{table}
+
+\caption{\label{tab:pb12}Disegno di Plackett-Burman con 12 esperimenti con risposte costruite dal modello ipotizzato
+            $y=x_1+5x_2-3x_3+15x_4-15x_1x_3+\epsilon$ }
+\centering
+\begin{tabular}[t]{r|r|r|r|r|r|r|r|r|r|r|r}
+\hline
+x1 & x2 & x3 & x4 & x5 & e1 & e2 & e3 & e4 & e5 & e6 & y\\
+\hline
+1 & 1 & -1 & 1 & 1 & 1 & -1 & -1 & -1 & 1 & -1 & 10.41\\
+\hline
+-1 & 1 & 1 & -1 & 1 & 1 & 1 & -1 & -1 & -1 & 1 & -28.31\\
+\hline
+1 & -1 & 1 & 1 & -1 & 1 & 1 & 1 & -1 & -1 & -1 & 24.41\\
+\hline
+-1 & 1 & -1 & 1 & 1 & -1 & 1 & 1 & 1 & -1 & -1 & 36.73\\
+\hline
+-1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & 1 & 1 & -1 & -38.92\\
+\hline
+-1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & 1 & 1 & 26.56\\
+\hline
+1 & -1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & 1 & -29.71\\
+\hline
+1 & 1 & -1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -20.04\\
+\hline
+1 & 1 & 1 & -1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 3.18\\
+\hline
+-1 & 1 & 1 & 1 & -1 & -1 & -1 & 1 & -1 & 1 & 1 & 1.26\\
+\hline
+1 & -1 & 1 & 1 & 1 & -1 & -1 & -1 & 1 & -1 & 1 & 21.81\\
+\hline
+-1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -3.04\\
+\hline
+\end{tabular}
+\end{table}
+
+Il grafico dei coefficienti è dato da Figura \ref{fig:pb8}
+
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=1\linewidth]{Immagini/PB/08_coeff12} 
+
+}
+
+\caption{Grafico dei coefficienti del piano di Plackett-Burman con 12 esperimenti}\label{fig:pb8}
+\end{figure}
+
+Quando si applicano piani di Plackett-Burman quindi è molto importante prestare la massima attenzione alla significatività dei fattori e alle possibili interazioni confuse con essi. Questo vale a maggior ragione per le variabili dummy che, come visto, possono essere confuse con le interazioni coppie al pari di qualsiasi altro fattore compreso nel piano degli esperimenti.\\
+Nel caso di un piano sperimentale di 12 esperimenti,le confusioni sono parziali. Si noti il valore \(-0.33\) nella matrice delle confusioni Figura \ref{fig:pb3}. Tale valore permette di stimare le interazioni con l'analisi di regressione. Possiamo sostituire gli effetti lineari meno importanti con le interazioni più significative.
+\newpage
+Per determinare le interazioni più significative, si moltiplicano queste per una interazione fissata, si moltiplicano le confusioni con i termini lineari più importanti per il segno del coefficiente del termine lineare e se ne fa la somma Figura \ref{fig:pb9}.
+
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=1\linewidth]{Immagini/PB/09_alias12} 
+
+}
+
+\caption{Grafico dei coefficienti del pb con 12 esperimenti}\label{fig:pb9}
+\end{figure}
+
+Con l'applicativo possiamo innanzitutto scaricare un disegno di Plackett-Burman con 12 esperimenti e quindi ricaricare il file salvato nel menù \emph{Piano Personalizzato} (se si preferisce si può anche importare il disegno con copia/incolla). Vedi Figura \ref{fig:pb10}
+
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=1\linewidth]{Immagini/PB/10_pp1} 
+
+}
+
+\caption{Selezione delle variabili}\label{fig:pb10}
+\end{figure}
+
+Una volta importato il datset selezioniamo i termini del modello che vogliamo studiare. Nel nostro caso ad esempio possiamo considerare i 5 termini lineari e le 4 interazioni \(x_1x_3,x_2x_5,x_2x_4,x_4x_5\) che hanno maggiore probabilità di essere significative, vedi Figura \ref{fig:pb9}.\\
+Inserendo le 12 risposte nell'opportuno riquadro otteniamo il seguente grafico dei coefficienti Figura \ref{fig:pb11}.
+
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=1\linewidth]{Immagini/PB/11_pp2} 
+
+}
+
+\caption{Selezione delle variabili}\label{fig:pb11}
+\end{figure}
+
+Tale grafico evidenzia la significatività sia di \(x_4\) che dell'interazione \(x_1x_3\) che non riuscivamo a distinguere poiché questi termini, a causa delle confusioni, si annullavano a vicenda.
+
+\hypertarget{esempio-elvitegravir}{%
+\section{Esempio Elvitegravir}\label{esempio-elvitegravir}}
+
+Il problema è lo sviluppo di un metodo semplice per l'isolamento di un principio attivo da plasma umano preliminare all'analisi HPLC-ESI/MS/MS. La risposta è la sensibilità S/N, che si vuole massimalizzzare.\\
+Tra tutti i fattori considerati si è deciso di considerare i 5 fattori:
+
+\begin{itemize}
+\tightlist
+\item
+  x1: Solvente (agente precipitante)
+\item
+  x2: Volume di plasma (µL)
+\item
+  x3: Volume di solvente (rapp v.campione)
+\item
+  x4: Tempo miscelazione (sec)
+\item
+  x5: Temperatura centrifuga (°C)
+\end{itemize}
+
+Il dominio sperimentale è definito in Tabella \ref{tab:pbliv1}
+\newpage
+
+\begin{table}
+
+\caption{\label{tab:pbliv1}Definizione dei livelli dei 5 fattori}
+\centering
+\begin{tabular}[t]{l|l|l}
+\hline
+Fattori & -1 & +1\\
+\hline
+Solvente & ACN & MeOH\\
+\hline
+Plasma & 50 & 200\\
+\hline
+Solvente (vol) & 1:3 & 1:7\\
+\hline
+Miscelazione & 20 & 60\\
+\hline
+Centrifuga & 4 & 25\\
+\hline
+\end{tabular}
+\end{table}
+
+Si sceglie un disegno di Plackett-Burnan con 8 esperimenti. Sono quindi aggiunte al piano sperimentale 2 variabili dummy
+
+\begin{itemize}
+\tightlist
+\item
+  e1: orologio al polso
+\item
+  e2: canto mentre lavoro
+\end{itemize}
+
+I livelli delle 2 variabili fittizie sono dati nella Tabella \ref{tab:dummy1}. Sono 2 variabili che sicuramente non hanno alcuna influenza sulla risposta e che saranno utili quindi per avere un benchmark di significatività (o se si preferisce, una stima della importanza del rumore di fondo casuale nei risultati degli esperimenti).
+
+\begin{table}
+
+\caption{\label{tab:dummy1}Definizione dei livelli dei 2 fattori  dummy}
+\centering
+\begin{tabular}[t]{l|l|l}
+\hline
+Fattori & -1 & +1\\
+\hline
+Orologio & sin & dx\\
+\hline
+Canto & si & no\\
+\hline
+\end{tabular}
+\end{table}
+
+Il disegno con le relative risposte è dato in Tabella \ref{tab:pbes2}
+\newpage
+
+\begin{table}
+
+\caption{\label{tab:pbes2}Disegno di Plackett-Burman per lo sviluppo del metodo di estrazione di Elvitegravir con risposte}
+\centering
+\begin{tabular}[t]{r|r|r|r|r|r|r|r|r}
+\hline
+Exp. & x1 & x2 & x3 & x4 & x5 & e1 & e2 & S.N\\
+\hline
+1 & 1 & 1 & 1 & -1 & 1 & -1 & -1 & 31795\\
+\hline
+2 & -1 & 1 & 1 & 1 & -1 & 1 & -1 & 33313\\
+\hline
+3 & -1 & -1 & 1 & 1 & 1 & -1 & 1 & 32264\\
+\hline
+4 & 1 & -1 & -1 & 1 & 1 & 1 & -1 & 31559\\
+\hline
+5 & -1 & 1 & -1 & -1 & 1 & 1 & 1 & 35150\\
+\hline
+6 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & 21201\\
+\hline
+7 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 32344\\
+\hline
+8 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 21087\\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+Inserendo le risposte nell'applicativo ottieniamo la stima dei parametri in Figura \ref{fig:pb5}
+
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=1\linewidth]{Immagini/PB/05_coeff1} 
+
+}
+
+\caption{Stima dei parametri}\label{fig:pb5}
+\end{figure}
+
+Come detto, le 2 variabili dummy possono essere usate come benchmark di significatività. Quindi tutti i parametri che in valore assoluto sono minori del valore assoluto dei coefficienti delle 2 variabili dummy possono essere considerati non significativi. In Figura \ref{fig:pb5} sono tracciate 2 linee orizzontali indicanti la fascia di non significatività. La variabile \(x_4\) (Tempo miscelazione, misurata in sec) è non significativa.
+
+Lo studio può continuare raffinando l'indagine con un nuovo piano di esperimenti che prenda in esame solo questi 4 fattori significativi.
+
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=1\linewidth]{Immagini/PB/04_plot_alias} 
+
+}
+
+\caption{Plot alias}\label{fig:pb4}
 \end{figure}
 
 \backmatter
