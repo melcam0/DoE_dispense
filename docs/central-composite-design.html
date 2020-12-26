@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capitolo 4 Central Composite Design | Dispense sul disegno sperimentiale</title>
+  <meta name="description" content="Capitolo 4 Central Composite Design | Dispense sul disegno sperimentiale" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capitolo 4 Central Composite Design | Dispense sul disegno sperimentiale" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="Immagini/Design-of-Experiments.jpg" />
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capitolo 4 Central Composite Design | Dispense sul disegno sperimentiale" />
+  
+  
+  <meta name="twitter:image" content="Immagini/Design-of-Experiments.jpg" />
+
+<meta name="author" content="Giorgio Marrubini e Camillo Melzi" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="Immagini/doe.ico" type="image/x-icon" />
+<link rel="prev" href="plackett-burman.html"/>
+<link rel="next" href="bibliografia.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">DoE</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#section"></a></li>
+<li class="chapter" data-level="" data-path="glossario.html"><a href="glossario.html"><i class="fa fa-check"></i>Glossario minimo</a></li>
+<li class="chapter" data-level="1" data-path="disegni-fattoriale-completo.html"><a href="disegni-fattoriale-completo.html"><i class="fa fa-check"></i><b>1</b> Disegni Fattoriale completo</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="disegni-fattoriale-completo.html"><a href="disegni-fattoriale-completo.html#disegni-fattoriali-completi-2k"><i class="fa fa-check"></i><b>1.1</b> Disegni fattoriali completi <span class="math inline">\(2^k\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="disegni-frazionari.html"><a href="disegni-frazionari.html"><i class="fa fa-check"></i><b>2</b> Disegni Frazionari</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="disegni-frazionari.html"><a href="disegni-frazionari.html#esempio-confusioni"><i class="fa fa-check"></i><b>2.1</b> Esempio: confusioni</a></li>
+<li class="chapter" data-level="2.2" data-path="disegni-frazionari.html"><a href="disegni-frazionari.html#esempio-studio-dei-fattori-dellestrazione-liquido-liquido"><i class="fa fa-check"></i><b>2.2</b> Esempio: studio dei fattori dell’estrazione liquido-liquido</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="plackett-burman.html"><a href="plackett-burman.html"><i class="fa fa-check"></i><b>3</b> Plackett Burman</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="plackett-burman.html"><a href="plackett-burman.html#esempio-confusioni-1"><i class="fa fa-check"></i><b>3.1</b> Esempio: confusioni</a></li>
+<li class="chapter" data-level="3.2" data-path="plackett-burman.html"><a href="plackett-burman.html#esempio-elvitegravir"><i class="fa fa-check"></i><b>3.2</b> Esempio Elvitegravir</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="central-composite-design.html"><a href="central-composite-design.html"><i class="fa fa-check"></i><b>4</b> Central Composite Design</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="central-composite-design.html"><a href="central-composite-design.html#esempio"><i class="fa fa-check"></i><b>4.1</b> Esempio</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Dispense sul disegno sperimentiale</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="central-composite-design" class="section level1" number="4">
+<h1><span class="header-section-number">Capitolo 4</span> Central Composite Design</h1>
+<p>I disegni fattoriali completi, frazionari e Plackett-Burman sono utili per lo screening dei fattori e delle loro eventuali interazioni che abbiano effetto su un fenomeno analizzato.<br />
+In questo capitolo siamo interessati al problema dell’ottimizzazione della variabile risposta nel dominio sperimentale. In termini analitici, per fissare le idee, ciò significa verificare se la risposta sperimentale ha massimi o minimi. Quindi, per gli studi di ottimizzazione, generalmente, bisogna analizzare la forma della superficie di risposta e verificare se essa ha una curvatura.<br />
+Per superficie di risposta intendiamo la superficie descritta dalla funzione <span class="math inline">\(f\)</span>, funzione teorica che descrive il fenomeno studiato
+<span class="math display">\[
+    y=f(X_1,\dots,X_k),
+\]</span>
+dove <span class="math inline">\(X_1,\dots,X_k\)</span> sono i fattori che influenzano il fenomeno studiato. La risposta sarà quindi
+<span class="math display">\[
+    Y=f(X_1,\dots,X_k)+\epsilon,
+\]</span>
+dove <span class="math inline">\(\epsilon\)</span> rappresenta l’errore sulla risposta osservata.</p>
+<p>Ricordando che, poichè ogni funzione <span class="math inline">\(f\)</span> passante per un punto <span class="math inline">\(\underline{x}_0=(x_{01},\dots,x_{0k})\)</span> di <span class="math inline">\(\mathbb{R}^k\)</span> sufficientemente regolare (ossia differenziabile un numero sufficiente di volte in un intorno di <span class="math inline">\(\underline{x}_0\)</span>) è approssimabile (formula di Taylor) da un polinomio <span class="math inline">\(P_m\)</span> di grado <span class="math inline">\(m\)</span>
+<span class="math display">\[
+    f(\underline{x})=P_m(\underline{x})+R(\underline{x}), \qquad \underline{x} \in \mathbb{R}^k
+\]</span>
+dove
+<span class="math display">\[
+    \lim_{\underline{x} \to \underline{x}_0}
+    \frac{R(\underline{x})}{\|\underline{x}-\underline{x}_0 \|^m}=0,
+\]</span>
+è sufficiente approssimare la risposta con un modello quadratico (posto <span class="math inline">\(\underline{x}_0=0\)</span>)
+<span class="math display">\[
+     Y=\beta_0+\beta_1 X_1+\cdots +\beta_k X_k +
+    \beta_{12}X_1X_2+\cdots+\beta_{k-1, k}X_{k-1}  X_k+
+    \beta_{11}X_1^2+\cdots+\beta_{kk}X_k^2+\epsilon 
+\]</span></p>
+<p>Si osservi che nell’uso dei disegni fattoriali completi, frazionari e di Plackett-Burman abbiamo approssimato la superficie risposta con un piano descritto dal modello lineare contenente solo gli effetti principali dei fattori e abbiamo analizzato le “deformazioni” di questo piano dovute alle interazione tra fattori aggiungendo i termini di interazione a due termini nel modello lineare.</p>
+<p>I domini sperimentali considerati in questi disegni non sono adatti ai modelli quadratici in quanto la relativa matrice di informazione non è invertibile, perché le colonne della matrice modello corrispondenti ai termini quadratici coincidono con la colonna <em>Int.</em>. Se la matrice di informazione non è invertibile, non esiste matrice di dispersione e non è possibile stimare i coefficienti del modello.</p>
+<p>Per ovviare a questo problema Box e Wilson hanno proposto un disegno fattoriale completo a cui vanno aggiunti <span class="math inline">\(N\)</span> punti centrali e <span class="math inline">\(2k\)</span> punti stellati, ossia per ogni fattore <span class="math inline">\(X_j\)</span> consideriamo i punti <span class="math inline">\((0,\dots,0,a,0,\dots,0)\)</span> e <span class="math inline">\((0,\dots,0,-a,0,\dots,0)\)</span> lungo l’asse <span class="math inline">\(X_j\)</span>, con <span class="math inline">\(a&gt;1\)</span>. Per ogni fattore sono considerati <span class="math inline">\(5\)</span> livelli.<br />
+Otteniamo così un disegno, chiamato disegno composito centrale e indicato con CCD, di <span class="math inline">\(2^k+2k+N\)</span> punti.<br />
+Esempio di un CCD per <span class="math inline">\(k=2,3\)</span> e <span class="math inline">\(a&gt;1\)</span> è rappresentato in Figura <a href="central-composite-design.html#fig:ccd1">4.1</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:ccd1"></span>
+<img src="Immagini/CCD/01_Rappresentazione.png" alt="Rappresentazione grafica del posizionamento dei punti stella in CCD" width="100%" />
+<p class="caption">
+Figura 4.1: Rappresentazione grafica del posizionamento dei punti stella in CCD
+</p>
+</div>
+<p>La matrice di tali disegni è data dalla matrice in Tabella <a href="central-composite-design.html#tab:MatrDisCCD">4.1</a></p>
+<table style="width:97%;">
+<caption><span id="tab:MatrDisCCD">Tabella 4.1: </span> Matrice disegno composito centrale</caption>
+<colgroup>
+<col width="19%" />
+<col width="19%" />
+<col width="19%" />
+<col width="19%" />
+<col width="19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(\bf{X_1}\)</span></th>
+<th align="center"><span class="math inline">\(\bf{X_2}\)</span></th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center"><span class="math inline">\(\bf{X_k}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">-1</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">-1</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">-1</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">-1</td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">-1</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">-1</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(2^k\)</span></td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">-1</td>
+<td align="center">-a</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center">a</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">-a</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(2^k+2k\)</span></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">a</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(2^k+2k+1\)</span></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(2^k+2k+N\)</span></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+<p>e la matrice relativa al modello quadratico è data dalla Tabella <a href="central-composite-design.html#tab:MatrModCCD">4.2</a>.</p>
+<table>
+<caption><span id="tab:MatrModCCD">Tabella 4.2: </span> Matrice modello</caption>
+<colgroup>
+<col width="11%" />
+<col width="8%" />
+<col width="11%" />
+<col width="11%" />
+<col width="10%" />
+<col width="11%" />
+<col width="14%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><em>Int.</em></th>
+<th align="center"><span class="math inline">\(\bf{X_1}\)</span></th>
+<th align="center"><span class="math inline">\(\bf{X_2}\)</span></th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center"><span class="math inline">\(\bf{X_k}\)</span></th>
+<th align="center"><span class="math inline">\(\bf{X_1X_2}\)</span></th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center"><span class="math inline">\(X^2_k\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">-1</td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">-1</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">-1</td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">-1</td>
+<td align="center">-1</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">-1</td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(2^k\)</span></td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">-1</td>
+<td align="center">1</td>
+<td align="center">-a</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center">1</td>
+<td align="center">a</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">-a</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(2^k+2k\)</span></td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">a</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(2^k+2k+1\)</span></td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center">1</td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(2^k+2k+N\)</span></td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>Con un po’ di calcolo si ottiene la matrice di informazione data in Tabella <a href="central-composite-design.html#tab:MatrInfoCCD">4.3</a>.<br />
+Si osservi che la correlazione tra i termini lineari e interazioni è nulla (parte dovuta al disegno fattoriale completo <span class="math inline">\(2^k\)</span>) così come interazione tra i termini lineari e interazione con i termini di secondo grado (questo implica che i termini lineari ‘’leggono’’ correttamente la crescita o la decrescita della risposta) mentre in generale non è nulla la correlazione tra termini quadratici e i termini quadratici e intercetta.</p>
+<table style="width:100%;">
+<caption><span id="tab:MatrInfoCCD">Tabella 4.3: </span> Matrice informazione <span class="math inline">\(X^tX\)</span></caption>
+<colgroup>
+<col width="12%" />
+<col width="7%" />
+<col width="7%" />
+<col width="6%" />
+<col width="7%" />
+<col width="9%" />
+<col width="6%" />
+<col width="12%" />
+<col width="3%" />
+<col width="9%" />
+<col width="6%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><em>Int.</em></th>
+<th align="center"><span class="math inline">\(\bf{X_1}\)</span></th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center"><span class="math inline">\(\bf{X_k}\)</span></th>
+<th align="center"><span class="math inline">\(\bf{X_1X_2}\)</span></th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center"><span class="math inline">\(\bf{X_{k-1}X_k}\)</span></th>
+<th align="center"></th>
+<th align="center"><span class="math inline">\(\bf{X_1^2}\)</span></th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center"><span class="math inline">\(\bf{X_k^2}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><em>Int.</em></td>
+<td align="center"><span class="math inline">\(2^k+2k+N\)</span></td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(2^k+2a^2\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(2^k+2a^2\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\bf{X_1}\)</span></td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(2^k+2a^2\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\bf{X_k}\)</span></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(2^k+2a^2\)</span></td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\bf{X_1X_2}\)</span></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(2^k\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\bf{X_{k-1}X_k}\)</span></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(2^k\)</span></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\bf{X_1^2}\)</span></td>
+<td align="center"><span class="math inline">\(2^k+2a^2\)</span></td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(2^k+2a^4\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(2^k\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\cdot\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\bf{X_k^2}\)</span></td>
+<td align="center"><span class="math inline">\(2^k+2a^2\)</span></td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(2^k+2a^4\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Nei CCD, per qualsiasi numero <em>k</em> di fattori, devono essere specificati necessariamente ogni volta anche <span class="math inline">\(2\)</span> parametri geometrici del disegno: la distanza assiale <span class="math inline">\(a\)</span> dal centro e il numero <span class="math inline">\(N\)</span> di punti centrali. La scelta di questi parametri dipende dalle proprietà che si desidera siano soddisfatte dal CCD.</p>
+<p><strong>Ruotabilità - Piano ruotabile</strong> - tutte le risposte ottenuti da esperimenti che giacciono su una sfera centrata nel centro sono stimate con la stessa approssimazione e hanno lo stesso valore di Leverage. Ossia <span class="math inline">\(Var(\hat{y})\)</span> e Leverage dipendono solo dalla distanza dal centro.<br />
+Per
+<span class="math display">\[
+    a=\sqrt[4]{2^k}
+\]</span>
+otteniamo un CCD ruotabile.</p>
+<p><strong>Sfericità - Piano a simmetria sferica</strong> - il disegno è inserito in una sfera centrata nel centro e raggio <span class="math inline">\(\sqrt{k}\)</span>. 
+Per
+<span class="math display">\[
+    a=\sqrt{k}
+\]</span>
+otteniamo un CCD sferico. 
+Si noti che per <span class="math inline">\(k=2\)</span> le proprietà di ruotabilità e di sfericità coincidono.</p>
+<p><strong>Ortogonalità - Piano ortogonale</strong> - un CCD è detto ortogonale quando i termini quadratici sono ortogonali tra loro, ossia la correlazione tra termini quadratici è nulla (da non confondere con l’ortogonalità del modello in cui si richiede l’ortogonalità tra tutti i termini, intercetta compresa).<br />
+Per
+<span class="math display">\[
+    a^2=\frac{\sqrt{(2^k+2k+N)2^k}-2^k}{2}\label{eq:CCDOrt}
+\]</span>
+otteniamo un CCD ortogonale.</p>
+<p><strong>Facce centrate</strong> - nel caso in cui la regione dello spazio in cui variano i fattori di interesse sia un cuboide, è possibile aumentare il dominio del piano fattoriale completo scegliendo i punti centrali delle facce del cuboide con
+<span class="math display">\[
+a=1
+\]</span>
+Un caso particolare interessante è quello per k=2: il CCD a facce centrate è identico al piano fattoriale completo <span class="math inline">\(3^2\)</span>.</p>
+<div id="esempio" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Esempio</h2>
+<p>Consideriamo la resa <span class="math inline">\(Y_1\)</span> di una reazione chimica che dipende da <span class="math inline">\(2\)</span> fattori: il tempo della reazione <span class="math inline">\(X_1\)</span> e la temperatura <span class="math inline">\(X_2\)</span> (cf.<span class="citation">(D.C. Montgomery <a href="#ref-DesAnExp" role="doc-biblioref">2013</a>, Ex 11.2)</span>).
+Siamo interessati a massimizzare la resa <span class="math inline">\(Y_1\)</span> sotto alcune condizioni (vincoli) sulla viscosità <span class="math inline">\(Y_2\)</span> e il peso molecolare <span class="math inline">\(Y_3\)</span> del prodotto. Siamo interessati al seguente problema
+<span class="math display">\[\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+  \rm{Max} &amp; Y_1 \\
+  \rm{sub}  &amp; 62\leq Y_2 \leq 68 \quad \\
+                 &amp; \quad Y_3 \leq 3400.
+\end{eqnarray*}\]</span>
+Per affrontare il problema costruiamo un CCD con <span class="math inline">\(k=2, a=\sqrt{2}\)</span> e <span class="math inline">\(N=2\)</span>. Per quanto visto è un disegno sferico, ruotabile non ortogonale.</p>
+<p>Il dominio sperimentale con i valori autentici dei fattori, il dominio sperimentale codificato e le risposte sono dati in Tabella <a href="central-composite-design.html#tab:esmatrmod">4.4</a>.
+</p>
+<table>
+<caption><span id="tab:esmatrmod">Tabella 4.4: </span>Dominio sperimentale autentico, dominio sperimentale
+codificato e risposte</caption>
+<thead>
+<tr class="header">
+<th align="right">Time</th>
+<th align="right">Temp</th>
+<th align="right">X1</th>
+<th align="right">X2</th>
+<th align="right">Y1</th>
+<th align="right">Y2</th>
+<th align="right">Y3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">80.0</td>
+<td align="right">170</td>
+<td align="right">-1.00</td>
+<td align="right">-1.00</td>
+<td align="right">76.5</td>
+<td align="right">62</td>
+<td align="right">2940</td>
+</tr>
+<tr class="even">
+<td align="right">90.0</td>
+<td align="right">170</td>
+<td align="right">1.00</td>
+<td align="right">-1.00</td>
+<td align="right">78.0</td>
+<td align="right">66</td>
+<td align="right">3680</td>
+</tr>
+<tr class="odd">
+<td align="right">80.0</td>
+<td align="right">180</td>
+<td align="right">-1.00</td>
+<td align="right">1.00</td>
+<td align="right">77.0</td>
+<td align="right">60</td>
+<td align="right">3470</td>
+</tr>
+<tr class="even">
+<td align="right">90.0</td>
+<td align="right">180</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="right">79.5</td>
+<td align="right">59</td>
+<td align="right">3890</td>
+</tr>
+<tr class="odd">
+<td align="right">77.9</td>
+<td align="right">175</td>
+<td align="right">-1.41</td>
+<td align="right">0.00</td>
+<td align="right">75.6</td>
+<td align="right">71</td>
+<td align="right">3020</td>
+</tr>
+<tr class="even">
+<td align="right">92.1</td>
+<td align="right">175</td>
+<td align="right">1.41</td>
+<td align="right">0.00</td>
+<td align="right">78.4</td>
+<td align="right">68</td>
+<td align="right">3360</td>
+</tr>
+<tr class="odd">
+<td align="right">85.0</td>
+<td align="right">168</td>
+<td align="right">0.00</td>
+<td align="right">-1.41</td>
+<td align="right">77.0</td>
+<td align="right">57</td>
+<td align="right">3150</td>
+</tr>
+<tr class="even">
+<td align="right">85.0</td>
+<td align="right">182</td>
+<td align="right">0.00</td>
+<td align="right">1.41</td>
+<td align="right">78.5</td>
+<td align="right">58</td>
+<td align="right">3630</td>
+</tr>
+<tr class="odd">
+<td align="right">85.0</td>
+<td align="right">175</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">79.9</td>
+<td align="right">72</td>
+<td align="right">3480</td>
+</tr>
+<tr class="even">
+<td align="right">85.0</td>
+<td align="right">175</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">80.3</td>
+<td align="right">69</td>
+<td align="right">3200</td>
+</tr>
+</tbody>
+</table>
+<p>Nell’applicativo, nel menù <em>CCD</em> selezioniamo 2 fattori, 2 punti al centro e scegliamo un disegno di tipo sferico, Figura <a href="central-composite-design.html#fig:ccd2">4.2</a>
+</p>
+<div class="figure" style="text-align: center"><span id="fig:ccd2"></span>
+<img src="Immagini/CCD/02_disegno_esempio.png" alt="Scelta numero fattori, punti al centro e tipo di CCD nell'applicativo" width="100%" />
+<p class="caption">
+Figura 4.2: Scelta numero fattori, punti al centro e tipo di CCD nell’applicativo
+</p>
+</div>
+<p>Ognuna delle 3 risposte sarà analizzata con il modello quadratico Figura <a href="central-composite-design.html#fig:ccd3">4.3</a>. Dalla lettura della matrice di dispersione si nota la non ortogonalità del modello (i termini quadratici sono correlati tra di loro, v. riquadro colorato in giallo nella Figura).</p>
+<div class="figure" style="text-align: center"><span id="fig:ccd3"></span>
+<img src="Immagini/CCD/03_matrdisp.png" alt="Modello e matrice di dispersione del CCD" width="100%" />
+<p class="caption">
+Figura 4.3: Modello e matrice di dispersione del CCD
+</p>
+</div>
+<p>Le linee di livello del Leverage Figura <a href="central-composite-design.html#fig:ccd4">4.4</a> mettono in evidenza invece la ruotabilità del piano sperimentale scelto.</p>
+<div class="figure" style="text-align: center"><span id="fig:ccd4"></span>
+<img src="Immagini/CCD/04_livello.png" alt="Grafico delle linee di livello del Leverage" width="100%" />
+<p class="caption">
+Figura 4.4: Grafico delle linee di livello del Leverage
+</p>
+</div>
+<p>Procediamo come di consueto inserendo le Risposte nell’apposito riquadro. Una volta convalidato il modello con tre misure indipendenti Tabella <a href="central-composite-design.html#tab:matrconv">4.5</a>
+</p>
+<table>
+<caption><span id="tab:matrconv">Tabella 4.5: </span>Misure indipendenti per convalidare il modello</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Time</th>
+<th align="right">Temp</th>
+<th align="right">X1</th>
+<th align="right">X2</th>
+<th align="right">Y1</th>
+<th align="right">Y2</th>
+<th align="right">Y3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">11</td>
+<td align="right">85</td>
+<td align="right">175</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">80.0</td>
+<td align="right">68</td>
+<td align="right">3410</td>
+</tr>
+<tr class="even">
+<td align="left">12</td>
+<td align="right">85</td>
+<td align="right">175</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">79.7</td>
+<td align="right">70</td>
+<td align="right">3290</td>
+</tr>
+<tr class="odd">
+<td align="left">13</td>
+<td align="right">85</td>
+<td align="right">175</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">79.8</td>
+<td align="right">71</td>
+<td align="right">3500</td>
+</tr>
+</tbody>
+</table>
+<p>possiamo utilizzare il grafico delle linee di livello Figura <a href="central-composite-design.html#fig:ccd5">4.5</a> per confrontare le risposte tra di loro.</p>
+<div class="figure"><span id="fig:ccd5"></span>
+<img src="Immagini/CCD/05_liv1.png" alt="Grafico delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$" width="50%" /><img src="Immagini/CCD/06_liv2.png" alt="Grafico delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$" width="50%" /><img src="Immagini/CCD/07_liv3.png" alt="Grafico delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$" width="50%" />
+<p class="caption">
+Figura 4.5: Grafico delle linee di livello delle risposte <span class="math inline">\(Y_1,Y_2\)</span> e <span class="math inline">\(Y_3\)</span>
+</p>
+</div>
+<p>Nell’applicativo si noti che è possibile scegliere il colore delle linee di livello. Questa risorsa è utile quando, come in questo caso, bisogna confrontare più grafici tra loro Figura <a href="central-composite-design.html#fig:ccd8">4.6</a>.</p>
+<div class="figure"><span id="fig:ccd8"></span>
+<img src="Immagini/CCD/08_livelli.png" alt="Grafici delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$ sovrapposti e regione di ottimo" width="50%" /><img src="Immagini/CCD/09_livelli.png" alt="Grafici delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$ sovrapposti e regione di ottimo" width="50%" />
+<p class="caption">
+Figura 4.6: Grafici delle linee di livello delle risposte <span class="math inline">\(Y_1,Y_2\)</span> e <span class="math inline">\(Y_3\)</span> sovrapposti e regione di ottimo
+</p>
+</div>
+<p>Analizzando i vincoli e le linee di livello della resa <span class="math inline">\(Y_1\)</span> si vede che le zona in cui cercare soluzione del problema sono quelle colorate in grigio (v. Figura <a href="central-composite-design.html#fig:ccd8">4.6</a>).</p>
+
+</div>
+</div>
+<h3>Bibliografia</h3>
+<div id="refs" class="references">
+<div id="ref-DesAnExp">
+<p>D.C. Montgomery. 2013. <em>Design and Analysis of Experiments</em>. Wiley.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="plackett-burman.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bibliografia.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["dispense_doe.pdf"],
+"toc": {
+"collapse": "section"
+},
+"info": false,
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

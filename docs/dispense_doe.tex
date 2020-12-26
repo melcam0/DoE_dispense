@@ -1782,6 +1782,1435 @@ Lo studio può continuare raffinando l'indagine con un nuovo piano di esperiment
 \caption{Plot alias}\label{fig:pb4}
 \end{figure}
 
+\hypertarget{central-composite-design}{%
+\chapter{Central Composite Design}\label{central-composite-design}}
+
+I disegni fattoriali completi, frazionari e Plackett-Burman sono utili per lo screening dei fattori e delle loro eventuali interazioni che abbiano effetto su un fenomeno analizzato.\\
+In questo capitolo siamo interessati al problema dell'ottimizzazione della variabile risposta nel dominio sperimentale. In termini analitici, per fissare le idee, ciò significa verificare se la risposta sperimentale ha massimi o minimi. Quindi, per gli studi di ottimizzazione, generalmente, bisogna analizzare la forma della superficie di risposta e verificare se essa ha una curvatura.\\
+Per superficie di risposta intendiamo la superficie descritta dalla funzione \(f\), funzione teorica che descrive il fenomeno studiato
+\[
+    y=f(X_1,\dots,X_k),
+\]
+dove \(X_1,\dots,X_k\) sono i fattori che influenzano il fenomeno studiato. La risposta sarà quindi
+\[
+    Y=f(X_1,\dots,X_k)+\epsilon,
+\]
+dove \(\epsilon\) rappresenta l'errore sulla risposta osservata.
+
+Ricordando che, poichè ogni funzione \(f\) passante per un punto \(\underline{x}_0=(x_{01},\dots,x_{0k})\) di \(\mathbb{R}^k\) sufficientemente regolare (ossia differenziabile un numero sufficiente di volte in un intorno di \(\underline{x}_0\)) è approssimabile (formula di Taylor) da un polinomio \(P_m\) di grado \(m\)
+\[
+    f(\underline{x})=P_m(\underline{x})+R(\underline{x}), \qquad \underline{x} \in \mathbb{R}^k
+\]
+dove
+\[
+    \lim_{\underline{x} \to \underline{x}_0}
+    \frac{R(\underline{x})}{\|\underline{x}-\underline{x}_0 \|^m}=0,
+\]
+è sufficiente approssimare la risposta con un modello quadratico (posto \(\underline{x}_0=0\))
+\[
+     Y=\beta_0+\beta_1 X_1+\cdots +\beta_k X_k +
+    \beta_{12}X_1X_2+\cdots+\beta_{k-1, k}X_{k-1}  X_k+
+    \beta_{11}X_1^2+\cdots+\beta_{kk}X_k^2+\epsilon 
+\]
+
+Si osservi che nell'uso dei disegni fattoriali completi, frazionari e di Plackett-Burman abbiamo approssimato la superficie risposta con un piano descritto dal modello lineare contenente solo gli effetti principali dei fattori e abbiamo analizzato le ``deformazioni'' di questo piano dovute alle interazione tra fattori aggiungendo i termini di interazione a due termini nel modello lineare.
+
+I domini sperimentali considerati in questi disegni non sono adatti ai modelli quadratici in quanto la relativa matrice di informazione non è invertibile, perché le colonne della matrice modello corrispondenti ai termini quadratici coincidono con la colonna \emph{Int.}. Se la matrice di informazione non è invertibile, non esiste matrice di dispersione e non è possibile stimare i coefficienti del modello.
+
+Per ovviare a questo problema Box e Wilson hanno proposto un disegno fattoriale completo a cui vanno aggiunti \(N\) punti centrali e \(2k\) punti stellati, ossia per ogni fattore \(X_j\) consideriamo i punti \((0,\dots,0,a,0,\dots,0)\) e \((0,\dots,0,-a,0,\dots,0)\) lungo l'asse \(X_j\), con \(a>1\). Per ogni fattore sono considerati \(5\) livelli.\\
+Otteniamo così un disegno, chiamato disegno composito centrale e indicato con CCD, di \(2^k+2k+N\) punti.\\
+Esempio di un CCD per \(k=2,3\) e \(a>1\) è rappresentato in Figura \ref{fig:ccd1}.
+
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=1\linewidth]{Immagini/CCD/01_Rappresentazione} 
+
+}
+
+\caption{Rappresentazione grafica del posizionamento dei punti stella in CCD}\label{fig:ccd1}
+\end{figure}
+
+La matrice di tali disegni è data dalla matrice in Tabella \ref{tab:MatrDisCCD}
+
+\begin{longtable}[]{@{}ccccc@{}}
+\caption{\label{tab:MatrDisCCD} Matrice disegno composito centrale}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.17\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
+\(\bf{X_1}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
+\(\bf{X_2}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
+\(\bf{X_k}\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.17\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
+\(\bf{X_1}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
+\(\bf{X_2}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering
+\(\bf{X_k}\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.17\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+-1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+-1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+-1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+-1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\(2^k\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+-a\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+a\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+-a\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\(2^k+2k\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+a\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\(2^k+2k+1\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\centering
+\(2^k+2k+N\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering
+0\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+e la matrice relativa al modello quadratico è data dalla Tabella \ref{tab:MatrModCCD}.
+
+\begin{longtable}[]{@{}ccccccccc@{}}
+\caption{\label{tab:MatrModCCD} Matrice modello}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering
+\emph{Int.}\strut
+\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\centering
+\(\bf{X_1}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\centering
+\(\bf{X_2}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\centering
+\(\bf{X_k}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+\(\bf{X_1X_2}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering
+\(X^2_k\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering
+\emph{Int.}\strut
+\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\centering
+\(\bf{X_1}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\centering
+\(\bf{X_2}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\centering
+\(\bf{X_k}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+\(\bf{X_1X_2}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[b]{0.08\columnwidth}\centering
+\(X^2_k\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.09\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+2\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+3\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(2^k\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+-1\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+-a\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+a\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+-a\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(2^k+2k\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+a\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(2^k+2k+1\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(2^k+2k+N\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.08\columnwidth}\centering
+1\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Con un po' di calcolo si ottiene la matrice di informazione data in Tabella \ref{tab:MatrInfoCCD}.\\
+Si osservi che la correlazione tra i termini lineari e interazioni è nulla (parte dovuta al disegno fattoriale completo \(2^k\)) così come interazione tra i termini lineari e interazione con i termini di secondo grado (questo implica che i termini lineari `'leggono'' correttamente la crescita o la decrescita della risposta) mentre in generale non è nulla la correlazione tra termini quadratici e i termini quadratici e intercetta.
+
+\begin{longtable}[]{@{}cccccccccccc@{}}
+\caption{\label{tab:MatrInfoCCD} Matrice informazione \(X^tX\)}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\emph{Int.}\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\(\bf{X_1}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\(\bf{X_k}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering
+\(\bf{X_1X_2}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\centering
+\(\bf{X_{k-1}X_k}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering
+\(\bf{X_1^2}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering
+\(\bf{X_k^2}\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\emph{Int.}\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\(\bf{X_1}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\(\bf{X_k}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering
+\(\bf{X_1X_2}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\centering
+\(\bf{X_{k-1}X_k}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering
+\(\bf{X_1^2}\)\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering
+\(\bf{X_k^2}\)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\emph{Int.}\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(2^k+2k+N\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(2^k+2a^2\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(2^k+2a^2\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\bf{X_1}\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(2^k+2a^2\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\bf{X_k}\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(2^k+2a^2\)\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\bf{X_1X_2}\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+\(2^k\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\bf{X_{k-1}X_k}\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(2^k\)\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+0\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\bf{X_1^2}\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(2^k+2a^2\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(2^k+2a^4\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(2^k\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(\cdot\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+\(\bf{X_k^2}\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(2^k+2a^2\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.02\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+0\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\centering
+\(\cdots\)\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+\(2^k+2a^4\)\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Nei CCD, per qualsiasi numero \emph{k} di fattori, devono essere specificati necessariamente ogni volta anche \(2\) parametri geometrici del disegno: la distanza assiale \(a\) dal centro e il numero \(N\) di punti centrali. La scelta di questi parametri dipende dalle proprietà che si desidera siano soddisfatte dal CCD.
+
+\textbf{Ruotabilità - Piano ruotabile} - tutte le risposte ottenuti da esperimenti che giacciono su una sfera centrata nel centro sono stimate con la stessa approssimazione e hanno lo stesso valore di Leverage. Ossia \(Var(\hat{y})\) e Leverage dipendono solo dalla distanza dal centro.\\
+Per
+\[
+    a=\sqrt[4]{2^k}
+\]
+otteniamo un CCD ruotabile.
+
+\textbf{Sfericità - Piano a simmetria sferica} - il disegno è inserito in una sfera centrata nel centro e raggio \(\sqrt{k}\). \newline
+Per
+\[
+    a=\sqrt{k}
+\]
+otteniamo un CCD sferico. \newline
+Si noti che per \(k=2\) le proprietà di ruotabilità e di sfericità coincidono.
+
+\textbf{Ortogonalità - Piano ortogonale} - un CCD è detto ortogonale quando i termini quadratici sono ortogonali tra loro, ossia la correlazione tra termini quadratici è nulla (da non confondere con l'ortogonalità del modello in cui si richiede l'ortogonalità tra tutti i termini, intercetta compresa).\\
+Per
+\[
+    a^2=\frac{\sqrt{(2^k+2k+N)2^k}-2^k}{2}\label{eq:CCDOrt}
+\]
+otteniamo un CCD ortogonale.
+
+\textbf{Facce centrate} - nel caso in cui la regione dello spazio in cui variano i fattori di interesse sia un cuboide, è possibile aumentare il dominio del piano fattoriale completo scegliendo i punti centrali delle facce del cuboide con
+\[
+a=1
+\]
+Un caso particolare interessante è quello per k=2: il CCD a facce centrate è identico al piano fattoriale completo \(3^2\).
+
+\hypertarget{esempio}{%
+\section{Esempio}\label{esempio}}
+
+Consideriamo la resa \(Y_1\) di una reazione chimica che dipende da \(2\) fattori: il tempo della reazione \(X_1\) e la temperatura \(X_2\) (cf.\citep[Ex 11.2]{DesAnExp}).
+Siamo interessati a massimizzare la resa \(Y_1\) sotto alcune condizioni (vincoli) sulla viscosità \(Y_2\) e il peso molecolare \(Y_3\) del prodotto. Siamo interessati al seguente problema
+\begin{eqnarray*}
+% \nonumber to remove numbering (before each equation)
+  \rm{Max} & Y_1 \\
+  \rm{sub}  & 62\leq Y_2 \leq 68 \quad \\
+                 & \quad Y_3 \leq 3400.
+\end{eqnarray*}
+Per affrontare il problema costruiamo un CCD con \(k=2, a=\sqrt{2}\) e \(N=2\). Per quanto visto è un disegno sferico, ruotabile non ortogonale.
+
+Il dominio sperimentale con i valori autentici dei fattori, il dominio sperimentale codificato e le risposte sono dati in Tabella \ref{tab:esmatrmod}.
+\newpage
+
+\begin{table}
+
+\caption{\label{tab:esmatrmod}Dominio sperimentale autentico, dominio sperimentale
+codificato e risposte}
+\centering
+\begin{tabular}[t]{r|r|r|r|r|r|r}
+\hline
+Time & Temp & X1 & X2 & Y1 & Y2 & Y3\\
+\hline
+80.0 & 170 & -1.00 & -1.00 & 76.5 & 62 & 2940\\
+\hline
+90.0 & 170 & 1.00 & -1.00 & 78.0 & 66 & 3680\\
+\hline
+80.0 & 180 & -1.00 & 1.00 & 77.0 & 60 & 3470\\
+\hline
+90.0 & 180 & 1.00 & 1.00 & 79.5 & 59 & 3890\\
+\hline
+77.9 & 175 & -1.41 & 0.00 & 75.6 & 71 & 3020\\
+\hline
+92.1 & 175 & 1.41 & 0.00 & 78.4 & 68 & 3360\\
+\hline
+85.0 & 168 & 0.00 & -1.41 & 77.0 & 57 & 3150\\
+\hline
+85.0 & 182 & 0.00 & 1.41 & 78.5 & 58 & 3630\\
+\hline
+85.0 & 175 & 0.00 & 0.00 & 79.9 & 72 & 3480\\
+\hline
+85.0 & 175 & 0.00 & 0.00 & 80.3 & 69 & 3200\\
+\hline
+\end{tabular}
+\end{table}
+
+Nell'applicativo, nel menù \emph{CCD} selezioniamo 2 fattori, 2 punti al centro e scegliamo un disegno di tipo sferico, Figura \ref{fig:ccd2}
+\newpage
+
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=1\linewidth]{Immagini/CCD/02_disegno_esempio} 
+
+}
+
+\caption{Scelta numero fattori, punti al centro e tipo di CCD nell'applicativo}\label{fig:ccd2}
+\end{figure}
+
+Ognuna delle 3 risposte sarà analizzata con il modello quadratico Figura \ref{fig:ccd3}. Dalla lettura della matrice di dispersione si nota la non ortogonalità del modello (i termini quadratici sono correlati tra di loro, v. riquadro colorato in giallo nella Figura).
+
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=1\linewidth]{Immagini/CCD/03_matrdisp} 
+
+}
+
+\caption{Modello e matrice di dispersione del CCD}\label{fig:ccd3}
+\end{figure}
+
+Le linee di livello del Leverage Figura \ref{fig:ccd4} mettono in evidenza invece la ruotabilità del piano sperimentale scelto.
+
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=1\linewidth]{Immagini/CCD/04_livello} 
+
+}
+
+\caption{Grafico delle linee di livello del Leverage}\label{fig:ccd4}
+\end{figure}
+
+Procediamo come di consueto inserendo le Risposte nell'apposito riquadro. Una volta convalidato il modello con tre misure indipendenti Tabella \ref{tab:matrconv}
+\newpage
+
+\begin{table}
+
+\caption{\label{tab:matrconv}Misure indipendenti per convalidare il modello}
+\centering
+\begin{tabular}[t]{l|r|r|r|r|r|r|r}
+\hline
+  & Time & Temp & X1 & X2 & Y1 & Y2 & Y3\\
+\hline
+11 & 85 & 175 & 0 & 0 & 80.0 & 68 & 3410\\
+\hline
+12 & 85 & 175 & 0 & 0 & 79.7 & 70 & 3290\\
+\hline
+13 & 85 & 175 & 0 & 0 & 79.8 & 71 & 3500\\
+\hline
+\end{tabular}
+\end{table}
+
+possiamo utilizzare il grafico delle linee di livello Figura \ref{fig:ccd5} per confrontare le risposte tra di loro.
+
+\begin{figure}[ht]
+\includegraphics[width=0.5\linewidth]{Immagini/CCD/05_liv1} \includegraphics[width=0.5\linewidth]{Immagini/CCD/06_liv2} \includegraphics[width=0.5\linewidth]{Immagini/CCD/07_liv3} \caption{Grafico delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$}\label{fig:ccd5}
+\end{figure}
+
+Nell'applicativo si noti che è possibile scegliere il colore delle linee di livello. Questa risorsa è utile quando, come in questo caso, bisogna confrontare più grafici tra loro Figura \ref{fig:ccd8}.
+
+\begin{figure}[ht]
+\includegraphics[width=0.5\linewidth]{Immagini/CCD/08_livelli} \includegraphics[width=0.5\linewidth]{Immagini/CCD/09_livelli} \caption{Grafici delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$ sovrapposti e regione di ottimo}\label{fig:ccd8}
+\end{figure}
+
+Analizzando i vincoli e le linee di livello della resa \(Y_1\) si vede che le zona in cui cercare soluzione del problema sono quelle colorate in grigio (v. Figura \ref{fig:ccd8}).
+
 \backmatter
 
   \bibliography{book.bib}
