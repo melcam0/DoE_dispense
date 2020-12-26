@@ -46,7 +46,7 @@ knitr::include_graphics("Immagini/CCD/01_Rappresentazione.png")
 ```
 
 La matrice di tali disegni è data dalla matrice in Tabella \@ref(tab:MatrDisCCD)
-\newpage
+
 
 +-------------+-------------+-------------+-------------+-------------+
 |             | $\bf{X_1}$  | $\bf{X_2}$  | $\cdots$    | $\bf{X_k}$  |
@@ -197,9 +197,10 @@ Si noti che per $k=2$ le proprietà di ruotabilità e di sfericità coincidono.
 
 **Ortogonalità - Piano ortogonale** - un CCD è detto ortogonale quando i termini quadratici sono ortogonali tra loro, ossia la correlazione tra termini quadratici è nulla (da non confondere con l'ortogonalità del modello in cui si richiede l'ortogonalità tra tutti i termini, intercetta compresa).  
 Per
-$$
-    a^2=\frac{\sqrt{(2^k+2k+N)2^k}-2^k}{2}\label{eq:CCDOrt}
-$$
+\begin{equation}
+    a^2=\frac{\sqrt{(2^k+2k+N)2^k}-2^k}{2}
+    (\#eq:CCDOrt)
+\end{equation}
 otteniamo un CCD ortogonale.
 
 **Facce centrate** - nel caso in cui la regione dello spazio in cui variano i fattori di interesse sia un cuboide, è possibile aumentare il dominio del piano fattoriale completo scegliendo i punti centrali delle facce del cuboide con
@@ -209,11 +210,8 @@ $$
 Un caso particolare interessante è quello per k=2: il CCD a facce centrate è identico al piano fattoriale completo $3^2$.
 
 
-
-
-
 ## Esempio
-Consideriamo la resa $Y_1$ di una reazione chimica che dipende da $2$ fattori: il tempo della reazione $X_1$ e la temperatura $X_2$ (cf.(D.C. Montgomery 2013, Ex 11.2)).
+Consideriamo la resa $Y_1$ di una reazione chimica che dipende da $2$ fattori: il tempo della reazione $X_1$ e la temperatura $X_2$ (cf. [@DesAnExp, Ex 11.2]).
 Siamo interessati a massimizzare la resa $Y_1$ sotto alcune condizioni (vincoli) sulla viscosità $Y_2$ e il peso molecolare $Y_3$ del prodotto. Siamo interessati al seguente problema
 \begin{eqnarray*}
 % \nonumber to remove numbering (before each equation)
@@ -223,56 +221,56 @@ Siamo interessati a massimizzare la resa $Y_1$ sotto alcune condizioni (vincoli)
 \end{eqnarray*}
 Per affrontare il problema costruiamo un CCD con $k=2, a=\sqrt{2}$ e $N=2$. Per quanto visto è un disegno sferico, ruotabile non ortogonale.
 
-Il dominio sperimentale con i valori autentici dei fattori, il dominio sperimentale codificato e le risposte sono dati in \autoref{tab:MatrInfoCCD}.
+Il dominio sperimentale con i valori autentici dei fattori, il dominio sperimentale codificato e le risposte sono dati in \autoref{tab:esmatrmod}.
 \newpage
 
-```{r echo=FALSE}
+```{r esmatrmod, echo=FALSE}
 knitr::kable(Es_Montgomery[1:10,],caption = 'Dominio sperimentale autentico, dominio sperimentale
-codificato e risposte\\label{es_matr_mod}',booktabs = TRUE)
+codificato e risposte',booktabs = TRUE)
 ```
 
-Nell'applicativo, nel menù *CCD* selezioniamo 2 fattori, 2 punti al centro e scegliamo un disegno di tipo sferico, \autoref{fig:ccd2}
+Nell'applicativo, nel menù *CCD* selezioniamo 2 fattori, 2 punti al centro e scegliamo un disegno di tipo sferico, Figura \@ref(fig:ccd2)
 \newpage
 
-```{r echo=FALSE, fig.align='center',fig.pos='ht',fig.cap="Scelta numero fattori, punti al centro e tipo di CCD nell'applicativo\\label{fig:ccd2}",out.width="100%"}
+```{r ccd2, echo=FALSE, fig.align='center',fig.pos='ht',fig.cap="Scelta numero fattori, punti al centro e tipo di CCD nell'applicativo",out.width="100%"}
 knitr::include_graphics("Immagini/CCD/02_disegno_esempio.png")
 ```
 
-Ognuna delle 3 risposte sarà analizzata con il modello quadratico \autoref{fig:ccd3}. Dalla lettura della matrice di dispersione si nota la non ortogonalità del modello (i termini quadratici sono correlati tra di loro, v. riquadro colorato in giallo nella Figura).
+Ognuna delle 3 risposte sarà analizzata con il modello quadratico Figura \@ref(fig:ccd3). Dalla lettura della matrice di dispersione si nota la non ortogonalità del modello (i termini quadratici sono correlati tra di loro, v. riquadro colorato in giallo nella Figura).
 
-```{r echo=FALSE, fig.align='center',fig.pos='ht',fig.cap='Modello e matrice di dispersione del CCD\\label{fig:ccd3}',out.width="100%"}
+```{r ccd3, echo=FALSE, fig.align='center',fig.pos='ht',fig.cap='Modello e matrice di dispersione del CCD',out.width="100%"}
 knitr::include_graphics("Immagini/CCD/03_matrdisp.png")
 ```
 
-Le linee di livello del Leverage \autoref{fig:ccd4} mettono in evidenza invece la ruotabilità del piano sperimentale scelto. 
+Le linee di livello del Leverage Figura \@ref(fig:ccd4) mettono in evidenza invece la ruotabilità del piano sperimentale scelto. 
 
-```{r echo=FALSE, fig.align='center',fig.pos='ht',fig.cap='Grafico delle linee di livello del Leverage\\label{fig:ccd4}',out.width="100%"}
+```{r ccd4, echo=FALSE, fig.align='center',fig.pos='ht',fig.cap='Grafico delle linee di livello del Leverage',out.width="100%"}
 knitr::include_graphics("Immagini/CCD/04_livello.png")
 ```
 
 
 
-Procediamo come di consueto inserendo le Risposte nell'apposito riquadro. Una volta convalidato il modello con tre misure indipendenti \autoref{matr_conv}
+Procediamo come di consueto inserendo le Risposte nell'apposito riquadro. Una volta convalidato il modello con tre misure indipendenti Tabella \@ref(tab:matrconv)
 \newpage
 
-```{r echo=FALSE}
-knitr::kable(Es_Montgomery[11:13,],caption = 'Misure indipendenti per convalidare il modello\\label{matr_conv}',booktabs = TRUE)
+```{r matrconv, echo=FALSE}
+knitr::kable(Es_Montgomery[11:13,],caption = 'Misure indipendenti per convalidare il modello',booktabs = TRUE)
 ```
 
 
-possiamo utilizzare il grafico delle linee di livello \autoref{fig:ccd5} per confrontare le risposte tra di loro. 
+possiamo utilizzare il grafico delle linee di livello Figura \@ref(fig:ccd5) per confrontare le risposte tra di loro. 
 
-```{r echo=FALSE,fig.show = "hold", fig.align='default',fig.pos='ht',fig.cap='Grafico delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$\\label{fig:ccd5}', out.width = "50%"}
+```{r ccd5, echo=FALSE,fig.show = "hold", fig.align='default',fig.pos='ht',fig.cap='Grafico delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$', out.width = "50%"}
 knitr::include_graphics(c("Immagini/CCD/05_liv1.png","Immagini/CCD/06_liv2.png","Immagini/CCD/07_liv3.png"))
 ```
 
-Nell'applicativo si noti che è possibile scegliere il colore delle linee di livello. Questa risorsa è utile quando, come in questo caso, bisogna confrontare più grafici tra loro \autoref{fig:ccd8}.
+Nell'applicativo si noti che è possibile scegliere il colore delle linee di livello. Questa risorsa è utile quando, come in questo caso, bisogna confrontare più grafici tra loro Figura \@ref(fig:ccd8).
 
-```{r echo=FALSE,fig.show='hold',fig.pos='ht',fig.cap='Grafici delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$ sovrapposti e regione di ottimo\\label{fig:ccd8}', out.width = "50%"}
+```{r ccd8, echo=FALSE,fig.show='hold',fig.pos='ht',fig.cap='Grafici delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$ sovrapposti e regione di ottimo', out.width = "50%"}
 knitr::include_graphics(c("Immagini/CCD/08_livelli.png","Immagini/CCD/09_livelli.png"))
 ```
 
-Analizzando i vincoli e le linee di livello della resa $Y_1$ si vede che le zona in cui cercare soluzione del problema sono quelle colorate in grigio (v. \autoref{fig:ccd8}).
+Analizzando i vincoli e le linee di livello della resa $Y_1$ si vede che le zona in cui cercare soluzione del problema sono quelle colorate in grigio (v. Figura \@ref(fig:ccd8).
 
 
 
