@@ -149,7 +149,8 @@ Esempio di un CCD per <span class="math inline">\(k=2,3\)</span> e <span class="
 Figura 4.1: Rappresentazione grafica del posizionamento dei punti stella in CCD
 </p>
 </div>
-<p>La matrice di tali disegni è data dalla matrice in Tabella <a href="central-composite-design.html#tab:MatrDisCCD">4.1</a></p>
+<p>La matrice di tali disegni è data dalla matrice in Tabella <a href="central-composite-design.html#tab:MatrDisCCD">4.1</a>
+</p>
 <table style="width:97%;">
 <caption><span id="tab:MatrDisCCD">Tabella 4.1: </span> Matrice disegno composito centrale</caption>
 <colgroup>
@@ -899,7 +900,7 @@ a=1
 Un caso particolare interessante è quello per k=2: il CCD a facce centrate è identico al piano fattoriale completo <span class="math inline">\(3^2\)</span>.</p>
 <div id="esempio" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Esempio</h2>
-<p>Consideriamo la resa <span class="math inline">\(Y_1\)</span> di una reazione chimica che dipende da <span class="math inline">\(2\)</span> fattori: il tempo della reazione <span class="math inline">\(X_1\)</span> e la temperatura <span class="math inline">\(X_2\)</span> (cf.<span class="citation">(D.C. Montgomery <a href="#ref-DesAnExp" role="doc-biblioref">2013</a>, Ex 11.2)</span>).
+<p>Consideriamo la resa <span class="math inline">\(Y_1\)</span> di una reazione chimica che dipende da <span class="math inline">\(2\)</span> fattori: il tempo della reazione <span class="math inline">\(X_1\)</span> e la temperatura <span class="math inline">\(X_2\)</span> (cf.(D.C. Montgomery 2013, Ex 11.2)).
 Siamo interessati a massimizzare la resa <span class="math inline">\(Y_1\)</span> sotto alcune condizioni (vincoli) sulla viscosità <span class="math inline">\(Y_2\)</span> e il peso molecolare <span class="math inline">\(Y_3\)</span> del prodotto. Siamo interessati al seguente problema
 <span class="math display">\[\begin{eqnarray*}
 % \nonumber to remove numbering (before each equation)
@@ -908,10 +909,10 @@ Siamo interessati a massimizzare la resa <span class="math inline">\(Y_1\)</span
                  &amp; \quad Y_3 \leq 3400.
 \end{eqnarray*}\]</span>
 Per affrontare il problema costruiamo un CCD con <span class="math inline">\(k=2, a=\sqrt{2}\)</span> e <span class="math inline">\(N=2\)</span>. Per quanto visto è un disegno sferico, ruotabile non ortogonale.</p>
-<p>Il dominio sperimentale con i valori autentici dei fattori, il dominio sperimentale codificato e le risposte sono dati in Tabella <a href="central-composite-design.html#tab:esmatrmod">4.4</a>.
+<p>Il dominio sperimentale con i valori autentici dei fattori, il dominio sperimentale codificato e le risposte sono dati in .
 </p>
 <table>
-<caption><span id="tab:esmatrmod">Tabella 4.4: </span>Dominio sperimentale autentico, dominio sperimentale
+<caption><span id="tab:unnamed-chunk-5">Tabella 4.4: </span>Dominio sperimentale autentico, dominio sperimentale
 codificato e risposte</caption>
 <thead>
 <tr class="header">
@@ -1017,32 +1018,32 @@ codificato e risposte</caption>
 </tr>
 </tbody>
 </table>
-<p>Nell’applicativo, nel menù <em>CCD</em> selezioniamo 2 fattori, 2 punti al centro e scegliamo un disegno di tipo sferico, Figura <a href="central-composite-design.html#fig:ccd2">4.2</a>
+<p>Nell’applicativo, nel menù <em>CCD</em> selezioniamo 2 fattori, 2 punti al centro e scegliamo un disegno di tipo sferico, 
 </p>
-<div class="figure" style="text-align: center"><span id="fig:ccd2"></span>
-<img src="Immagini/CCD/02_disegno_esempio.png" alt="Scelta numero fattori, punti al centro e tipo di CCD nell'applicativo" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
+<img src="Immagini/CCD/02_disegno_esempio.png" alt="Scelta numero fattori, punti al centro e tipo di CCD nell'applicativo\label{fig:ccd2}" width="100%" />
 <p class="caption">
 Figura 4.2: Scelta numero fattori, punti al centro e tipo di CCD nell’applicativo
 </p>
 </div>
-<p>Ognuna delle 3 risposte sarà analizzata con il modello quadratico Figura <a href="central-composite-design.html#fig:ccd3">4.3</a>. Dalla lettura della matrice di dispersione si nota la non ortogonalità del modello (i termini quadratici sono correlati tra di loro, v. riquadro colorato in giallo nella Figura).</p>
-<div class="figure" style="text-align: center"><span id="fig:ccd3"></span>
-<img src="Immagini/CCD/03_matrdisp.png" alt="Modello e matrice di dispersione del CCD" width="100%" />
+<p>Ognuna delle 3 risposte sarà analizzata con il modello quadratico . Dalla lettura della matrice di dispersione si nota la non ortogonalità del modello (i termini quadratici sono correlati tra di loro, v. riquadro colorato in giallo nella Figura).</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
+<img src="Immagini/CCD/03_matrdisp.png" alt="Modello e matrice di dispersione del CCD\label{fig:ccd3}" width="100%" />
 <p class="caption">
 Figura 4.3: Modello e matrice di dispersione del CCD
 </p>
 </div>
-<p>Le linee di livello del Leverage Figura <a href="central-composite-design.html#fig:ccd4">4.4</a> mettono in evidenza invece la ruotabilità del piano sperimentale scelto.</p>
-<div class="figure" style="text-align: center"><span id="fig:ccd4"></span>
-<img src="Immagini/CCD/04_livello.png" alt="Grafico delle linee di livello del Leverage" width="100%" />
+<p>Le linee di livello del Leverage  mettono in evidenza invece la ruotabilità del piano sperimentale scelto.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
+<img src="Immagini/CCD/04_livello.png" alt="Grafico delle linee di livello del Leverage\label{fig:ccd4}" width="100%" />
 <p class="caption">
 Figura 4.4: Grafico delle linee di livello del Leverage
 </p>
 </div>
-<p>Procediamo come di consueto inserendo le Risposte nell’apposito riquadro. Una volta convalidato il modello con tre misure indipendenti Tabella <a href="central-composite-design.html#tab:matrconv">4.5</a>
+<p>Procediamo come di consueto inserendo le Risposte nell’apposito riquadro. Una volta convalidato il modello con tre misure indipendenti 
 </p>
 <table>
-<caption><span id="tab:matrconv">Tabella 4.5: </span>Misure indipendenti per convalidare il modello</caption>
+<caption><span id="tab:unnamed-chunk-9">Tabella 4.5: </span>Misure indipendenti per convalidare il modello</caption>
 <thead>
 <tr class="header">
 <th align="left"></th>
@@ -1088,28 +1089,22 @@ Figura 4.4: Grafico delle linee di livello del Leverage
 </tr>
 </tbody>
 </table>
-<p>possiamo utilizzare il grafico delle linee di livello Figura <a href="central-composite-design.html#fig:ccd5">4.5</a> per confrontare le risposte tra di loro.</p>
-<div class="figure"><span id="fig:ccd5"></span>
-<img src="Immagini/CCD/05_liv1.png" alt="Grafico delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$" width="50%" /><img src="Immagini/CCD/06_liv2.png" alt="Grafico delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$" width="50%" /><img src="Immagini/CCD/07_liv3.png" alt="Grafico delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$" width="50%" />
+<p>possiamo utilizzare il grafico delle linee di livello  per confrontare le risposte tra di loro.</p>
+<div class="figure"><span id="fig:unnamed-chunk-10"></span>
+<img src="Immagini/CCD/05_liv1.png" alt="Grafico delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$\label{fig:ccd5}" width="50%" /><img src="Immagini/CCD/06_liv2.png" alt="Grafico delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$\label{fig:ccd5}" width="50%" /><img src="Immagini/CCD/07_liv3.png" alt="Grafico delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$\label{fig:ccd5}" width="50%" />
 <p class="caption">
 Figura 4.5: Grafico delle linee di livello delle risposte <span class="math inline">\(Y_1,Y_2\)</span> e <span class="math inline">\(Y_3\)</span>
 </p>
 </div>
-<p>Nell’applicativo si noti che è possibile scegliere il colore delle linee di livello. Questa risorsa è utile quando, come in questo caso, bisogna confrontare più grafici tra loro Figura <a href="central-composite-design.html#fig:ccd8">4.6</a>.</p>
-<div class="figure"><span id="fig:ccd8"></span>
-<img src="Immagini/CCD/08_livelli.png" alt="Grafici delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$ sovrapposti e regione di ottimo" width="50%" /><img src="Immagini/CCD/09_livelli.png" alt="Grafici delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$ sovrapposti e regione di ottimo" width="50%" />
+<p>Nell’applicativo si noti che è possibile scegliere il colore delle linee di livello. Questa risorsa è utile quando, come in questo caso, bisogna confrontare più grafici tra loro .</p>
+<div class="figure"><span id="fig:unnamed-chunk-11"></span>
+<img src="Immagini/CCD/08_livelli.png" alt="Grafici delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$ sovrapposti e regione di ottimo\label{fig:ccd8}" width="50%" /><img src="Immagini/CCD/09_livelli.png" alt="Grafici delle linee di livello delle risposte $Y_1,Y_2$ e $Y_3$ sovrapposti e regione di ottimo\label{fig:ccd8}" width="50%" />
 <p class="caption">
 Figura 4.6: Grafici delle linee di livello delle risposte <span class="math inline">\(Y_1,Y_2\)</span> e <span class="math inline">\(Y_3\)</span> sovrapposti e regione di ottimo
 </p>
 </div>
-<p>Analizzando i vincoli e le linee di livello della resa <span class="math inline">\(Y_1\)</span> si vede che le zona in cui cercare soluzione del problema sono quelle colorate in grigio (v. Figura <a href="central-composite-design.html#fig:ccd8">4.6</a>).</p>
+<p>Analizzando i vincoli e le linee di livello della resa <span class="math inline">\(Y_1\)</span> si vede che le zona in cui cercare soluzione del problema sono quelle colorate in grigio (v. ).</p>
 
-</div>
-</div>
-<h3>Bibliografia</h3>
-<div id="refs" class="references">
-<div id="ref-DesAnExp">
-<p>D.C. Montgomery. 2013. <em>Design and Analysis of Experiments</em>. Wiley.</p>
 </div>
 </div>
             </section>
