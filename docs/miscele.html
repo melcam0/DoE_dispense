@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capitolo 6 Miscele | Dispense sul disegno sperimentiale</title>
+  <meta name="description" content="Capitolo 6 Miscele | Dispense sul disegno sperimentiale" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capitolo 6 Miscele | Dispense sul disegno sperimentiale" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="Immagini/Design-of-Experiments.jpg" />
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capitolo 6 Miscele | Dispense sul disegno sperimentiale" />
+  
+  
+  <meta name="twitter:image" content="Immagini/Design-of-Experiments.jpg" />
+
+<meta name="author" content="Giorgio Marrubini e Camillo Melzi" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="Immagini/doe.ico" type="image/x-icon" />
+<link rel="prev" href="disegni-d-ottimali.html"/>
+<link rel="next" href="bibliografia.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">DoE</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#section"></a></li>
+<li class="chapter" data-level="" data-path="glossario.html"><a href="glossario.html"><i class="fa fa-check"></i>Glossario minimo</a></li>
+<li class="chapter" data-level="1" data-path="disegni-fattoriale-completo.html"><a href="disegni-fattoriale-completo.html"><i class="fa fa-check"></i><b>1</b> Disegni Fattoriale completo</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="disegni-fattoriale-completo.html"><a href="disegni-fattoriale-completo.html#disegni-fattoriali-completi-2k"><i class="fa fa-check"></i><b>1.1</b> Disegni fattoriali completi <span class="math inline">\(2^k\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="disegni-frazionari.html"><a href="disegni-frazionari.html"><i class="fa fa-check"></i><b>2</b> Disegni Frazionari</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="disegni-frazionari.html"><a href="disegni-frazionari.html#esempio-confusioni"><i class="fa fa-check"></i><b>2.1</b> Esempio: confusioni</a></li>
+<li class="chapter" data-level="2.2" data-path="disegni-frazionari.html"><a href="disegni-frazionari.html#esempio-studio-dei-fattori-dellestrazione-liquido-liquido"><i class="fa fa-check"></i><b>2.2</b> Esempio: studio dei fattori dell’estrazione liquido-liquido</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="plackett-burman.html"><a href="plackett-burman.html"><i class="fa fa-check"></i><b>3</b> Plackett Burman</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="plackett-burman.html"><a href="plackett-burman.html#esempio-confusioni-1"><i class="fa fa-check"></i><b>3.1</b> Esempio: confusioni</a></li>
+<li class="chapter" data-level="3.2" data-path="plackett-burman.html"><a href="plackett-burman.html#esempio-elvitegravir"><i class="fa fa-check"></i><b>3.2</b> Esempio Elvitegravir</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="central-composite-design.html"><a href="central-composite-design.html"><i class="fa fa-check"></i><b>4</b> Central Composite Design</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="central-composite-design.html"><a href="central-composite-design.html#esempio"><i class="fa fa-check"></i><b>4.1</b> Esempio</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="disegni-d-ottimali.html"><a href="disegni-d-ottimali.html"><i class="fa fa-check"></i><b>5</b> Disegni D-ottimali</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="disegni-d-ottimali.html"><a href="disegni-d-ottimali.html#algoritmo-di-federov"><i class="fa fa-check"></i><b>5.1</b> Algoritmo di Federov</a></li>
+<li class="chapter" data-level="5.2" data-path="disegni-d-ottimali.html"><a href="disegni-d-ottimali.html#esempio-proprietà-di-un-adesivo"><i class="fa fa-check"></i><b>5.2</b> Esempio: proprietà di un adesivo</a></li>
+<li class="chapter" data-level="5.3" data-path="disegni-d-ottimali.html"><a href="disegni-d-ottimali.html#esempio-riparazione-di-una-matrice"><i class="fa fa-check"></i><b>5.3</b> Esempio: riparazione di una matrice</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="miscele.html"><a href="miscele.html"><i class="fa fa-check"></i><b>6</b> Miscele</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="miscele.html"><a href="miscele.html#esempio-ace"><i class="fa fa-check"></i><b>6.1</b> Esempio: ACE</a></li>
+<li class="chapter" data-level="6.2" data-path="miscele.html"><a href="miscele.html#diegni-di-miscele-d-ottimali"><i class="fa fa-check"></i><b>6.2</b> Diegni di miscele D-ottimali</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="miscele.html"><a href="miscele.html#esempio-polveron"><i class="fa fa-check"></i><b>6.2.1</b> Esempio: Polveron</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Dispense sul disegno sperimentiale</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="miscele" class="section level1" number="6">
+<h1><span class="header-section-number">Capitolo 6</span> Miscele</h1>
+<p>In un esperimento con miscele i <span class="math inline">\(k\)</span> fattori <span class="math inline">\(X_1, \dots, X_k\)</span> sono le differenti proporzioni dei costituenti della miscela, e queste devono soddisfare il seguente vincolo
+<span class="math display" id="eq:VinMisc">\[\begin{equation}
+    X_1+\cdots+X_k=1.
+    \tag{6.1}
+ \end{equation}\]</span>
+Il fatto che la somma delle proporzioni dei differenti fattori debba essere uguale a <span class="math inline">\(1\)</span> complica il disegno sperimentale e l’analisi dei risultati. Il dominio sperimentale può avere forma geometrica regolare (triangolare <span class="math inline">\(\mathbb{R}^2\)</span>}, tetraedrica in <span class="math inline">\(\mathbb{R}^3\)</span>}, ipertetraedrica in <span class="math inline">\(\mathbb{R}^k\)</span>}), oppure poligonale o iperpoliedrica irregolare se le proporzioni stesse sono condizionate da vincoli particolari.
+Nel caso caso di <span class="math inline">\(3\)</span> fattori si può rappresentare bidimensionalmente il dominio sperimentale mediante un diagramma ternario (vedi Figura <a href="miscele.html#fig:MiscDiaTern">6.1</a>)</p>
+<div class="figure"><span id="fig:MiscDiaTern"></span>
+<img src="dispense_doe_files/figure-html/MiscDiaTern-1.png" alt="Diagramma ternario ($p=(20,40,40)$)" width="672" />
+<p class="caption">
+Figura 6.1: Diagramma ternario (<span class="math inline">\(p=(20,40,40)\)</span>)
+</p>
+</div>
+<p>in cui è rappresentato il punto di coordinate <span class="math inline">\(p=(0.2,0.4,0.4)\)</span>. Si noti che in Figura <a href="miscele.html#fig:MiscDiaTern">6.1</a> le coordinate sono date in percentuale e non in proporzione, ossia <span class="math inline">\(p=(20,40,40)\)</span>.</p>
+<p>In questo dominio dovremo ricavare, mediante opportuno disegno sperimentale, l’ottimo della risposta e conoscere come varia la risposta nel dominio sperimentale.
+Oltre a questo vincolo primario possono esserci ulteriori vincoli e ciò complica ancora di più la situazione.</p>
+<p>Consideriamo ora i modelli per disegni di miscele. Non tutti i modelli utilizzati fino ad ora potranno essere definiti in quanto per alcuni di essi la relativa matrice d’informazione non è invertibile per l’esistenza del vincolo <a href="miscele.html#eq:VinMisc">(6.1)</a> che rende non indipendenti tra loro i fattori del disegno.
+Ad esempio l’usuale modello del primo ordine
+<span class="math display">\[\begin{equation*}
+    Y=\beta_0+\sum_{i=1}^k\beta_iX_i+\epsilon
+\end{equation*}\]</span>
+ha matrice d’informazione singolare essendo per il vincolo () la colonna <em>Int.</em> somma delle colonne <span class="math inline">\(X_1,\dots,X_k\)</span>. Si può pensare di eliminare uno dei fattori ponendo che ad es. <span class="math inline">\(X_j=1-\sum_{i\neq j}X_i\)</span> ma il migliore approccio è stato finora quello suggerito da Sheffé. La soluzione proposta da Sheffé fu di moltiplicare <span class="math inline">\(\beta_0\)</span> per <span class="math inline">\(1=\sum_iX_i\)</span> per ottenere
+<span class="math display">\[\begin{equation*}
+    Y=\sum_{i=1}^k(\beta_0+\beta_i)X_i+\epsilon.
+\end{equation*}\]</span>
+Analogamente l’usuale modello quadratico
+<span class="math display">\[\begin{equation*}
+    Y=\sum_{i=1}^k\beta_iX_i+\sum_{i=1}^k\sum_{j&gt;i}\beta_{ij}X_iX_j+\sum_{i=1}^k\beta_{ii}X_i^2+
+    \epsilon
+\end{equation*}\]</span>
+ha matrice d’informazione singolare essendo per il vincolo <a href="miscele.html#eq:VinMisc">(6.1)</a>
+<span class="math display">\[\begin{equation*}
+    X_i^2=X_iX_i=X_i(1-\sum_{j\neq i}X_j)=X_i-\sum_{j\neq i}X_iX_j.
+\end{equation*}\]</span>
+In questo caso si può eliminare
+<span class="math inline">\(X_i^2=X_i-\sum_{j\neq i}X_iX_j\)</span> ottenendo
+<span class="math display">\[\begin{equation*}
+    Y=\sum_{i=1}^k(\beta_i+\beta_{ii})X_i++\sum_{i=1}^k\sum_{j&gt;i}(\beta_{ij}-\beta_{ii}-\beta_{jj})X_iX_j
+    +\epsilon.
+\end{equation*}\]</span>
+Ragionamenti analoghi possono essere fatti per i modelli di ordine superiore.
+Riassumendo, riordinando i parametri, abbiamo i quattro tipi di modelli seguenti</p>
+<ul>
+<li><strong>Lineare</strong>
+<span class="math display">\[\begin{equation*}
+  Y=\sum_{i=1}^k\beta_iX_i+\epsilon
+\end{equation*}\]</span></li>
+<li><strong>Quadratico</strong>
+<span class="math display">\[\begin{equation*}
+  Y=\sum_{i=1}^k\beta_iX_i+\sum_{i=1}^k\sum_{j&gt;i}\beta_{ij}X_iX_j+\epsilon
+\end{equation*}\]</span></li>
+<li><strong>Cubico speciale</strong>
+<span class="math display">\[\begin{equation*}
+  Y=\sum_{i=1}^k\beta_iX_i+\sum_{i=1}^k\sum_{j&gt;i}\beta_{ij}X_iX_j+
+  +\sum_{i=1}^k\sum_{j&gt;i}\sum_{k&gt;j}\beta_{ijk}X_iX_jX_k+\epsilon
+\end{equation*}\]</span></li>
+<li><strong>Cubico completo</strong>
+<span class="math display">\[\begin{equation*}
+  Y=\sum_{i=1}^k\beta_iX_i+\sum_{i=1}^k\sum_{j&gt;i}\beta_{ij}X_iX_j+
+  +\sum_{i=1}^k\sum_{j&gt;i}\delta_{ij}X_iX_j(X_i-X_j)+
+  +\sum_{i=1}^k\sum_{j&gt;i}\sum_{k&gt;j}\beta_{ijk}X_iX_jX_k+\epsilon.
+\end{equation*}\]</span></li>
+</ul>
+<p>Come accennato all’inizio di questa sezione i fattori dei disegni di miscele non sono variabili indipendenti tra loro come invece accadeva nei disegni canonici finora studiati. I fattori dei disegni di miscele sono legati dal vincolo <a href="miscele.html#eq:VinMisc">(6.1)</a>, e pertanto bisogna fare molta attenzione al significato dei coefficenti del modello. I termini lineari <span class="math inline">\(\beta_i\)</span>, infatti, non rappresentano l’effetto dei fattori <span class="math inline">\(X_i\)</span> sulla risposta, se fissiamo gli altri fattori pari a 0 come si poteva fare nei disegni canonici visti finora. Nei disegni di miscele, non c’è intercetta, perché la miscela “nulla” non ha senso fisico. Inoltre è impossibile stimare l’effetto di un solo fattore indipendentemente dagli altri per l’esistenza del vincolo <a href="miscele.html#eq:VinMisc">(6.1)</a>: se osserviamo un solo fattore <span class="math inline">\(X_i\)</span>, le altre k-1 variabili non possono essere contemporaneamente tutte nulle; questa situazione sperimentalmente sarebbe quella data dalla miscela pura <span class="math inline">\(X_i=1\)</span>, Figura <a href="miscele.html#fig:mixfig2">6.2</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:mixfig2"></span>
+<img src="Immagini/Mixt/02_coeff_lin.png" alt="Intepretazione dei termini lineari" width="100%" />
+<p class="caption">
+Figura 6.2: Intepretazione dei termini lineari
+</p>
+</div>
+<p>Anche nel caso in cui <span class="math inline">\(\beta_i=0\)</span>, ciò non significa che l’effetto del fattore i-esimo sulla risposta variando <span class="math inline">\(X_i\)</span> da 0 a 1, sia nullo, nemmeno mantenendo ad esempio costante il rapporto tra le altre variabili <span class="math inline">\(\frac{X_1}{X_2}=1\)</span>. Il vincolo per cui la somma delle proporzioni dei fattori è uguale a 1, impone che non possiamo mantenere nulle le tre variabili e quindi dobbiamo “scegliere una direzione nel dominio sperimentale lungo cui fare variare il fattore” in esame e modificare simultaneamente le proporzioni dei rimanenti k-1 in modo tale che sia rispettato il vincolo di costruzione della miscela. Ad esempio in Figura <a href="miscele.html#fig:mixfig1">6.3</a> sono indicate le risposte per le miscele pure <span class="math inline">\(X_i=1\)</span> e per la miscela <span class="math inline">\(X_2=X_3=05\)</span> dato il modello <span class="math inline">\(Y=5X_2+4X_3\)</span></p>
+<div class="figure" style="text-align: center"><span id="fig:mixfig1"></span>
+<img src="Immagini/Mixt/01_coeff_effetto.png" alt="&quot;Effetto&quot; per un termine il cui coeffciente è nullo" width="100%" />
+<p class="caption">
+Figura 6.3: “Effetto” per un termine il cui coeffciente è nullo
+</p>
+</div>
+<p>Come si può osservare, l’effetto dovuto alla variazione di <span class="math inline">\(X_1\)</span> da 0 a 1 muovendosi lungo la linea tratteggiata (linea lungo la quale <span class="math inline">\(\frac{X_1}{X_2}=1\)</span>) è -4.5 pur essendo <span class="math inline">\(\beta_1=0\)</span>.</p>
+<p>I termini misti <span class="math inline">\(\beta_{ij}\)</span> non vanno interpretati come termini di interazione ma, a differenza delle variabili indipendenti, come termini di miscelazione non lineare: ciò equivale a dire che se <span class="math inline">\(\beta_{ij}&gt;0\)</span> la miscela tra <span class="math inline">\(X_i\)</span> e <span class="math inline">\(X_j\)</span> ha effetto positivo sulla risposta <span class="math inline">\(Y\)</span>. Per un’interpretazione grafica si veda Figura <a href="miscele.html#fig:mixfig3">6.4</a></p>
+<div class="figure" style="text-align: center"><span id="fig:mixfig3"></span>
+<img src="Immagini/Mixt/03_coeff_quadr.png" alt="Interpretazione dei termini quadratici\label{fig3}" width="100%" />
+<p class="caption">
+Figura 6.4: Interpretazione dei termini quadratici
+</p>
+</div>
+<p>Il coefficiente <span class="math inline">\(\beta_{123}\)</span> rappresenta invece la miscela ternaria dei 3 componenti all’interno del simplesso (1/27 del suo valore corrisponde all’altezza/profondità della superficie di riposta nel centro del simplesso).</p>
+<p>Nell’applicativo nel menù Miscele/Simplex Design per ognuno dei modelli lineare, quadratico e cubico è proposto un disegno Figura <a href="miscele.html#fig:mixfig4">6.5</a></p>
+<div class="figure"><span id="fig:mixfig4"></span>
+<img src="Immagini/Mixt/04_dis_lin.png" alt="Simplex Design per modello lineare, quadratico e cubico senza e  con punti assiali " width="50%" /><img src="Immagini/Mixt/05_dis_quad.png" alt="Simplex Design per modello lineare, quadratico e cubico senza e  con punti assiali " width="50%" /><img src="Immagini/Mixt/06_dis_cub.png" alt="Simplex Design per modello lineare, quadratico e cubico senza e  con punti assiali " width="50%" /><img src="Immagini/Mixt/07_dis_cub.png" alt="Simplex Design per modello lineare, quadratico e cubico senza e  con punti assiali " width="50%" />
+<p class="caption">
+Figura 6.5: Simplex Design per modello lineare, quadratico e cubico senza e con punti assiali
+</p>
+</div>
+<p>E’ possibile anche aggiungere ulteriori punti (punti assiali) all’interno del simplesso dove la precisione di un modello può essere verificata.</p>
+<div id="esempio-ace" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Esempio: ACE</h2>
+<p>Disponendo in casa di una elettrodomestico per preparare centrifugati di frutta e verdura si è studiata la composizione “più buona” delle bevande ACE. Al netto dell’acqua, che in generale è circa il 70% della bevanda, si è voluta studiare la “migliore” miscela ottenuta con</p>
+<ul>
+<li><span class="math inline">\(x_1\)</span> arancia</li>
+<li><span class="math inline">\(x_2\)</span> carota</li>
+<li><span class="math inline">\(x_3\)</span> limone</li>
+</ul>
+<p>Nota bene: la percentuale 100% delle 3 sostanze rappresenta il 70% della bevanda.</p>
+<p>Si è scelto di utilizzare il modello cubico. La bevanda ottenuta è stata quindi valutata da 4 assaggiatori (ogni volta in ordine casuale e mascherandone il colore), e questi hanno espresso un voto sulla “bontà”. I voti sono stati quindi scalati da 0 a 100 (i voti erano espressi in decimi) per evitare l’evenienza di avere differenti intervalli di variazione del voto. I risulati ottenuti sono riportati in Tabella <a href="miscele.html#tab:ace">6.1</a></p>
+<table>
+<caption><span id="tab:ace">Tabella 6.1: </span>Disegno sperimentale e risultati per la bevanda ACE</caption>
+<thead>
+<tr class="header">
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">R</th>
+<th align="right">P</th>
+<th align="right">M</th>
+<th align="right">D</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1.0000</td>
+<td align="right">0.0000</td>
+<td align="right">0.0000</td>
+<td align="right">75</td>
+<td align="right">83.3</td>
+<td align="right">50</td>
+<td align="right">87.5</td>
+</tr>
+<tr class="even">
+<td align="right">0.0000</td>
+<td align="right">1.0000</td>
+<td align="right">0.0000</td>
+<td align="right">50</td>
+<td align="right">66.7</td>
+<td align="right">25</td>
+<td align="right">100.0</td>
+</tr>
+<tr class="odd">
+<td align="right">0.0000</td>
+<td align="right">0.0000</td>
+<td align="right">1.0000</td>
+<td align="right">0</td>
+<td align="right">50.0</td>
+<td align="right">0</td>
+<td align="right">12.5</td>
+</tr>
+<tr class="even">
+<td align="right">0.5000</td>
+<td align="right">0.5000</td>
+<td align="right">0.0000</td>
+<td align="right">100</td>
+<td align="right">100.0</td>
+<td align="right">75</td>
+<td align="right">62.5</td>
+</tr>
+<tr class="odd">
+<td align="right">0.5000</td>
+<td align="right">0.0000</td>
+<td align="right">0.5000</td>
+<td align="right">25</td>
+<td align="right">33.3</td>
+<td align="right">50</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="even">
+<td align="right">0.0000</td>
+<td align="right">0.5000</td>
+<td align="right">0.5000</td>
+<td align="right">50</td>
+<td align="right">100.0</td>
+<td align="right">25</td>
+<td align="right">25.0</td>
+</tr>
+<tr class="odd">
+<td align="right">0.3333</td>
+<td align="right">0.3333</td>
+<td align="right">0.3333</td>
+<td align="right">25</td>
+<td align="right">0.0</td>
+<td align="right">100</td>
+<td align="right">75.0</td>
+</tr>
+</tbody>
+</table>
+<p>Riportando i voti dati da ogni assaggiatore nell’applicativo si ottengono le seguenti superfici di risposta Figura <a href="miscele.html#fig:mixfig8">6.6</a></p>
+<div class="figure"><span id="fig:mixfig8"></span>
+<img src="Immagini/Mixt/08_aceR.png" alt="Superfici di risposta del voto espresso dai 4 assaggiatori" width="50%" /><img src="Immagini/Mixt/09_aceP.png" alt="Superfici di risposta del voto espresso dai 4 assaggiatori" width="50%" /><img src="Immagini/Mixt/10_aceM.png" alt="Superfici di risposta del voto espresso dai 4 assaggiatori" width="50%" /><img src="Immagini/Mixt/11_aceD.png" alt="Superfici di risposta del voto espresso dai 4 assaggiatori" width="50%" />
+<p class="caption">
+Figura 6.6: Superfici di risposta del voto espresso dai 4 assaggiatori
+</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="diegni-di-miscele-d-ottimali" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Diegni di miscele D-ottimali</h2>
+<p>Frequentemente oltre al vincolo <a href="miscele.html#eq:VinMisc">(6.1)</a>, nello studio di miscele vengono imposti altri vincoli. Ciò implica che si determinano domini sperimentali poligonali irregolari che, in generale, non permettono l’uso di nessuno dei quattro modelli canonici elencati più sopra. In questi casi si può procedere solo costruendo disegni D-ottimali che visto per disegni in cui le variabili sono indipendenti.</p>
+<p>Consideriamo, per capire come si procede, il seguente esempio</p>
+<div id="esempio-polveron" class="section level3" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Esempio: Polveron</h3>
+<p>Si cerca di valutare l’apprezzamento dei consumatori di un Polveron, dolce tipico delle Filippine, composto da una miscela di <span class="math inline">\(x_1\)</span> zucchero, <span class="math inline">\(x_2\)</span> arachidi e <span class="math inline">\(x_3\)</span> burro.<br />
+Questi ingredienti devono soddisfare i seguenti vincoli
+<span class="math display">\[\begin{eqnarray*}
+  0.00&amp; \leq x1 \leq &amp; 0.80\\
+  0.10&amp;\leq x2 \leq &amp; 0.95 \\
+  0.05&amp;\leq x3 \leq &amp; 0.50
+\end{eqnarray*}\]</span></p>
+<p>Cominciamo con il costruire il dominio sperimentale e l’insieme dei punti candidati mediante l’applicativo. Nel menù Miscele/D-ottimale alla pagina Matrice punti candidati si definisca il passo della griglia scelto e si indichino i vincoli come in Figura <a href="miscele.html#fig:mixfig17">6.7</a></p>
+<div class="figure" style="text-align: center"><span id="fig:mixfig17"></span>
+<img src="Immagini/Mixt/17_cp.png" alt="Costruzione dell'insieme dei punti candidati" width="100%" />
+<p class="caption">
+Figura 6.7: Costruzione dell’insieme dei punti candidati
+</p>
+</div>
+<p>Si calcola la matrice dei punti candidati e ne viene data una rappresentazione grafica Figura <a href="miscele.html#fig:mixfig18">6.8</a></p>
+<div class="figure" style="text-align: center"><span id="fig:mixfig18"></span>
+<img src="Immagini/Mixt/18_cp.png" alt="Matrice dei punti candidati e rappresentazione grafica" width="100%" />
+<p class="caption">
+Figura 6.8: Matrice dei punti candidati e rappresentazione grafica
+</p>
+</div>
+<p>La matrice dei punti candidati è esportabile cliccando sul bottone <em>Download</em>.</p>
+<p>Passando quindi alla pagina D-ottimale si indicano i termini del modello che si vuole studiare e il numero minimo e massimo di esperimenti Figura <a href="miscele.html#fig:mixfig19">6.9</a>. Quindi cliccando sul bottone <em>calcola</em> si ottiene il valore del parametro <span class="math inline">\(D\)</span> al variare del numero di esperimenti e una sua rappresentazione grafica Figura <a href="miscele.html#fig:mixfig20">6.10</a></p>
+<div class="figure" style="text-align: center"><span id="fig:mixfig19"></span>
+<img src="Immagini/Mixt/19_dopt.png" alt="Definizione del modello e del numero di esperimenti" width="100%" />
+<p class="caption">
+Figura 6.9: Definizione del modello e del numero di esperimenti
+</p>
+</div>
+<p>Si noti che in questo caso non compare il grafico dei VIF: la cosa non deve sorprendere perché nei disegni di miscele i fattori non sono indipendentitra loro per costruzione e dunque il calcolo dei VIF è privo di significato.</p>
+<div class="figure" style="text-align: center"><span id="fig:mixfig20"></span>
+<img src="Immagini/Mixt/20_grafD.png" alt="Andamento del parametro $D$ in funzione del numero di esprimenti" width="100%" />
+<p class="caption">
+Figura 6.10: Andamento del parametro <span class="math inline">\(D\)</span> in funzione del numero di esprimenti
+</p>
+</div>
+<p>Si sceglie il disegno con 9 esperimenti perché, come si può vedere in Figura <a href="miscele.html#fig:mixfig20">6.10</a>, in corrispondenza di 9 prove si ha il primo massimo locale del parametro <span class="math inline">\(D\)</span>. Il disegno può essere esportato mediante pulsante <em>Download</em> Figura <a href="miscele.html#fig:mixfig21">6.11</a></p>
+<div class="figure" style="text-align: center"><span id="fig:mixfig21"></span>
+<img src="Immagini/Mixt/21_disDopt.png" alt="Disegno D-ottimale con 9 esperimenti" width="100%" />
+<p class="caption">
+Figura 6.11: Disegno D-ottimale con 9 esperimenti
+</p>
+</div>
+<p>Una volta determinato il disegno D-ottimale, questo può essere importato nel menù Piano Personalizzato. Scegliendo i termini del modello in studio e indicando correttamente i vincoli ne otteniamo la matrice di dispersione e il grafico delle linee di livello del leverage Figura <a href="miscele.html#fig:mixfig22">6.12</a>.</p>
+<div class="figure"><span id="fig:mixfig22"></span>
+<img src="Immagini/Mixt/22_lev.png" alt="Linee di livello del leverage" width="50%" /><img src="Immagini/Mixt/23_lev.png" alt="Linee di livello del leverage" width="50%" />
+<p class="caption">
+Figura 6.12: Linee di livello del leverage
+</p>
+</div>
+<p>Dopo avere eseguito i 9 esperimenti in ordine casuale Tabella <a href="miscele.html#tab:mixDOpt">6.2</a></p>
+<table>
+<caption><span id="tab:mixDOpt">Tabella 6.2: </span>Disegno D-ottimale e risultati per il Polveron</caption>
+<thead>
+<tr class="header">
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.80</td>
+<td align="right">0.15</td>
+<td align="right">0.05</td>
+<td align="right">5.51</td>
+</tr>
+<tr class="even">
+<td align="right">0.41</td>
+<td align="right">0.54</td>
+<td align="right">0.05</td>
+<td align="right">5.91</td>
+</tr>
+<tr class="odd">
+<td align="right">0.01</td>
+<td align="right">0.94</td>
+<td align="right">0.05</td>
+<td align="right">3.74</td>
+</tr>
+<tr class="even">
+<td align="right">0.31</td>
+<td align="right">0.41</td>
+<td align="right">0.28</td>
+<td align="right">6.33</td>
+</tr>
+<tr class="odd">
+<td align="right">0.61</td>
+<td align="right">0.10</td>
+<td align="right">0.29</td>
+<td align="right">6.02</td>
+</tr>
+<tr class="even">
+<td align="right">0.00</td>
+<td align="right">0.70</td>
+<td align="right">0.30</td>
+<td align="right">3.95</td>
+</tr>
+<tr class="odd">
+<td align="right">0.40</td>
+<td align="right">0.10</td>
+<td align="right">0.50</td>
+<td align="right">5.58</td>
+</tr>
+<tr class="even">
+<td align="right">0.20</td>
+<td align="right">0.30</td>
+<td align="right">0.50</td>
+<td align="right">5.43</td>
+</tr>
+<tr class="odd">
+<td align="right">0.00</td>
+<td align="right">0.50</td>
+<td align="right">0.50</td>
+<td align="right">3.71</td>
+</tr>
+</tbody>
+</table>
+<p>si possono inserire i risultati ottenuti nell’applicativo. Si ottengono così le stime puntuali e per intervallo dei parametri del modello e il grafico delle linee di livello della superficie di risposta Figura <a href="miscele.html#fig:mixfig24">6.13</a>.</p>
+<div class="figure"><span id="fig:mixfig24"></span>
+<img src="Immagini/Mixt/24_suprisp.png" alt="Linee di livello della superficie di risposta" width="50%" /><img src="Immagini/Mixt/25_suprisp.png" alt="Linee di livello della superficie di risposta" width="50%" />
+<p class="caption">
+Figura 6.13: Linee di livello della superficie di risposta
+</p>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="disegni-d-ottimali.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bibliografia.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["dispense_doe.pdf"],
+"toc": {
+"collapse": "section"
+},
+"info": false,
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
