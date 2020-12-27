@@ -270,7 +270,7 @@ Nell'applicativo si noti che è possibile scegliere il colore delle linee di liv
 knitr::include_graphics(c("Immagini/CCD/08_livelli.png","Immagini/CCD/09_livelli.png"))
 ```
 
-Analizzando i vincoli e le linee di livello della resa $Y_1$ si vede che le zona in cui cercare soluzione del problema sono quelle colorate in grigio (v. Figura \@ref(fig:ccd8).
+Analizzando i vincoli e le linee di livello della resa $Y_1$ si vede che le zona in cui cercare soluzione del problema sono quelle colorate in grigio (v. Figura \@ref(fig:ccd8)).
 
 
 

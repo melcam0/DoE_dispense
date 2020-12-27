@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capitolo 5 Disegni D-ottimali | Dispense sul disegno sperimentiale</title>
+  <meta name="description" content="Capitolo 5 Disegni D-ottimali | Dispense sul disegno sperimentiale" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capitolo 5 Disegni D-ottimali | Dispense sul disegno sperimentiale" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="Immagini/Design-of-Experiments.jpg" />
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capitolo 5 Disegni D-ottimali | Dispense sul disegno sperimentiale" />
+  
+  
+  <meta name="twitter:image" content="Immagini/Design-of-Experiments.jpg" />
+
+<meta name="author" content="Giorgio Marrubini e Camillo Melzi" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="Immagini/doe.ico" type="image/x-icon" />
+<link rel="prev" href="central-composite-design.html"/>
+<link rel="next" href="bibliografia.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">DoE</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#section"></a></li>
+<li class="chapter" data-level="" data-path="glossario.html"><a href="glossario.html"><i class="fa fa-check"></i>Glossario minimo</a></li>
+<li class="chapter" data-level="1" data-path="disegni-fattoriale-completo.html"><a href="disegni-fattoriale-completo.html"><i class="fa fa-check"></i><b>1</b> Disegni Fattoriale completo</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="disegni-fattoriale-completo.html"><a href="disegni-fattoriale-completo.html#disegni-fattoriali-completi-2k"><i class="fa fa-check"></i><b>1.1</b> Disegni fattoriali completi <span class="math inline">\(2^k\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="disegni-frazionari.html"><a href="disegni-frazionari.html"><i class="fa fa-check"></i><b>2</b> Disegni Frazionari</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="disegni-frazionari.html"><a href="disegni-frazionari.html#esempio-confusioni"><i class="fa fa-check"></i><b>2.1</b> Esempio: confusioni</a></li>
+<li class="chapter" data-level="2.2" data-path="disegni-frazionari.html"><a href="disegni-frazionari.html#esempio-studio-dei-fattori-dellestrazione-liquido-liquido"><i class="fa fa-check"></i><b>2.2</b> Esempio: studio dei fattori dell’estrazione liquido-liquido</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="plackett-burman.html"><a href="plackett-burman.html"><i class="fa fa-check"></i><b>3</b> Plackett Burman</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="plackett-burman.html"><a href="plackett-burman.html#esempio-confusioni-1"><i class="fa fa-check"></i><b>3.1</b> Esempio: confusioni</a></li>
+<li class="chapter" data-level="3.2" data-path="plackett-burman.html"><a href="plackett-burman.html#esempio-elvitegravir"><i class="fa fa-check"></i><b>3.2</b> Esempio Elvitegravir</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="central-composite-design.html"><a href="central-composite-design.html"><i class="fa fa-check"></i><b>4</b> Central Composite Design</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="central-composite-design.html"><a href="central-composite-design.html#esempio"><i class="fa fa-check"></i><b>4.1</b> Esempio</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="disegni-d-ottimali.html"><a href="disegni-d-ottimali.html"><i class="fa fa-check"></i><b>5</b> Disegni D-ottimali</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="disegni-d-ottimali.html"><a href="disegni-d-ottimali.html#algoritmo-di-federov"><i class="fa fa-check"></i><b>5.1</b> Algoritmo di Federov</a></li>
+<li class="chapter" data-level="5.2" data-path="disegni-d-ottimali.html"><a href="disegni-d-ottimali.html#esempio-proprietà-di-un-adesivo"><i class="fa fa-check"></i><b>5.2</b> Esempio: proprietà di un adesivo</a></li>
+<li class="chapter" data-level="5.3" data-path="disegni-d-ottimali.html"><a href="disegni-d-ottimali.html#esempio-riparazione-di-una-matrice"><i class="fa fa-check"></i><b>5.3</b> Esempio: riparazione di una matrice</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Dispense sul disegno sperimentiale</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="disegni-d-ottimali" class="section level1" number="5">
+<h1><span class="header-section-number">Capitolo 5</span> Disegni D-ottimali</h1>
+<p>Nelle sezioni precedenti sono stati illustrati disegni in cui la geometria del dominio sperimentale (iperpiano, ipercubo, ipersfera) e il modello erano prefissati (modello primo ordine, lineare senza interazioni, di secondo ordine lineare con interazioni di coppie di termini, di secondo ordine con interazioni a coppie e con termini quadratici). Questi piani sperimentali e i corrispondenti modelli sono “ottimali” e garantiscono la massima efficienza nella sperimentazione, vale a dire l’ottenimento della informazione di migliore qualità con il numero minimo di esperimenti possibile.
+Tuttavia esistono molte situazioni in cui i disegni fino ad ora visti possono non essere la scelta “migliore”. I casi più comuni in cui è difficile impiegare proficuamente i disegni canonici visti finora sono:</p>
+<ul>
+<li>la regione sperimentale non è una figura geometrica regolare: si devono rispettare condizioni di lavoro prestabilite - vincoli;</li>
+<li>il modello è non canonico: ad esempio contiene un termine quadratico in una variabile ma non nelle altre, oppure contiene fattori quantitativi e almeno un fattore qualitativo a più di due livelli (es. la regolazione di uno strumento è possibile solo su tre livelli non numerici indicati con “basso”, “medio” e “alto”)</li>
+<li>il numero di esperimenti fattibili non è sufficiente per completare i disegni fino ad ora visti per qualsiasi ragione (es. indisponibilità di risorse, di tempo) .</li>
+</ul>
+<p>In tutti questi casi, non è mai una buona decisione quella di adattare artificiosamente la sperimentazione ad un disegno sperimentale e ad un modello canonico. Piuttosto conviene pensare quali possono essere il modello e il piano sperimentale migliori per studiare il problema in osservazione.
+La soluzione a questi problemi che proponiamo in questo corso e nell’applicativo è fornita dai cosiddetti <em>disegni D-ottimali</em>.
+La costruzione dei disegni D-ottimali è condotta come segue.
+Fissata la regione sperimentale da stusiare, scegliamo in tale regione un insieme di <span class="math inline">\(m\)</span> punti (leggi: esperimenti) candidati ad essere usati per costruire un disegno ad-hoc per il nostro problema. In generale si considera una griglia di punti che copre l’intera regione da studiare con un dettaglio (leggi: ampiezza degli intervalli che costituiscono la griglia dei punti sperimentali) che dipende dagli obiettivi dello studio.<br />
+Si scelgono quindi un modello contenente <span class="math inline">\(p\)</span> parametri e il numero <span class="math inline">\(n\)</span>
+<span class="math display">\[\begin{equation*}
+p \leq n \leq m
+\end{equation*}\]</span>
+di esperimenti che vogliamo eseguire. Fatte queste scelte la matematica ci consente di sapere che esistono
+<span class="math display">\[\begin{equation*}
+\frac{m!}{(m-n)!n!}
+\end{equation*}\]</span>
+matrici sperimentali possibili. Per scegliere il “disegno migliore” tra queste <span class="math inline">\(\frac{m!}{(m-n)!n!}\)</span> matrici esistono vari criteri. In questa dispensa ci occuperemo del criterio cosiddetto di <em><span class="math inline">\(D\)</span>-ottimalità</em> e di quei disegni, definiti per questo <em>D-ottimali</em>, che soddisfano tale criterio di scelta. Tali disegni sono quelli che massimizzano il determinante della matrice di informazione.
+<span class="math display">\[\begin{equation*}
+\rm{det}(X^tX).
+\end{equation*}\]</span>
+Maggiore è il determinante della matrice di informazione “migliore” è l’ortogonalità del modello. Si può dimostrare che la radice del determinate della matrice di informazione è inversamente proporzionale al volume dell’iperelissoide di confidenza dei parametri del modello. Massimizzare il determinante della matrice di informazione corrisponde a rendere di migliore qualità l’informazione sui parametri del modello (i.e. rendere minima la loro varianza) e ottenere quindi la predizione più precisa della variabile risposta.
+I disegni canonici fino ad ora considerati sono tutti <span class="math inline">\(D\)</span>-ottimali.</p>
+<p>Per poter confrontare disegni che differiscono per il numero di esperimenti progettati <span class="math inline">\(n\)</span> (ad esempio, un disegno non canonico in cui è possibile avere più repliche di esperimenti nel dominio sperimentale) introduciamo il seguente indicatore <span class="math inline">\(0 \leq D \leq 1\)</span>
+<span class="math display" id="eq:DOpt">\[\begin{equation}
+    D=\frac{\rm{det}(X^tX)^{1/p}}{n}
+    \tag{5.1}
+\end{equation}\]</span>
+che misura la “qualità” del disegno considerato. Si noti che in generale per piani sperimentali multivariati non è vero che all’aumentare di <span class="math inline">\(n\)</span> abbiamo una migliore “qualità” del disegno (cf. Figura <a href="disegni-d-ottimali.html#fig:fig3">5.3</a>). Questo criterio vale solo per studi limitati alla misura dell’effetto di un solo fattore. L’indicatore <span class="math inline">\(D\)</span> trova il miglior compromesso tra maggiore informazione (determinante della matrice di informazione) e lo “sforzo” sperimentale (il numero <span class="math inline">\(n\)</span> di esperimenti).
+Indicando rispettivamente con <span class="math inline">\(D_1\)</span> e <span class="math inline">\(D_2\)</span> l’indicatore () per un piano sperimentale costruito con un disegno avente numero di esperimenti differenti <span class="math inline">\(n_1\)</span> e <span class="math inline">\(n_2\)</span>, l’efficacia relativa tra i due progetti si ottiene del rapporto <span class="math inline">\(D_1/D_2\)</span>.</p>
+<div id="algoritmo-di-federov" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Algoritmo di Federov</h2>
+<p>Descriviamo brevemente l’algoritmo di Federov, su cui è basato l’applicativo, per determinare disegni <span class="math inline">\(D\)</span>-ottimali.</p>
+<p>Sia <span class="math inline">\(X_n\)</span> la matrice del modello di un disegno di <span class="math inline">\(n\)</span> esperimenti. Indichiamo con <span class="math inline">\(X_{n+1}\)</span> la matrice del modello del disegno di <span class="math inline">\(n+1\)</span> punti sperimentali ottenuta aggiungendo a <span class="math inline">\(X_n\)</span> un nuovo punto <span class="math inline">\(x^j\)</span>. La corrispondente matrice di informazione è data
+<span class="math display">\[\begin{equation*}
+    X^t_{n+1}X_{n+1}=X^t_nX_n+(x^j*x^{jt})
+\end{equation*}\]</span>
+il cui determinante soddisfa
+<span class="math display">\[\begin{equation*}
+    \rm{det}(X^t_{n+1}X_{n+1})=\rm{det}(X^t_nX_n)(1+h(x^j)),
+\end{equation*}\]</span>
+dove <span class="math inline">\(h(x^j)=x^j(X^t_nX_n){-1}x^{jt}\)</span> è il valore Leverage di <span class="math inline">\(x^j\)</span>. 
+In maniera analoga, indicando con <span class="math inline">\(X_{n-1}\)</span> la matrice del modello del disegno di <span class="math inline">\(n-1\)</span> punti sperimentali ottenuto rimuovendo da <span class="math inline">\(X_n\)</span> un punto <span class="math inline">\(x_i\)</span>, la corrispondente matrice di informazione è data
+<span class="math display">\[\begin{equation*}
+    X^t_{n-1}X_{n-1}=X^t_nX_n+(x_i*x^t_i)
+\end{equation*}\]</span>
+il cui determinante soddisfa
+<span class="math display">\[\begin{equation*}
+    \rm{det}(X^t_{n-1}X_{n-1})=\rm{det}(X^t_nX_n)(1-h(x_i)),
+\end{equation*}\]</span>
+dove <span class="math inline">\(h(x_i)=x_i(X^t_nX_n)^{-1}x^t_i\)</span> è il valore Leverage di <span class="math inline">\(x_i\)</span>.</p>
+<p>Nell’algoritmo di Federov lo scambio tra un punto sperimentale <span class="math inline">\(x^j\)</span> appartenete all’insieme dei punti candidati e un punto <span class="math inline">\(x_i\)</span> appartenente al disegno iniziale avviene simultaneamente ottenendo un nuovo disegno la cui matrice del modello <span class="math inline">\(\tilde{X}_n\)</span> ha la corrispondente matrice di informazione legata alla precedente da
+<span class="math display">\[\begin{equation*}
+    \tilde{X_n}^t\tilde{X_n}=X^t_{n}X_{n}-(x_i*x_i^t)+(x^j*x^{jt})
+\end{equation*}\]</span>
+il cui determinante soddisfa
+<span class="math display">\[\begin{equation*}
+    \rm{det}(\tilde{X_n}^t\tilde{X_n})=\rm{det}(X^t_{n}X_{n})(1+\Delta(x_i,x^j)),
+\end{equation*}\]</span>
+dove
+<span class="math display">\[\begin{equation*}
+    \Delta(x_i,x^j)=h(x^j)-(h(x_i)h(x^j)-h(x_i,x^j)^2)-h(x_i)
+\end{equation*}\]</span>
+con <span class="math inline">\(h(x_i,x^j)=x_i^t(X^tX)x^j=x^j(X^tX)x_i.\)</span></p>
+<p>L’algoritmo di Federov sceglie casualmente <span class="math inline">\(n\)</span> punti nell’insieme dei punti candidati, ne calcola la matrice del modello <span class="math inline">\(X\)</span> e quindi determina il valore <span class="math inline">\(\Delta(x_i,x^j)\)</span> per ogni coppia di <span class="math inline">\((x_i,x^j)\)</span> con <span class="math inline">\(x_i\)</span> appartenente al disegno scelto casualmente e <span class="math inline">\(x^j\)</span> appartenente all’insieme dei punti candidati (esclusi gli <span class="math inline">\(n\)</span> punti scelti). La procedura di calcolo individua una coppia di esperimenti <span class="math inline">\((x_i,x^j)\)</span> per cui <span class="math inline">\(\Delta(x_i,x^j)\)</span> sia positivo e massimo e quindi scambia <span class="math inline">\(x_i\)</span> con <span class="math inline">\(x^j\)</span>. A partire dal nuovo insieme di <span class="math inline">\(n\)</span> punti ripete il procedimento finché non trova una coppia di punti <span class="math inline">\((x_i,x^j)\)</span> con <span class="math inline">\(\Delta(x_i,x^j)&gt;0\)</span>. Nei vari software di calcolo il procedimento si ferma quando <span class="math inline">\(\Delta(x_i,x^j)\)</span> raggiunge un valore sufficientemente piccolo.</p>
+</div>
+<div id="esempio-proprietà-di-un-adesivo" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Esempio: proprietà di un adesivo</h2>
+<p>Uno sperimentatore sta indagando sulle proprietà di un
+particolare adesivo termoplastico. L’adesivo è applicato su due parti di pezzi che vengono incollati tra loro e quindi trattati a temperature diverse. I
+due fattori di interesse sono</p>
+<ul>
+<li><span class="math inline">\(X_1\)</span> la quantità di adesivo applicato</li>
+<li><span class="math inline">\(X_2\)</span> la temperatura.</li>
+</ul>
+<p>La variabile risposta <span class="math inline">\(Y\)</span> è la forza con cui le due parti di ogni pezzo risultano incollate, misurata dalla cosiddetta “forza di strappo”. Questa risposta è descritta con un modello del secondo ordine
+<span class="math display">\[
+Y=b_0+b_1X_1+b_2X_2+b_{11}X_1^2+b_{22}X_2^2+b_{12}X_1X_2
+\]</span></p>
+<p>Considerando il dominio standardizzato, le variabili <span class="math inline">\(X_1\)</span> e <span class="math inline">\(X_2\)</span> variano tra <span class="math inline">\(-1\)</span> e <span class="math inline">\(1\)</span>. Lo sperimentatore sa che se viene applicato troppo poco adesivo e la temperatura è troppo bassa, le parti non si incollano. Si impone quindi il vincolo
+<span class="math display">\[
+X_1+X_2\geq-1.5
+\]</span>
+Inoltre, se la temperatura del trattamento termico è troppo alta e si applica troppo adesivo, le parti incollate si rovinano per effetto di stress da calore, oppure non si incollano bene. Si impone quindi anche un secondo vincolo
+<span class="math display">\[
+X_1+X_2\leq 1
+\]</span></p>
+<p>Scegliamo nella regione sperimentale un insieme di punti candidati ad essere usati per un disegno. Stabiliamo ad esempio di usare una griglia di passo 0.1. Per generare la matrice dei punti candidati nell’applicativo, si seleziona il menù D-ottimale alla pagina Matrice punti candidati, e si scelgono le opzioni del caso in esame come in Figura <a href="disegni-d-ottimali.html#fig:fig1">5.1</a></p>
+<div class="figure" style="text-align: center"><span id="fig:fig1"></span>
+<img src="Immagini/D_opt/01_es1_pticandidati.png" alt="Costruzione della matrice dei punti candidati" width="100%" />
+<p class="caption">
+Figura 5.1: Costruzione della matrice dei punti candidati
+</p>
+</div>
+<p>Si noti come sono stati indicati i vincoli. Se si vuole, è possibile scaricare la matrice dei punti candidati generata con il tasto Download. In Figura <a href="disegni-d-ottimali.html#fig:fig2">5.2</a> è illustrata graficamente la forma del dominio sperimentale dei punti del caso in discussione, realizzata con Excel.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig2"></span>
+<img src="Immagini/D_opt/02_es1_pticandidati.png" alt="Insieme dei punti candidati" width="100%" />
+<p class="caption">
+Figura 5.2: Insieme dei punti candidati
+</p>
+</div>
+<p>Nella pagina D-ottimale Figura <a href="disegni-d-ottimali.html#fig:fig3">5.3</a> una volta fissato il modello e il numero massimo di esperimenti, cliccando sul bottone Calcola viene determinato il piano sperimentale D-ottimale per ogni numero di esperimenti tra il minimo e il massimo fissati nell’applicativo. Sono anche dati i valori del parametro <span class="math inline">\(D\)</span> definito in <a href="disegni-d-ottimali.html#eq:DOpt">(5.1)</a> e il valore di VIF massimo. Possiamo vedere l’andamento di questi valori in funzione del numero di esperimenti in Figura <a href="disegni-d-ottimali.html#fig:fig3">5.3</a></p>
+<div class="figure"><span id="fig:fig3"></span>
+<img src="Immagini/D_opt/04_es1_pticandidati.png" alt="Andamento del parametro $D$ e del VIF massimo in funzione del numero di esperimenti" width="50%" /><img src="Immagini/D_opt/05_es1_pticandidati.png" alt="Andamento del parametro $D$ e del VIF massimo in funzione del numero di esperimenti" width="50%" />
+<p class="caption">
+Figura 5.3: Andamento del parametro <span class="math inline">\(D\)</span> e del VIF massimo in funzione del numero di esperimenti
+</p>
+</div>
+<p>Come si può vedere in Figura <a href="disegni-d-ottimali.html#fig:fig3">5.3</a> il “migliore” valore di <span class="math inline">\(D\)</span> è dato dal piano con 7 esperimenti Figura <a href="disegni-d-ottimali.html#fig:fig6">5.4</a> e Figura <a href="disegni-d-ottimali.html#fig:fig7">5.5</a></p>
+<div class="figure" style="text-align: center"><span id="fig:fig6"></span>
+<img src="Immagini/D_opt/06_es1_pticandidati.png" alt="Disegno D-ottimale" width="100%" />
+<p class="caption">
+Figura 5.4: Disegno D-ottimale
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:fig7"></span>
+<img src="Immagini/D_opt/07_es1_pticandidati.png" alt="Disegno D-ottimale" width="100%" />
+<p class="caption">
+Figura 5.5: Disegno D-ottimale
+</p>
+</div>
+</div>
+<div id="esempio-riparazione-di-una-matrice" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Esempio: riparazione di una matrice</h2>
+<p>I disegni D-ottimali possono essere usati per “riparare” matrici i cui gli esperimenti sono stati eseguiti senza seguire un piano sperimentale predeterminato
+definendo l’insieme degli esperimenti possibili (insieme dei punti candidati) e tenendo “bloccati” gli esperimenti già eseguiti.
+Vediamo un esempio.</p>
+<p>Per ottimizzare un metodo cromatografico <span class="citation">(Leardi <a href="#ref-r.leardi2018" role="doc-biblioref">2018</a>)</span> è stato utilizzato un CCD a facce centrate con 4 variabili e 5 repliche al centro per un totale di 29 esperimenti.
+Dopo che ci si è resi conto che il livello superiore di <span class="math inline">\(X_3\)</span> era troppo alto (tutti i 9 esperimenti eseguiti con <span class="math inline">\(X_3\)</span> = 1 sono falliti). Non era più possibile avere sufficiente informazione dai 16 esperimenti “buoni” di cui 1 replicato 5 volte (punti al centro).<br />
+Fu deciso di tenere il precedente livello inferiore di <span class="math inline">\(X_3\)</span> ma di utilizzare il livello centrale del primo piano di esperimenti come nuovo livello superiore e di fissare un nuovo livello centrale nel punto medio dei due nuovi livelli Tabella <a href="disegni-d-ottimali.html#tab:Esbuoni">5.1</a></p>
+<table>
+<caption><span id="tab:Esbuoni">Tabella 5.1: </span>I 16 esperimenti “buoni” di cui 1 replicato 5 volte</caption>
+<thead>
+<tr class="header">
+<th align="right">Exp.</th>
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x3</th>
+<th align="right">x4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">-1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">0</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">-1</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">17</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">18</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">19</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p>Gli esperimenti possibili tra cui scegliere i punti da introdurre nel piano sperimentale da “aggiustare” sono tutti i <span class="math inline">\(3^4\)</span> esperimenti possibili con <span class="math inline">\(4\)</span> fattori studiati a <span class="math inline">\(3\)</span> livelli (-1,0,1), e da questi vanno tolti i 16 esperimenti già eseguiti. Per costruire l’insieme di tutte le combinazioni dei 4 fattori con l’applicativo nella pagina Matrice punti candidati del menù D-ottimale si indicano i livelli per ogni variabile come in Figura <a href="disegni-d-ottimali.html#fig:fig10">5.6</a></p>
+<div class="figure" style="text-align: center"><span id="fig:fig10"></span>
+<img src="Immagini/D_opt/10_es2.png" alt="Costruzione dei punti candidati indicando i livelli" width="100%" />
+<p class="caption">
+Figura 5.6: Costruzione dei punti candidati indicando i livelli
+</p>
+</div>
+<p>Una volta “ripulito” il dataset creato dai 16 esperimenti già eseguiti lo si importa nella pagina Matrice punti candidati. Quindi si importano nella pagina D-ottimale per aggiunta i 16 esperimenti già eseguiti e, una volta fissati il numero minimo e massimo di esperimenti totali (20 già eseguiti: 16 più 5 repliche, quindi almeno 21), cliccando sul bottone Calcola si ottiene il piano sperimentale D-ottimale. L’operazione è condotta seguendo la stessa logica descritta per la pagina D-ottimale, Figura <a href="disegni-d-ottimali.html#fig:fig8">5.7</a></p>
+<div class="figure"><span id="fig:fig8"></span>
+<img src="Immagini/D_opt/08_es2.png" alt="Andamento del parametro $D$ e VIF max in funzionedel Numero di esperimenti" width="50%" /><img src="Immagini/D_opt/09_es2.png" alt="Andamento del parametro $D$ e VIF max in funzionedel Numero di esperimenti" width="50%" />
+<p class="caption">
+Figura 5.7: Andamento del parametro <span class="math inline">\(D\)</span> e VIF max in funzionedel Numero di esperimenti
+</p>
+</div>
+<p>Nell’esempio in discussione, il compromesso scelto fu quello di aggiungere 11 esperimenti ai 20 già eseguiti. La soluzione detta fu adottata considerando il basso costo di ogni esperimento. Come spesso accade però nelle analisi di esperimenti condotte <em>a posteriori</em>, se si riconsidera il problema più attentamente, si può osservare che aggiungendo un solo esperimento si ottiene una soluzione più che accettabile.</p>
+<p>Nota: l’algoritmo di Federov è conosciuto da oltre 40 anni ed è uno degli algoritmi più studiati per calcoli di disegni D-ottimali <span class="citation">(Federov <a href="#ref-v.v.federov1972" role="doc-biblioref">1972</a>)</span>. Negli anni, molti studiosi hanno sviluppato varianti di questo algoritmo presentate come più veloci ed efficienti, per cui usando sofware commerciali (es. Minitab, Design Expert, JMP) può capitare di dovere scegliere tra più opzioni di metodi per il calcolo di piani sperimentali ottimali. In questi software, l’algoritmo di Federov originale è chiamato “algoritmo di scambio”, e le versioni modificate fanno ricorso a sistemi meno laboriosi dal punto di vista del calcolo per la scelta dei punti su cui eseguire lo scambio descritto in questa sezione.</p>
+
+</div>
+</div>
+<h3>Bibliografia</h3>
+<div id="refs" class="references">
+<div id="ref-v.v.federov1972">
+<p>Federov, V. V. 1972. <em>Theory of Optimal Experiments.</em> New York: Academic Press.</p>
+</div>
+<div id="ref-r.leardi2018">
+<p>Leardi, R. 2018. “D-Optimal Designs.” In <em>Encyclopedia of Analytical Chemistry: Applications, Theory and Instrumentation</em>. Wiley Online Library.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="central-composite-design.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bibliografia.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["dispense_doe.pdf"],
+"toc": {
+"collapse": "section"
+},
+"info": false,
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
