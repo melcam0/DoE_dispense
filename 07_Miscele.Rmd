@@ -10,7 +10,7 @@ In un esperimento con miscele i $k$ fattori $X_1, \dots, X_k$ sono le differenti
     X_1+\cdots+X_k=1.
     (\#eq:VinMisc)
  \end{equation}
-Il fatto che la somma delle proporzioni dei differenti fattori debba essere uguale a $1$ complica il disegno sperimentale e l'analisi dei risultati. Il dominio sperimentale può avere forma geometrica regolare (triangolare $\mathbb{R}^2$}, tetraedrica in $\mathbb{R}^3$}, ipertetraedrica in $\mathbb{R}^k$}), oppure poligonale o iperpoliedrica irregolare se le proporzioni stesse sono condizionate da vincoli particolari.
+Il fatto che la somma delle proporzioni dei differenti fattori debba essere uguale a $1$ complica il disegno sperimentale e l'analisi dei risultati. Il dominio sperimentale può avere forma geometrica regolare (triangolare $\mathbb{R}^2$, tetraedrica in $\mathbb{R}^3$, ipertetraedrica in $\mathbb{R}^k$), oppure poligonale o iperpoliedrica irregolare se le proporzioni stesse sono condizionate da vincoli particolari.
 Nel caso caso di $3$ fattori si può rappresentare bidimensionalmente il dominio sperimentale mediante un diagramma ternario (vedi Figura \@ref(fig:MiscDiaTern))
 
 ```{r MiscDiaTern, echo=FALSE, fig.cap="Diagramma ternario ($p=(20,40,40)$)", message=FALSE, warning=FALSE}
