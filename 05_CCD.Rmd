@@ -178,7 +178,7 @@ Si osservi che la correlazione tra i termini lineari e interazioni è nulla (par
 
 Nei CCD, per qualsiasi numero *k* di fattori, devono essere specificati necessariamente ogni volta anche $2$ parametri geometrici del disegno: la distanza assiale $a$ dal centro e il numero $N$ di punti centrali. La scelta di questi parametri dipende dalle proprietà che si desidera siano soddisfatte dal CCD.
 
-**Ruotabilità - Piano ruotabile** - tutte le risposte ottenuti da esperimenti che giacciono su una sfera centrata nel centro sono stimate con la stessa approssimazione e hanno lo stesso valore di Leverage. Ossia $Var(\hat{y})$ e Leverage dipendono solo dalla distanza dal centro.   
+**Ruotabilità - Piano ruotabile** - tutte le risposte ottenute da esperimenti che giacciono su una sfera centrata nel centro sono stimate con la stessa approssimazione e hanno lo stesso valore di Leverage. Ossia $Var(\hat{y})$ e Leverage dipendono solo dalla distanza dal centro.   
 Per
 $$
     a=\sqrt[4]{2^k}

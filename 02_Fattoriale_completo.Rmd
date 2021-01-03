@@ -81,7 +81,7 @@ variazione di ogni fattore omogenea nel dominio sperimentale). Inoltre
 il modello lineare che costruiamo dopo aver eseguito gli esperimenti
 risulta molto semplificato.
 
-La matrice del disegno sperimentale sperimentale, ossia la matrice le
+La matrice del disegno sperimentale, ossia la matrice le
 cui colonne sono i $k$ fattori e le cui righe sono i $2^k$ esperimenti è
 data da Tabella \@ref(tab:MatrDisFull).
 

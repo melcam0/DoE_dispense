@@ -129,7 +129,7 @@ knitr::include_graphics("Immagini/D_opt/07_es1_pticandidati.png")
 
 
 ## Esempio: riparazione di una matrice
-I disegni D-ottimali possono essere usati per “riparare” matrici i cui gli esperimenti sono stati eseguiti senza seguire un piano sperimentale predeterminato
+I disegni D-ottimali possono essere usati per “riparare” matrici i cui esperimenti sono stati eseguiti senza seguire un piano sperimentale predeterminato
 definendo l'insieme degli esperimenti possibili (insieme dei punti candidati) e tenendo “bloccati” gli esperimenti già eseguiti. 
 Vediamo un esempio.
 

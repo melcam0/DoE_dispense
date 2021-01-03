@@ -222,7 +222,7 @@ Inserendo le risposte nell'applicativo ottieniamo la stima dei parametri in Figu
 knitr::include_graphics("Immagini/PB/05_coeff1.png")
 ```
 
-Come detto, le 2 variabili dummy possono essere usate come benchmark di significatività. Quindi tutti i parametri che in valore assoluto sono minori del valore assoluto dei coefficienti delle 2 variabili dummy possono essere considerati non significativi. In Figura \@ref(fig:pb5) sono tracciate 2 linee orizzontali indicanti la fascia di non significatività. La variabile $x_4$ (Tempo miscelazione, misurata in sec) è non significativa.
+Come detto, le 2 variabili dummy possono essere usate come benchmark di significatività. Quindi tutti i parametri che in valore assoluto sono minori del valore assoluto dei coefficienti delle 2 variabili dummy possono essere considerati non significativi. In Figura \@ref(fig:pb5) sono tracciate 2 linee orizzontali indicanti la fascia di non significatività. La variabile $x_3$ (Volume solvente) è non significativa.
 
 Lo studio può continuare raffinando l’indagine con un nuovo piano di esperimenti che prenda in esame solo questi 4 fattori significativi.
 
