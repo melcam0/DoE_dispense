@@ -16,7 +16,7 @@ principalmente per lo screening, cioè per determinare l'influenza di un
 certo numero di fattori e delle loro interazioni su una risposta, e per
 eliminare quelli che sono non significativi.
 
-## Disegni fattoriali completi $2^k$
+## Piani fattoriali completi $2^k$
 
 I disegni fattoriali completi sono disegni in cui sono indagate tutte le
 possibili combinazioni dei livelli dei fattori. Se ad esempio il fattore
