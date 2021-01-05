@@ -1,5 +1,6 @@
 ---
-title: "Dispense sul disegno sperimentiale"
+title: "Dispense sulla progettazione degli esperimenti"
+subtitle: "Design of Experiments, DoE"
 author: "Giorgio Marrubini e Camillo Melzi"
 date: ''
 #output: pdf_document

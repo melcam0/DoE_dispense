@@ -1,4 +1,4 @@
-# Disegni D-ottimali
+# Piani D-ottimali
 
 
 ```{r include=FALSE}

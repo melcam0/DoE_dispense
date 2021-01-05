@@ -38,7 +38,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Dispense sul disegno sperimentiale},
+  pdftitle={Dispense sulla progettazione degli esperimenti},
   pdfauthor={Giorgio Marrubini e Camillo Melzi},
   colorlinks=true,
   linkcolor=Maroon,
@@ -88,7 +88,14 @@
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
 
-\title{Dispense sul disegno sperimentiale}
+\title{Dispense sulla progettazione degli esperimenti}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Design of Experiments, DoE}
 \author{Giorgio Marrubini e Camillo Melzi}
 \date{}
 
@@ -257,8 +264,8 @@ Se due variabili sono \emph{statisticamente} indipendenti si dice anche che esse
 
 \textbf{Verifica delle ipotesi, v. Ipotesi}
 
-\hypertarget{disegni-fattoriale-completo}{%
-\chapter{Disegni Fattoriale completo}\label{disegni-fattoriale-completo}}
+\hypertarget{piani-fattoriali-completi}{%
+\chapter{Piani Fattoriali completi}\label{piani-fattoriali-completi}}
 
 I disegni fattoriali che analizziamo in questa dispensa sono utilizzati
 principalmente per lo screening, cioè per determinare l'influenza di un
@@ -331,7 +338,7 @@ variazione di ogni fattore omogenea nel dominio sperimentale). Inoltre
 il modello lineare che costruiamo dopo aver eseguito gli esperimenti
 risulta molto semplificato.
 
-La matrice del disegno sperimentale sperimentale, ossia la matrice le
+La matrice del disegno sperimentale, ossia la matrice le
 cui colonne sono i \(k\) fattori e le cui righe sono i \(2^k\) esperimenti è
 data da Tabella \ref{tab:MatrDisFull}.
 
@@ -840,8 +847,8 @@ stima di \(\sigma\) ottenuta, Figura \ref{fig:fc13}
 
 Nel nostro esempio numerico il modello risulta convalidato.
 
-\hypertarget{disegni-frazionari}{%
-\chapter{Disegni Frazionari}\label{disegni-frazionari}}
+\hypertarget{piani-fattoriali-frazionari}{%
+\chapter{Piani Fattoriali Frazionari}\label{piani-fattoriali-frazionari}}
 
 All'aumentare del numero \(k\) dei fattori, il numero degli esperimenti da eseguire in un disegno fattoriale completo (a 2 livelli) aumenta esponenzialmente come \(2^k\).\\
 In Tabella \ref{tab:exprich} è riportato il numero di esperimenti richiesti in funzione del numero di fattori \(k\) nei piani sperimentali fattoriali completi.
@@ -1313,8 +1320,8 @@ Il modello è convalidato statisticamente e può quindi essere usato per esplora
 \caption{Grafico della superficie di risposta}\label{fig:fz10}
 \end{figure}
 
-\hypertarget{plackett-burman}{%
-\chapter{Plackett Burman}\label{plackett-burman}}
+\hypertarget{piani-di-plackett-burman}{%
+\chapter{Piani di Plackett Burman}\label{piani-di-plackett-burman}}
 
 I disegni frazionari \(2_{III}^{k-p}\) di risoluzione \(III\) sono usati prevalentemente per condurre studi di screening e di robustezza. Il numero di esperimenti di un qualsiasi piano fattoriale frazionario è comunque uguale ad un numero di esperimenti esponenziale \(2^n\): 8, 16, 32, \ldots{} .
 Plackett e Burman nel 1946 hanno introdotto una classe di disegni fattoriali a \(2\) livelli ortogonali che permettono di condurre lo screening di \(n-1\) fattori prevedendo lo svolgimento di un numero \(n=4m\) di esperimenti (4, 8, 12, 16, 20, 24, \ldots), in modo tale da offrire le opzioni per colmare i vuoti esistenti ad esempio tra piani di 8 e 16, oppure di 16 e 32 esperimenti.\\
@@ -1769,7 +1776,7 @@ Inserendo le risposte nell'applicativo ottieniamo la stima dei parametri in Figu
 \caption{Stima dei parametri}\label{fig:pb5}
 \end{figure}
 
-Come detto, le 2 variabili dummy possono essere usate come benchmark di significatività. Quindi tutti i parametri che in valore assoluto sono minori del valore assoluto dei coefficienti delle 2 variabili dummy possono essere considerati non significativi. In Figura \ref{fig:pb5} sono tracciate 2 linee orizzontali indicanti la fascia di non significatività. La variabile \(x_4\) (Tempo miscelazione, misurata in sec) è non significativa.
+Come detto, le 2 variabili dummy possono essere usate come benchmark di significatività. Quindi tutti i parametri che in valore assoluto sono minori del valore assoluto dei coefficienti delle 2 variabili dummy possono essere considerati non significativi. In Figura \ref{fig:pb5} sono tracciate 2 linee orizzontali indicanti la fascia di non significatività. La variabile \(x_3\) (Volume solvente) è non significativa.
 
 Lo studio può continuare raffinando l'indagine con un nuovo piano di esperimenti che prenda in esame solo questi 4 fattori significativi.
 
@@ -3067,7 +3074,7 @@ Si osservi che la correlazione tra i termini lineari e interazioni è nulla (par
 
 Nei CCD, per qualsiasi numero \emph{k} di fattori, devono essere specificati necessariamente ogni volta anche \(2\) parametri geometrici del disegno: la distanza assiale \(a\) dal centro e il numero \(N\) di punti centrali. La scelta di questi parametri dipende dalle proprietà che si desidera siano soddisfatte dal CCD.
 
-\textbf{Ruotabilità - Piano ruotabile} - tutte le risposte ottenuti da esperimenti che giacciono su una sfera centrata nel centro sono stimate con la stessa approssimazione e hanno lo stesso valore di Leverage. Ossia \(Var(\hat{y})\) e Leverage dipendono solo dalla distanza dal centro.\\
+\textbf{Ruotabilità - Piano ruotabile} - tutte le risposte ottenute da esperimenti che giacciono su una sfera centrata nel centro sono stimate con la stessa approssimazione e hanno lo stesso valore di Leverage. Ossia \(Var(\hat{y})\) e Leverage dipendono solo dalla distanza dal centro.\\
 Per
 \[
     a=\sqrt[4]{2^k}
@@ -3202,8 +3209,8 @@ Nell'applicativo si noti che è possibile scegliere il colore delle linee di liv
 
 Analizzando i vincoli e le linee di livello della resa \(Y_1\) si vede che le zona in cui cercare soluzione del problema sono quelle colorate in grigio (v. Figura \ref{fig:ccd8}).
 
-\hypertarget{disegni-d-ottimali}{%
-\chapter{Disegni D-ottimali}\label{disegni-d-ottimali}}
+\hypertarget{piani-d-ottimali}{%
+\chapter{Piani D-ottimali}\label{piani-d-ottimali}}
 
 Nelle sezioni precedenti sono stati illustrati disegni in cui la geometria del dominio sperimentale (iperpiano, ipercubo, ipersfera) e il modello erano prefissati (modello primo ordine, lineare senza interazioni, di secondo ordine lineare con interazioni di coppie di termini, di secondo ordine con interazioni a coppie e con termini quadratici). Questi piani sperimentali e i corrispondenti modelli sono ``ottimali'' e garantiscono la massima efficienza nella sperimentazione, vale a dire l'ottenimento della informazione di migliore qualità con il numero minimo di esperimenti possibile.
 Tuttavia esistono molte situazioni in cui i disegni fino ad ora visti possono non essere la scelta ``migliore''. I casi più comuni in cui è difficile impiegare proficuamente i disegni canonici visti finora sono:
@@ -3364,7 +3371,7 @@ Come si può vedere in Figura \ref{fig:fig3} il ``migliore'' valore di \(D\) è 
 \hypertarget{esempio-riparazione-di-una-matrice}{%
 \section{Esempio: riparazione di una matrice}\label{esempio-riparazione-di-una-matrice}}
 
-I disegni D-ottimali possono essere usati per ``riparare'' matrici i cui gli esperimenti sono stati eseguiti senza seguire un piano sperimentale predeterminato
+I disegni D-ottimali possono essere usati per ``riparare'' matrici i cui esperimenti sono stati eseguiti senza seguire un piano sperimentale predeterminato
 definendo l'insieme degli esperimenti possibili (insieme dei punti candidati) e tenendo ``bloccati'' gli esperimenti già eseguiti.
 Vediamo un esempio.
 
@@ -3428,8 +3435,8 @@ Nell'esempio in discussione, il compromesso scelto fu quello di aggiungere 11 es
 
 Nota: l'algoritmo di Federov è conosciuto da oltre 40 anni ed è uno degli algoritmi più studiati per calcoli di disegni D-ottimali \citep{v.v.federov1972}. Negli anni, molti studiosi hanno sviluppato varianti di questo algoritmo presentate come più veloci ed efficienti, per cui usando sofware commerciali (es. Minitab, Design Expert, JMP) può capitare di dovere scegliere tra più opzioni di metodi per il calcolo di piani sperimentali ottimali. In questi software, l'algoritmo di Federov originale è chiamato ``algoritmo di scambio'', e le versioni modificate fanno ricorso a sistemi meno laboriosi dal punto di vista del calcolo per la scelta dei punti su cui eseguire lo scambio descritto in questa sezione.
 
-\hypertarget{miscele}{%
-\chapter{Miscele}\label{miscele}}
+\hypertarget{piani-per-miscele}{%
+\chapter{Piani per miscele}\label{piani-per-miscele}}
 
 In un esperimento con miscele i \(k\) fattori \(X_1, \dots, X_k\) sono le differenti proporzioni dei costituenti della miscela, e queste devono soddisfare il seguente vincolo
 \begin{equation}

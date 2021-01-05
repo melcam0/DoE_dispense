@@ -1,4 +1,4 @@
-# Disegni Frazionari
+# Piani Fattoriali Frazionari
 
 ```{r include=FALSE}
 load("Dati/Fraz.RData")

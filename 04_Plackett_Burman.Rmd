@@ -1,4 +1,4 @@
-# Plackett Burman
+# Piani di Plackett Burman
 
 ```{r include=FALSE}
 load("Dati/PB.RData")
