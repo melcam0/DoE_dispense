@@ -128,7 +128,7 @@ knitr::include_graphics(c("Immagini/Mixt/08_aceR.png","Immagini/Mixt/09_aceP.png
 ```
 
 \newpage
-## Diegni di miscele D-ottimali
+## Piani per miscele D-ottimali
 Frequentemente oltre al vincolo \@ref(eq:VinMisc), nello studio di miscele vengono imposti altri vincoli. Ciò implica che si determinano domini sperimentali poligonali irregolari che, in generale, non permettono l'uso di nessuno dei quattro modelli canonici elencati più sopra. In questi casi si può procedere solo costruendo disegni D-ottimali che visto per disegni in cui le variabili sono indipendenti. 
 
 Consideriamo, per capire come si procede, il seguente esempio
