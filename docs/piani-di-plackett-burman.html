@@ -32,7 +32,7 @@
   <link rel="shortcut icon" href="Immagini/doe.ico" type="image/x-icon" />
 <link rel="prev" href="piani-fattoriali-frazionari.html"/>
 <link rel="next" href="central-composite-design.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,13 +50,10 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="book.css" type="text/css" />
 </head>
 
 <body>
@@ -69,7 +66,7 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">DoE</a></li>
+<li><a href="https://istrsetup.netlify.app/doe_ita.html" target="_blank">MODUNIVAR SetUp</a></a></li>
 
 <li class="divider"></li>
 <li><a href="index.html#section"></a></li>
@@ -604,7 +601,7 @@ Figura 3.1: Disegno di Plackett-Burman per 5 fattori
 </tr>
 </tbody>
 </table>
-<p>La matrice A, spesso indicata anche con il nome di “<em>alias matrix</em>”, o matrice di confusione, è definita dalla relazione algebrica
+<p>La matrice A, spesso indicata anche con il nome di “<em>alias matrix</em>,” o matrice di confusione, è definita dalla relazione algebrica
 <span class="math display">\[
 A=(X_1^tX_1)^{-1}(X_1^tX_2)
 \]</span>
@@ -624,7 +621,7 @@ Figura 3.2: Matrice di confusione
 Figura 3.3: Parte della matrice di confusione di un disegno di Plackett-Burman con 12 esperimenti
 </p>
 </div>
-<p>In questo caso le “confusioni” sono “parziali”, cioè le interazioni si confondono “parzialmente” con più termini lineari. Questo ci permette di stimare le interazioni con l’analisi di regressione. Possiamo sostituire gli effetti lineari meno significativi con le interazioni più importanti. Per determinare le interazioni più rilevanti si moltiplicano per un’interazione fissata le confusioni con i termini lineari più grandi per il segno del coefficiente del termine lineare e se ne fa la somma. Nell’applicativo è proposto il grafico delle confusioni (Plot alias) in cui è rappresentata visivamente tale somma Figura <a href="piani-di-plackett-burman.html#fig:pb4">3.11</a></p>
+<p>In questo caso le “confusioni” sono “parziali,” cioè le interazioni si confondono “parzialmente” con più termini lineari. Questo ci permette di stimare le interazioni con l’analisi di regressione. Possiamo sostituire gli effetti lineari meno significativi con le interazioni più importanti. Per determinare le interazioni più rilevanti si moltiplicano per un’interazione fissata le confusioni con i termini lineari più grandi per il segno del coefficiente del termine lineare e se ne fa la somma. Nell’applicativo è proposto il grafico delle confusioni (Plot alias) in cui è rappresentata visivamente tale somma Figura <a href="piani-di-plackett-burman.html#fig:pb4">3.11</a></p>
 <p>Per meglio chiarire quanto finora detto detto facciamo 2 esempi numerici.</p>
 <div id="esempio-confusioni-1" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Esempio: confusioni</h2>

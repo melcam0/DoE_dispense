@@ -32,7 +32,7 @@
   <link rel="shortcut icon" href="Immagini/doe.ico" type="image/x-icon" />
 <link rel="prev" href="central-composite-design.html"/>
 <link rel="next" href="piani-per-miscele.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,13 +50,10 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="book.css" type="text/css" />
 </head>
 
 <body>
@@ -69,7 +66,7 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">DoE</a></li>
+<li><a href="https://istrsetup.netlify.app/doe_ita.html" target="_blank">MODUNIVAR SetUp</a></a></li>
 
 <li class="divider"></li>
 <li><a href="index.html#section"></a></li>
@@ -127,10 +124,10 @@
 <div id="piani-d-ottimali" class="section level1" number="5">
 <h1><span class="header-section-number">Capitolo 5</span> Piani D-ottimali</h1>
 <p>Nelle sezioni precedenti sono stati illustrati disegni in cui la geometria del dominio sperimentale (iperpiano, ipercubo, ipersfera) e il modello erano prefissati (modello primo ordine, lineare senza interazioni, di secondo ordine lineare con interazioni di coppie di termini, di secondo ordine con interazioni a coppie e con termini quadratici). Questi piani sperimentali e i corrispondenti modelli sono “ottimali” e garantiscono la massima efficienza nella sperimentazione, vale a dire l’ottenimento della informazione di migliore qualità con il numero minimo di esperimenti possibile.
-Tuttavia esistono molte situazioni in cui i disegni fino ad ora visti possono non essere la scelta “migliore”. I casi più comuni in cui è difficile impiegare proficuamente i disegni canonici visti finora sono:</p>
+Tuttavia esistono molte situazioni in cui i disegni fino ad ora visti possono non essere la scelta “migliore.” I casi più comuni in cui è difficile impiegare proficuamente i disegni canonici visti finora sono:</p>
 <ul>
 <li>la regione sperimentale non è una figura geometrica regolare: si devono rispettare condizioni di lavoro prestabilite - vincoli;</li>
-<li>il modello è non canonico: ad esempio contiene un termine quadratico in una variabile ma non nelle altre, oppure contiene fattori quantitativi e almeno un fattore qualitativo a più di due livelli (es. la regolazione di uno strumento è possibile solo su tre livelli non numerici indicati con “basso”, “medio” e “alto”)</li>
+<li>il modello è non canonico: ad esempio contiene un termine quadratico in una variabile ma non nelle altre, oppure contiene fattori quantitativi e almeno un fattore qualitativo a più di due livelli (es. la regolazione di uno strumento è possibile solo su tre livelli non numerici indicati con “basso,” “medio” e “alto”)</li>
 <li>il numero di esperimenti fattibili non è sufficiente per completare i disegni fino ad ora visti per qualsiasi ragione (es. indisponibilità di risorse, di tempo) .</li>
 </ul>
 <p>In tutti questi casi, non è mai una buona decisione quella di adattare artificiosamente la sperimentazione ad un disegno sperimentale e ad un modello canonico. Piuttosto conviene pensare quali possono essere il modello e il piano sperimentale migliori per studiare il problema in osservazione.
@@ -203,7 +200,7 @@ due fattori di interesse sono</p>
 <li><span class="math inline">\(X_1\)</span> la quantità di adesivo applicato</li>
 <li><span class="math inline">\(X_2\)</span> la temperatura.</li>
 </ul>
-<p>La variabile risposta <span class="math inline">\(Y\)</span> è la forza con cui le due parti di ogni pezzo risultano incollate, misurata dalla cosiddetta “forza di strappo”. Questa risposta è descritta con un modello del secondo ordine
+<p>La variabile risposta <span class="math inline">\(Y\)</span> è la forza con cui le due parti di ogni pezzo risultano incollate, misurata dalla cosiddetta “forza di strappo.” Questa risposta è descritta con un modello del secondo ordine
 <span class="math display">\[
 Y=b_0+b_1X_1+b_2X_2+b_{11}X_1^2+b_{22}X_2^2+b_{12}X_1X_2
 \]</span></p>
@@ -255,7 +252,7 @@ Figura 5.5: Disegno D-ottimale
 <p>I disegni D-ottimali possono essere usati per “riparare” matrici i cui esperimenti sono stati eseguiti senza seguire un piano sperimentale predeterminato
 definendo l’insieme degli esperimenti possibili (insieme dei punti candidati) e tenendo “bloccati” gli esperimenti già eseguiti.
 Vediamo un esempio.</p>
-<p>Per ottimizzare un metodo cromatografico <span class="citation">(Leardi <a href="#ref-r.leardi2018" role="doc-biblioref">2018</a>)</span> è stato utilizzato un CCD a facce centrate con 4 variabili e 5 repliche al centro per un totale di 29 esperimenti.
+<p>Per ottimizzare un metodo cromatografico <span class="citation">(<a href="bibliografia.html#ref-r.leardi2018" role="doc-biblioref">Leardi 2018</a>)</span> è stato utilizzato un CCD a facce centrate con 4 variabili e 5 repliche al centro per un totale di 29 esperimenti.
 Dopo che ci si è resi conto che il livello superiore di <span class="math inline">\(X_3\)</span> era troppo alto (tutti i 9 esperimenti eseguiti con <span class="math inline">\(X_3\)</span> = 1 sono falliti). Non era più possibile avere sufficiente informazione dai 16 esperimenti “buoni” di cui 1 replicato 5 volte (punti al centro).<br />
 Fu deciso di tenere il precedente livello inferiore di <span class="math inline">\(X_3\)</span> ma di utilizzare il livello centrale del primo piano di esperimenti come nuovo livello superiore e di fissare un nuovo livello centrale nel punto medio dei due nuovi livelli Tabella <a href="piani-d-ottimali.html#tab:Esbuoni">5.1</a></p>
 <table>
@@ -427,17 +424,8 @@ Figura 5.7: Andamento del parametro <span class="math inline">\(D\)</span> e VIF
 </p>
 </div>
 <p>Nell’esempio in discussione, il compromesso scelto fu quello di aggiungere 11 esperimenti ai 20 già eseguiti. La soluzione detta fu adottata considerando il basso costo di ogni esperimento. Come spesso accade però nelle analisi di esperimenti condotte <em>a posteriori</em>, se si riconsidera il problema più attentamente, si può osservare che aggiungendo un solo esperimento si ottiene una soluzione più che accettabile.</p>
-<p>Nota: l’algoritmo di Federov è conosciuto da oltre 40 anni ed è uno degli algoritmi più studiati per calcoli di disegni D-ottimali <span class="citation">(Federov <a href="#ref-v.v.federov1972" role="doc-biblioref">1972</a>)</span>. Negli anni, molti studiosi hanno sviluppato varianti di questo algoritmo presentate come più veloci ed efficienti, per cui usando sofware commerciali (es. Minitab, Design Expert, JMP) può capitare di dovere scegliere tra più opzioni di metodi per il calcolo di piani sperimentali ottimali. In questi software, l’algoritmo di Federov originale è chiamato “algoritmo di scambio”, e le versioni modificate fanno ricorso a sistemi meno laboriosi dal punto di vista del calcolo per la scelta dei punti su cui eseguire lo scambio descritto in questa sezione.</p>
+<p>Nota: l’algoritmo di Federov è conosciuto da oltre 40 anni ed è uno degli algoritmi più studiati per calcoli di disegni D-ottimali <span class="citation">(<a href="bibliografia.html#ref-v.v.federov1972" role="doc-biblioref">Federov 1972</a>)</span>. Negli anni, molti studiosi hanno sviluppato varianti di questo algoritmo presentate come più veloci ed efficienti, per cui usando sofware commerciali (es. Minitab, Design Expert, JMP) può capitare di dovere scegliere tra più opzioni di metodi per il calcolo di piani sperimentali ottimali. In questi software, l’algoritmo di Federov originale è chiamato “algoritmo di scambio,” e le versioni modificate fanno ricorso a sistemi meno laboriosi dal punto di vista del calcolo per la scelta dei punti su cui eseguire lo scambio descritto in questa sezione.</p>
 
-</div>
-</div>
-<h3>Bibliografia</h3>
-<div id="refs" class="references">
-<div id="ref-v.v.federov1972">
-<p>Federov, V. V. 1972. <em>Theory of Optimal Experiments.</em> New York: Academic Press.</p>
-</div>
-<div id="ref-r.leardi2018">
-<p>Leardi, R. 2018. “D-Optimal Designs.” In <em>Encyclopedia of Analytical Chemistry: Applications, Theory and Instrumentation</em>. Wiley Online Library.</p>
 </div>
 </div>
             </section>
