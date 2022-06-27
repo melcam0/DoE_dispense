@@ -12,10 +12,10 @@ bibliography: book.bib
 link-citations: yes
 colorlinks: yes
 favicon: Immagini/doe.ico
-cover-image: Immagini/Design-of-Experiments.jpg
+cover-image: Immagini/Design-of-Experiments.png
 site: bookdown::bookdown_site
 ---
 
 #  {.unnumbered}
 
-`r if (knitr:::is_html_output()) ' ![](Immagini/Design-of-Experiments.jpg) '`
+`r if (knitr:::is_html_output()) ' ![](Immagini/Design-of-Experiments.png) '`
